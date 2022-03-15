@@ -1,13 +1,9 @@
 <script setup>
 import NavComp from '@/components/base/NavComp.vue';
-import brandImg from '@/assets/img/stechoq-logo.svg';
+import HeadingComp from '@/components/base/HeadingComp.vue';
 </script>
 
 <template>
-  <header id="header">
-    <div id="brand">
-      <img :src="brandImg" :alt="siteMeta.title" />
-    </div>
-    <nav-comp />
-  </header>
+  <nav-comp />
+  <heading-comp />
 </template>
