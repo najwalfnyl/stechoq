@@ -5,6 +5,9 @@ module.exports = {
       container: {
         center: true,
       },
+      colors: {
+        primary: '#006'
+      }
     },
   },
   plugins: [],

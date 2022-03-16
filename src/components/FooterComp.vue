@@ -4,20 +4,44 @@ const year = d.getFullYear();
 </script>
 
 <template>
-  <footer id="footer">
+  <footer id="footer" class="bg-neutral-100">
     <div class="container">
       <section id="bottom-nav">
-        <div class="grid grid-cols-6">
-          <div class="col-span-2">test</div>
-          <div>a</div>
-          <div>b</div>
-          <div>c</div>
-          <div>d</div>
+        <div class="grid grid-cols-6 gap-12 py-4">
+          <div class="col-span-2">
+            <h3 class="font-medium text-2xl">PT Stechoq Robotika Indonesia</h3>
+            <address class="not-italic">
+              Jl Belimbing A17 Perumahan Sidoarum Blok II, Godean, Kramat,
+              Sidoarum, Kabupaten Sleman, Daerah Istimewa Yogyakarta
+            </address>
+          </div>
+          <div class="text-sm">
+            <h3 class="font-medium text-xl">Tentang Kami</h3>
+            <a class="block my-2" href="#">Visi Misi</a>
+            <a class="block my-2" href="#">Profil Founder</a>
+          </div>
+          <div class="text-sm">
+            <h3 class="font-medium text-xl">Product</h3>
+            <a class="block my-2" href="#">Ventilator ICU</a>
+            <a class="block my-2" href="#">Automatic Guided Vehicle</a>
+            <a class="block my-2" href="#">Mini Production System</a>
+            <a class="block my-2" href="#">Digital Control System</a>
+          </div>
+          <div class="text-sm">
+            <h3 class="font-medium text-xl">Kampus Merdeka</h3>
+          </div>
+          <div class="text-sm">
+            <h3 class="font-medium text-xl">Social Media</h3>
+            <a class="block my-2" href="#">Twitter</a>
+            <a class="block my-2" href="#">Facebook</a>
+            <a class="block my-2" href="#">Instagram</a>
+            <a class="block my-2" href="#">YouTube</a>
+          </div>
         </div>
       </section>
       <hr />
       <section id="copyright">
-        <p>&COPY; {{ year }} &mdash; {{ siteMeta.title }}</p>
+        <p class="font-medium py-4">&COPY; {{ year }} &mdash; {{ siteMeta.title }}</p>
       </section>
     </div>
   </footer>

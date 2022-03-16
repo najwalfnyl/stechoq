@@ -1,6 +1,7 @@
 import { defineStore } from 'pinia';
+import { assetsImg } from '@/utils/helper';
 
-import siteLogo from '@/assets/img/stechoq-logo.svg';
+const siteLogo = assetsImg('stechoq-logo.svg');
 
 const useSiteMetaStore = defineStore({
   id: 'siteMeta',

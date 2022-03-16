@@ -2,7 +2,7 @@
 import { RouterLink } from 'vue-router';
 
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue';
-import { BellIcon, MenuIcon, XIcon } from '@heroicons/vue/outline';
+import { MenuIcon, XIcon } from '@heroicons/vue/outline';
 
 const navs = [
   {
@@ -38,11 +38,7 @@ const navs = [
 
 <template>
   <header class="min-h-full">
-    <Disclosure
-      v-slot="{ open }"
-      as="nav"
-      class="container"
-    >
+    <Disclosure v-slot="{ open }" as="nav" class="container">
       <div class="flex items-center justify-between h-16">
         <div class="flex items-center">
           <img class="h-12" :src="siteMeta.logo" :alt="siteMeta.title" />
@@ -61,7 +57,7 @@ const navs = [
         </div>
         <div class="hidden md:block">
           <div class="flex items-center">
-            <button type="button" class="bg-blue-500 text-white p-2 rounded-md">
+            <button type="button" class="bg-primary text-white p-2 rounded-md">
               Contact Us
             </button>
           </div>
@@ -91,7 +87,7 @@ const navs = [
         </div>
         <div class="pt-4 pb-3 border-t border-gray-700">
           <div class="flex items-center">
-            <button type="button" class="bg-blue-500 text-white p-2 rounded-md">
+            <button type="button" class="bg-primary text-white p-2 rounded-md">
               Contact Us
             </button>
           </div>
