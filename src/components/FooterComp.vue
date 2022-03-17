@@ -10,7 +10,7 @@ const year = d.getFullYear();
         <div class="grid grid-cols-6 gap-12 py-4">
           <div class="col-span-2">
             <h3 class="font-medium text-2xl">PT Stechoq Robotika Indonesia</h3>
-            <address class="not-italic">
+            <address class="not-italic my-2">
               Jl Belimbing A17 Perumahan Sidoarum Blok II, Godean, Kramat,
               Sidoarum, Kabupaten Sleman, Daerah Istimewa Yogyakarta
             </address>

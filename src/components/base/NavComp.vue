@@ -39,7 +39,7 @@ const navs = [
 <template>
   <header class="min-h-full">
     <Disclosure v-slot="{ open }" as="nav" class="container">
-      <div class="flex items-center justify-between h-16">
+      <div class="flex items-center justify-between h-20">
         <div class="flex items-center">
           <img class="h-12" :src="siteMeta.logo" :alt="siteMeta.title" />
         </div>
