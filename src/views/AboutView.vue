@@ -5,6 +5,10 @@ const imgClient = assetsImg('brand/ypti-vertical.svg');
 const imgClient2 = assetsImg('stechoq-logo.svg');
 
 const imgProduct = assetsImg('product/mps.png');
+
+const masMalik = assetsImg('people/mas-malik.png');
+
+const award1 = assetsImg('award/award 1 1.png');
 </script>
 
 <template>
@@ -26,7 +30,7 @@ const imgProduct = assetsImg('product/mps.png');
       </div>
     </article>
   </section>
-  <section id="title" class="my-4">
+  <section id="title" class="my-4 py-4">
     <article class="container max-w-5xl">
       <h2 class="text-4xl">
         Leading world class R&D company that develops applicative technology for
@@ -35,7 +39,7 @@ const imgProduct = assetsImg('product/mps.png');
     </article>
   </section>
   <section id="visi-misi">
-    <article class="container max-w-5xl my-8 grid grid-cols-2 gap-8">
+    <article class="container max-w-5xl my-8 py-8 grid grid-cols-2 gap-8">
       <div>
         <div class="flex flex-row items-center gap-4 my-2">
           <h1 class="text-3xl font-bold">Visi</h1>
@@ -55,7 +59,7 @@ const imgProduct = assetsImg('product/mps.png');
         <img :src="imgClient" alt="" />
       </div>
     </article>
-    <article class="container max-w-5xl my-8 grid grid-cols-2 gap-8">
+    <article class="container max-w-5xl my-8 py-8 grid grid-cols-2 gap-8">
       <div class="flex">
         <img :src="imgClient2" alt="" />
       </div>
@@ -75,29 +79,65 @@ const imgProduct = assetsImg('product/mps.png');
       </div>
     </article>
   </section>
-  <section id="profil-founder" class="my-8">
-    <article class="container max-w-3xl">
+  <section id="profil-founder" class="my-8 py-8">
+    <article class="container max-w-4xl">
       <h3 class="text-center text-3xl font-medium my-4">Profil Founder</h3>
-      <div class="grid grid-cols-2 gap-4">
-        <p class="text-neutral-800 text-lg">
-          “Stechoq merupakan perusahaan R&D yang berfokus dalam mengembangkan
-          inovasi produk teknologi robotika dan industri 4.0, didirikan pada
-          tahun 2015 oleh para milenial berprestasi yang berhasil meraih belasan
-          prestasi di bidang robotika dalam maupun luar negeri. stechoq telah
-          berhasil dan akan terus mengembangkan produk inovasi tepat guna untuk
-          kemajuan Indonesia.“
-        </p>
+      <div class="grid grid-cols-3 gap-4">
+        <div class="flex col-span-2">
+          <p class="text-neutral-800 text-2xl">
+            “Stechoq merupakan perusahaan R&D yang berfokus dalam mengembangkan
+            inovasi produk teknologi robotika dan industri 4.0, didirikan pada
+            tahun 2015 oleh para milenial berprestasi yang berhasil meraih belasan
+            prestasi di bidang robotika dalam maupun luar negeri. stechoq telah
+            berhasil dan akan terus mengembangkan produk inovasi tepat guna untuk
+            kemajuan Indonesia.“
+          </p>
+        </div>
         <div class="flex">
           <div class="w-full">
-            <img class="object-cover w-full h-full" :src="imgProduct" alt="" />
+            <img class="object-cover w-full h-full" :src="masMalik" alt="" />
           </div>
         </div>
       </div>
     </article>
   </section>
   <section id="awards" class="my-8">
-    <article class="container max-w-3xl">
-      <h3 class="text-3xl font-medium text-center">Pencapaian & Penghargaan</h3>
+    <article class="container">
+      <h3 class="text-3xl font-medium text-center my-4">Pencapaian & Penghargaan</h3>
+      <div class="grid grid-cols-5 justify-center gap-8">
+        <div class="flex flex-col p-4">
+          <img :src="award1" alt="">
+          <p class="text-center font-medium">Leader of the national defense day ceremony 2016</p>
+        </div>
+        <div class="flex flex-col p-4">
+          <img :src="award1" alt="">
+          <p class="text-center font-medium">Leader of the national defense day ceremony 2016</p>
+        </div>
+        <div class="flex flex-col p-4">
+          <img :src="award1" alt="">
+          <p class="text-center font-medium">Leader of the national defense day ceremony 2016</p>
+        </div>
+        <div class="flex flex-col p-4">
+          <img :src="award1" alt="">
+          <p class="text-center font-medium">Leader of the national defense day ceremony 2016</p>
+        </div>
+        <div class="flex flex-col p-4">
+          <img :src="award1" alt="">
+          <p class="text-center font-medium">Leader of the national defense day ceremony 2016</p>
+        </div>
+        <div class="flex flex-col p-4">
+          <img :src="award1" alt="">
+          <p class="text-center font-medium">Leader of the national defense day ceremony 2016</p>
+        </div>
+        <div class="flex flex-col p-4">
+          <img :src="award1" alt="">
+          <p class="text-center font-medium">Leader of the national defense day ceremony 2016</p>
+        </div>
+        <div class="flex flex-col p-4">
+          <img :src="award1" alt="">
+          <p class="text-center font-medium">Leader of the national defense day ceremony 2016</p>
+        </div>
+      </div>
     </article>
   </section>
 </template>

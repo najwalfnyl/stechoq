@@ -1,5 +1,5 @@
 <template>
-  <section id="headings">
+  <section id="headings" class="my-8 pb-8">
     <div class="container">
       <div class="grid grid-cols-2 gap-32">
         <h1 class="text-6xl font-bold text-gray-900 py-6">

@@ -1,6 +1,13 @@
 <script setup>
 import { onMounted, onUnmounted, ref } from 'vue';
 
+const props = defineProps({
+  outsideiIndicator: {
+    type: Boolean,
+    default: false,
+  },
+});
+
 const images = [
   'https://picsum.photos/id/237/1024/800',
   'https://picsum.photos/id/238/1024/800',
@@ -36,8 +43,8 @@ onUnmounted(() => {
         v-for="(img, i) in images"
         :id="`slide-${i}`"
         :key="i"
-        :class="`${i === active ? 'active' : 'left-full'}`"
-        class="carousel-item object-fill transition-all h-[750px] duration-500 ease-in-out"
+        :class="`${i === active ? 'active' : 'right-full'}`"
+        class="carousel-item object-fill transition-all h-[750px] ease-in-out"
       >
         <img
           class="object-cover object-center w-full h-full"
@@ -47,7 +54,8 @@ onUnmounted(() => {
       </div>
     </div>
     <div
-      class="container carousel-indicators -mt-16 flex h-16 w-full items-center"
+      class="container carousel-indicators flex h-16 w-full items-center"
+      :class="[props.outsideiIndicator ? '' : '-mt-16']"
     >
       <ol class="z-50 flex w-fit justify-center space-x-2">
         <li
@@ -62,20 +70,20 @@ onUnmounted(() => {
 </template>
 
 <style>
-.left-full {
-  left: -100%;
+.right-full {
+  right: -100%;
 }
 
 .carousel-item {
-  float: left;
+  float: right;
   position: relative;
   display: block;
   width: 100%;
-  margin-right: -100%;
+  margin-left: -100%;
   backface-visibility: hidden;
 }
 
 .carousel-item.active {
-  left: 0;
+  right: 0;
 }
 </style>
