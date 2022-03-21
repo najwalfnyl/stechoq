@@ -3,7 +3,7 @@ import { RouterLink } from 'vue-router';
 
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue';
 import { MenuIcon, XIcon } from '@heroicons/vue/outline';
-import { ref } from 'vue';
+import { ref, reactive } from 'vue';
 
 const navs = [
   {
@@ -28,6 +28,18 @@ const navs = [
   },
 ];
 
+const initialForm = {
+  name: '',
+  company: '',
+  email: '',
+  phone: '',
+  message: '',
+};
+const form = reactive({ ...initialForm });
+const reset = () => {
+  Object.assign(form, initialForm);
+};
+
 const contactForm = ref(null);
 
 const openContact = () => {
@@ -38,8 +50,15 @@ const closeContact = () => {
   contactForm.value.close();
 };
 
-const submitForm = (e) => {
-  console.log(e);
+const submitForm = (input) => {
+  try {
+    window.open(`mailto:${input.email}?subject=${input.name}&body=${input.message}%0D%0A%0D%0A${input.company}%0D%0A${input.phone}`);
+  } catch (error) {
+    console.log(error);
+  } finally {
+    reset();
+    closeContact();
+  }
 };
 </script>
 
@@ -112,8 +131,8 @@ const submitForm = (e) => {
       </DisclosurePanel>
     </Disclosure>
   </header>
-  <dialog ref="contactForm" class="p-8 w-1/2 rounded-md">
-    <form method="dialog" @submit.prevent="submitForm">
+  <dialog id="contactForm" ref="contactForm" class="p-8 w-1/2 rounded-md">
+    <form method="dialog" @submit.prevent="submitForm(form)">
       <div class="py-12">
         <h2 class="text-2xl font-bold">Mari membuat inovasi teknologi bersama STECHOQ</h2>
         <div class="mt-8">
@@ -121,6 +140,7 @@ const submitForm = (e) => {
             <label class="block col-span-2">
               <span class="text-gray-700 font-medium">Nama Lengkap</span>
               <input
+                v-model.trim="form.name"
                 type="text"
                 class="mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black"
                 placeholder="John Doe"
@@ -129,6 +149,7 @@ const submitForm = (e) => {
             <label class="block col-span-2">
               <span class="text-gray-700 font-medium">Perusahaan</span>
               <input
+                v-model.trim="form.company"
                 type="text"
                 class="mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black"
                 placeholder="PT Stechoq Robotika Indonesia"
@@ -137,6 +158,7 @@ const submitForm = (e) => {
             <label class="block">
               <span class="text-gray-700 font-medium">Alamat Email</span>
               <input
+                v-model.trim="form.email"
                 type="email"
                 class="mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black"
                 placeholder="john@example.com"
@@ -145,6 +167,7 @@ const submitForm = (e) => {
             <label class="block">
               <span class="text-gray-700 font-medium">Nomer Telepon</span>
               <input
+                v-model.trim="form.phone"
                 type="tel"
                 class="mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black"
                 placeholder="628123456789"
@@ -153,6 +176,7 @@ const submitForm = (e) => {
             <label class="block col-span-2">
               <span class="text-gray-700 font-medium">Pesan</span>
               <textarea
+                v-model.trim="form.message"
                 class="mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black"
                 rows="2"
                 placeholder="Tulis pesan"
@@ -166,3 +190,13 @@ const submitForm = (e) => {
     </form>
   </dialog>
 </template>
+
+<style>
+#contactForm::backdrop {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(0, 0, 0, 0.75) 100%
+  );
+}
+</style>

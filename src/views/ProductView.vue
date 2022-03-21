@@ -13,135 +13,86 @@ const imgProduct = assetsImg('product/mps.png');
   <section id="product-list" class="my-8 py-8">
     <div class="container grid grid-cols-3 gap-4">
       <article class="h-full">
-        <div class="object-fill overflow-hidden w-full h-96">
+        <div class="object-fill overflow-hidden w-full h-96 bg-gradient-to-t from-neutral-600 via-neutral-500 to-neutral-400">
           <img
-            style="
-              mask-image: linear-gradient(
-                to bottom,
-                rgba(0, 0, 0, 1),
-                rgba(0, 0, 0, 0.75)
-              );
-            "
             :src="imgProduct"
-            class="w-full h-full object-cover bg-neutral-900"
+            class="w-full h-full object-cover mix-blend-overlay"
             alt=""
           />
         </div>
-        <div class="-mt-28 mb-8 px-8">
+        <div class="-mt-28 h-28 px-8">
           <h3 class="text-white font-medium text-4xl">Automatic Guided Vehicle</h3>
         </div>
       </article>
       <article class="h-full">
-        <div class="object-fill overflow-hidden w-full h-96">
+        <div class="object-fill overflow-hidden w-full h-96 bg-gradient-to-t from-neutral-600 via-neutral-500 to-neutral-400">
           <img
-            style="
-              mask-image: linear-gradient(
-                to bottom,
-                rgba(0, 0, 0, 1),
-                rgba(0, 0, 0, 0.75)
-              );
-            "
             :src="imgProduct"
-            class="w-full h-full object-cover bg-neutral-900"
+            class="w-full h-full object-cover mix-blend-overlay"
             alt=""
           />
         </div>
-        <div class="-mt-28 mb-8 px-8">
+        <div class="-mt-28 h-28 px-8">
           <h3 class="text-white font-medium text-4xl">Automatic Guided Vehicle</h3>
         </div>
       </article>
       <article class="h-full">
-        <div class="object-fill overflow-hidden w-full h-96">
+        <div class="object-fill overflow-hidden w-full h-96 bg-gradient-to-t from-neutral-600 via-neutral-500 to-neutral-400">
           <img
-            style="
-              mask-image: linear-gradient(
-                to bottom,
-                rgba(0, 0, 0, 1),
-                rgba(0, 0, 0, 0.75)
-              );
-            "
             :src="imgProduct"
-            class="w-full h-full object-cover bg-neutral-900"
+            class="w-full h-full object-cover mix-blend-overlay"
             alt=""
           />
         </div>
-        <div class="-mt-28 mb-8 px-8">
+        <div class="-mt-28 h-28 px-8">
           <h3 class="text-white font-medium text-4xl">Automatic Guided Vehicle</h3>
         </div>
       </article>
       <article class="h-full">
-        <div class="object-fill overflow-hidden w-full h-96">
+        <div class="object-fill overflow-hidden w-full h-96 bg-gradient-to-t from-neutral-600 via-neutral-500 to-neutral-400">
           <img
-            style="
-              mask-image: linear-gradient(
-                to bottom,
-                rgba(0, 0, 0, 1),
-                rgba(0, 0, 0, 0.75)
-              );
-            "
             :src="imgProduct"
-            class="w-full h-full object-cover bg-neutral-900"
+            class="w-full h-full object-cover mix-blend-overlay"
             alt=""
           />
         </div>
-        <div class="-mt-28 mb-8 px-8">
+        <div class="-mt-28 h-28 px-8">
           <h3 class="text-white font-medium text-4xl">Automatic Guided Vehicle</h3>
         </div>
       </article>
       <article class="h-full">
-        <div class="object-fill overflow-hidden w-full h-96">
+        <div class="object-fill overflow-hidden w-full h-96 bg-gradient-to-t from-neutral-600 via-neutral-500 to-neutral-400">
           <img
-            style="
-              mask-image: linear-gradient(
-                to bottom,
-                rgba(0, 0, 0, 1),
-                rgba(0, 0, 0, 0.75)
-              );
-            "
             :src="imgProduct"
-            class="w-full h-full object-cover bg-neutral-900"
+            class="w-full h-full object-cover mix-blend-overlay"
             alt=""
           />
         </div>
-        <div class="-mt-28 mb-8 px-8">
+        <div class="-mt-28 h-28 px-8">
           <h3 class="text-white font-medium text-4xl">Automatic Guided Vehicle</h3>
         </div>
       </article>
       <article class="h-full">
-        <div class="object-fill overflow-hidden w-full h-96">
+        <div class="object-fill overflow-hidden w-full h-96 bg-gradient-to-t from-neutral-600 via-neutral-500 to-neutral-400">
           <img
-            style="
-              mask-image: linear-gradient(
-                to bottom,
-                rgba(0, 0, 0, 1),
-                rgba(0, 0, 0, 0.75)
-              );
-            "
             :src="imgProduct"
-            class="w-full h-full object-cover bg-neutral-900"
+            class="w-full h-full object-cover mix-blend-overlay"
             alt=""
           />
         </div>
-        <div class="-mt-28 mb-8 px-8">
+        <div class="-mt-28 h-28 px-8">
           <h3 class="text-white font-medium text-4xl">Automatic Guided Vehicle</h3>
         </div>
       </article>
       <article class="h-full">
-        <div class="object-fill overflow-hidden w-full h-96">
+        <div class="object-fill overflow-hidden w-full h-96 bg-gradient-to-t from-neutral-600 via-neutral-500 to-neutral-400">
           <img
-            style="
-              mask-image: linear-gradient(
-                to bottom,
-                rgba(0, 0, 0, 1),
-                rgba(0, 0, 0, 0.75)
-              );
-            "
             :src="imgProduct"
-            class="w-full h-full object-cover bg-neutral-900"
+            class="w-full h-full object-cover mix-blend-overlay"
             alt=""
           />
         </div>
-        <div class="-mt-28 mb-8 px-8">
+        <div class="-mt-28 h-28 px-8">
           <h3 class="text-white font-medium text-4xl">Automatic Guided Vehicle</h3>
         </div>
       </article>

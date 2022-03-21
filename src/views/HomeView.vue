@@ -30,16 +30,9 @@ const imgProduct = assetsImg('/product/mps.png');
   </section>
   <section id="products" class="py-2 grid grid-flow-row gap-4 my-4">
     <article>
-      <div class="h-96 overflow-hidden bg-neutral-900">
+      <div class="h-96 overflow-hidden bg-gradient-to-l from-neutral-700 via-neutral-500 to-neutral-400">
         <img
-          class="object-cover h-full w-full"
-          style="
-            mask-image: linear-gradient(
-              to right,
-              rgba(0, 0, 0, 1),
-              rgba(0, 0, 0, 0.75)
-            );
-          "
+          class="object-cover h-full w-full mix-blend-overlay"
           :src="imgProduct"
           alt=""
         />
@@ -63,16 +56,9 @@ const imgProduct = assetsImg('/product/mps.png');
       </div>
     </article>
     <article>
-      <div class="h-96 overflow-hidden bg-neutral-900">
+      <div class="h-96 overflow-hidden bg-gradient-to-l from-neutral-700 via-neutral-500 to-neutral-400">
         <img
-          class="object-cover h-full w-full"
-          style="
-            mask-image: linear-gradient(
-              to right,
-              rgba(0, 0, 0, 1),
-              rgba(0, 0, 0, 0.75)
-            );
-          "
+          class="object-cover h-full w-full mix-blend-overlay"
           :src="imgProduct"
           alt=""
         />
@@ -96,16 +82,9 @@ const imgProduct = assetsImg('/product/mps.png');
       </div>
     </article>
     <article>
-      <div class="h-96 overflow-hidden bg-neutral-900">
+      <div class="h-96 overflow-hidden bg-gradient-to-l from-neutral-700 via-neutral-500 to-neutral-400">
         <img
-          class="object-cover h-full w-full"
-          style="
-            mask-image: linear-gradient(
-              to right,
-              rgba(0, 0, 0, 1),
-              rgba(0, 0, 0, 0.75)
-            );
-          "
+          class="object-cover h-full w-full mix-blend-overlay"
           :src="imgProduct"
           alt=""
         />
