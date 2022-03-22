@@ -1,0 +1,20 @@
+#testimonial {
+
+  #leftArrow, #rightArrow {
+    @apply flex-none self-center;
+
+    .iconTestimoni {
+      @apply border-2 rounded-full p-2;
+    }
+  }
+
+  #content {u
+    #content-container {
+      @apply grid md:grid-cols-2 lg:grid-cols-3 gap-8;
+
+      .testimoni-message {
+        @apply flex items-center lg:col-span-2;
+      }
+    }
+  }
+}

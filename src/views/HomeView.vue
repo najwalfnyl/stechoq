@@ -20,7 +20,7 @@ const imgProduct = assetsImg('/product/mps.png');
   <carousel-comp />
   <section id="client" class="h-32 my-8">
     <div
-      class="container grid grid-cols-4 gap-8 place-content-center text-center h-full"
+      class="main-container grid grid-cols-2 md:grid-cols-4 md:gap-8 place-content-center text-center h-full"
     >
       <div class="flex align-middle"><img :src="imgClient" /></div>
       <div class="flex align-middle"><img :src="imgClient2" /></div>
@@ -39,13 +39,13 @@ const imgProduct = assetsImg('/product/mps.png');
       </div>
       <div class="absolute -mt-96 w-full h-96">
         <div
-          class="grid grid-cols-2 content-center container mx-auto h-full text-white"
+          class="grid grid-cols-2 content-center main-container mx-auto h-full text-white"
         >
           <div class="col-start-2">
             <p class="text-3xl">
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
             </p>
-            <p class="text-lg">
+            <p class="hidden md:block text-lg">
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos
               laboriosam optio vel, magnam, illum mollitia explicabo cumque
               fugit ab accusamus non est? Adipisci excepturi in fugit molestiae
@@ -65,13 +65,13 @@ const imgProduct = assetsImg('/product/mps.png');
       </div>
       <div class="absolute -mt-96 w-full h-96">
         <div
-          class="grid grid-cols-2 content-center container mx-auto h-full text-white"
+          class="grid grid-cols-2 content-center main-container mx-auto h-full text-white"
         >
           <div class="col-start-2">
             <p class="text-3xl">
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
             </p>
-            <p class="text-lg">
+            <p class="hidden md:block text-lg">
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos
               laboriosam optio vel, magnam, illum mollitia explicabo cumque
               fugit ab accusamus non est? Adipisci excepturi in fugit molestiae
@@ -91,13 +91,13 @@ const imgProduct = assetsImg('/product/mps.png');
       </div>
       <div class="absolute -mt-96 w-full h-96">
         <div
-          class="grid grid-cols-2 content-center container mx-auto h-full text-white"
+          class="grid grid-cols-2 content-center main-container mx-auto h-full text-white"
         >
           <div class="col-start-2">
             <p class="text-3xl">
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
             </p>
-            <p class="text-lg">
+            <p class="hidden md:block text-lg">
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos
               laboriosam optio vel, magnam, illum mollitia explicabo cumque
               fugit ab accusamus non est? Adipisci excepturi in fugit molestiae

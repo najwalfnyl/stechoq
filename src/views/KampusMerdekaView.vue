@@ -19,7 +19,7 @@ const imgProduct = assetsImg('product/mps.png');
     </template>
   </heading-comp>
   <section id="kampus-merdeka" class="my-8">
-    <article class="container">
+    <article class="main-container">
       <carousel-comp :outsidei-indicator="true" />
 
       <div id="content" class="my-8">
@@ -28,7 +28,7 @@ const imgProduct = assetsImg('product/mps.png');
             Apa yang akan kamu dapatkan?
           </h3>
 
-          <div class="grid grid-cols-3 gap-8 my-8">
+          <div class="grid lg:grid-cols-3 gap-8 my-8">
             <div class="bg-white rounded-lg py-8 px-4">
               <h4 class="text-3xl text-center font-medium mb-6">
                 Research Funding
@@ -69,18 +69,21 @@ const imgProduct = assetsImg('product/mps.png');
         </div>
 
         <div id="testimonial">
-          <h3 class="text-5xl font-medium text-center my-4">
-            Testimoni
-          </h3>
+          <h3 class="text-5xl font-medium text-center my-4">Testimoni</h3>
 
           <testimonial-slider-comp />
         </div>
       </div>
     </article>
   </section>
-  <section id="products" class="container py-2 grid grid-flow-row gap-4 my-4">
+  <section
+    id="products"
+    class="main-container py-2 grid grid-flow-row gap-4 my-4"
+  >
     <article>
-      <div class="h-96 overflow-hidden z-0 bg-gradient-to-r from-neutral-600 via-neutral-500 to-neutral-400">
+      <div
+        class="h-96 overflow-hidden z-0 bg-gradient-to-r from-neutral-600 via-neutral-500 to-neutral-400"
+      >
         <img
           class="object-cover h-full w-full mix-blend-overlay"
           :src="imgProduct"
@@ -89,11 +92,11 @@ const imgProduct = assetsImg('product/mps.png');
       </div>
       <div class="-mt-96 px-8 w-full h-96">
         <div
-          class="grid grid-cols-2 content-center container mx-auto h-full text-white"
+          class="grid grid-cols-2 content-center main-container mx-auto h-full text-white"
         >
           <div class="col-start-1">
             <p class="text-3xl font-medium">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Mari buat inovasi lokal berkualitas international
             </p>
           </div>
         </div>

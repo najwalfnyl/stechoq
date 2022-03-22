@@ -76,16 +76,16 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div id="testimonial" class="">
-    <article class="container flex">
-      <button id="leftArrow" class="flex-none self-center" @click="prevData">
-        <div class="border-2 rounded-full p-2">
+  <div id="testimonial">
+    <article class="main-container flex">
+      <button id="leftArrow" @click="prevData">
+        <div class="iconTestimoni">
           <img class="w-4 h-4" :src="leftArrow" alt="" />
         </div>
       </button>
       <div id="content" class="grow p-4">
         <template v-for="(item, i) in data" :key="i">
-          <div v-if="i === active" class="grid grid-cols-3 gap-8">
+          <div v-if="i === active" id="content-container">
             <div class="h-96 object-fill">
               <img
                 class="object-cover h-full w-full"
@@ -93,7 +93,7 @@ onUnmounted(() => {
                 alt=""
               />
             </div>
-            <div class="flex items-center col-span-2">
+            <div class="testimoni-message">
               <blockquote>
                 <p class="mb-4">"{{ item.message }}"</p>
                 <cite class="not-italic">
@@ -105,8 +105,8 @@ onUnmounted(() => {
           </div>
         </template>
       </div>
-      <button id="rightArrow" class="flex-none self-center" @click="nextData">
-        <div class="border-2 rounded-full p-2">
+      <button id="rightArrow" @click="nextData">
+        <div class="iconTestimoni">
           <img class="w-4 h-4" :src="rightArrow" alt="" />
         </div>
       </button>

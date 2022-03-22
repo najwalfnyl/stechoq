@@ -14,24 +14,15 @@ const award1 = assetsImg('award/award 1 1.png');
 <template>
   <section id="products" class="py-2 grid grid-flow-row gap-4">
     <article>
-      <div class="h-[500px] overflow-hidden bg-neutral-900">
+      <div class="">
         <img
-          class="object-cover h-full w-full"
-          style="
-            mask-image: linear-gradient(
-              to right,
-              rgba(0, 0, 0, 1),
-              rgba(0, 0, 0, 0.75)
-            );
-          "
           :src="imgProduct"
-          alt=""
         />
       </div>
     </article>
   </section>
   <section id="title" class="my-4 py-4">
-    <article class="container max-w-5xl">
+    <article class="main-container max-w-5xl">
       <h2 class="text-4xl">
         Leading world class R&D company that develops applicative technology for
         the empowerment of Indonesia
@@ -39,7 +30,7 @@ const award1 = assetsImg('award/award 1 1.png');
     </article>
   </section>
   <section id="visi-misi">
-    <article class="container max-w-5xl my-8 py-8 grid grid-cols-2 gap-8">
+    <article class="main-container max-w-5xl my-8 py-8 grid md:grid-cols-2 md:gap-8">
       <div>
         <div class="flex flex-row items-center gap-4 my-2">
           <h1 class="text-3xl font-bold">Visi</h1>
@@ -56,11 +47,11 @@ const award1 = assetsImg('award/award 1 1.png');
         </ul>
       </div>
       <div class="flex">
-        <img :src="imgClient" alt="" />
+        <img :src="imgClient2" alt="" />
       </div>
     </article>
-    <article class="container max-w-5xl my-8 py-8 grid grid-cols-2 gap-8">
-      <div class="flex">
+    <article class="main-container max-w-5xl my-8 py-8 grid md:grid-cols-2 md:gap-8">
+      <div class="flex order-last md:order-1">
         <img :src="imgClient2" alt="" />
       </div>
       <div>
@@ -80,10 +71,10 @@ const award1 = assetsImg('award/award 1 1.png');
     </article>
   </section>
   <section id="profil-founder" class="my-8 py-8">
-    <article class="container max-w-4xl">
+    <article class="main-container max-w-4xl">
       <h3 class="text-center text-3xl font-medium my-4">Profil Founder</h3>
-      <div class="grid grid-cols-3 gap-4">
-        <div class="flex col-span-2">
+      <div class="grid md:grid-cols-3 gap-4">
+        <div class="flex md:col-span-2">
           <p class="text-neutral-800 text-2xl">
             “Stechoq merupakan perusahaan R&D yang berfokus dalam mengembangkan
             inovasi produk teknologi robotika dan industri 4.0, didirikan pada
@@ -93,7 +84,7 @@ const award1 = assetsImg('award/award 1 1.png');
             kemajuan Indonesia.“
           </p>
         </div>
-        <div class="flex">
+        <div class="flex order-first">
           <div class="w-full">
             <img class="object-cover w-full h-full" :src="masMalik" alt="" />
           </div>
@@ -102,9 +93,9 @@ const award1 = assetsImg('award/award 1 1.png');
     </article>
   </section>
   <section id="awards" class="my-8">
-    <article class="container">
+    <article class="main-container">
       <h3 class="text-3xl font-medium text-center my-4">Pencapaian & Penghargaan</h3>
-      <div class="grid grid-cols-5 justify-center gap-8">
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 justify-center gap-4 lg:gap-8">
         <div class="flex flex-col p-4">
           <img :src="award1" alt="">
           <p class="text-center font-medium">Leader of the national defense day ceremony 2016</p>

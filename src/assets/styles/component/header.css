@@ -1,2 +1,19 @@
 #header {
+  @apply min-h-full;
+
+  #main-navbar {
+    @apply flex items-center justify-between h-20;
+
+    #brand {
+      @apply flex items-center;
+
+      img {
+        @apply h-12;
+      }
+    }
+
+    .hide-in-tablet {
+      @apply hidden lg:block;
+    }
+  }
 }

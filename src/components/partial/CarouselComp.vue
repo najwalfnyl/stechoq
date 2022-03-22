@@ -54,7 +54,7 @@ onUnmounted(() => {
       </div>
     </div>
     <div
-      class="container carousel-indicators flex h-16 w-full items-center"
+      class="main-container carousel-indicators flex h-16 w-full items-center"
       :class="[props.outsideiIndicator ? '' : '-mt-16']"
     >
       <ol class="z-50 flex w-fit justify-center space-x-2">
