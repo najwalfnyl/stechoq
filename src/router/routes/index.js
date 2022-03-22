@@ -23,7 +23,17 @@ const routes = [
     path: '/products/:id',
     name: 'productDetail',
     component: () => import('@/views/ProductDetailView.vue'),
-  }
+  },
+  {
+    path: '/e-learning',
+    name: 'eLearning',
+    component: () => import('@/views/LearningView.vue'),
+  },
+  {
+    path: '/news',
+    name: 'news',
+    component: () => import('@/views/NewsView.vue'),
+  },
 ];
 
 export default routes;
