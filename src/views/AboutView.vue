@@ -1,12 +1,11 @@
 <script setup>
 import { assetsImg } from '@/utils/helper';
 
-const imgClient = assetsImg('brand/ypti-vertical.svg');
 const imgClient2 = assetsImg('stechoq-logo.svg');
 
 const imgProduct = assetsImg('product/mps.png');
 
-const masMalik = assetsImg('people/mas-malik.png');
+const imgLogo = assetsImg('stechoq-logo.svg');
 
 const award1 = assetsImg('award/award 1 1.png');
 </script>
@@ -51,7 +50,7 @@ const award1 = assetsImg('award/award 1 1.png');
       </div>
     </article>
     <article class="main-container max-w-5xl my-8 py-8 grid md:grid-cols-2 md:gap-8">
-      <div class="flex order-last md:order-1">
+      <div class="flex order-last md:order-first">
         <img :src="imgClient2" alt="" />
       </div>
       <div>
@@ -86,7 +85,7 @@ const award1 = assetsImg('award/award 1 1.png');
         </div>
         <div class="flex order-first">
           <div class="w-full">
-            <img class="object-cover w-full h-full" :src="masMalik" alt="" />
+            <img class="object-cover w-full h-full" :src="imgLogo" alt="" />
           </div>
         </div>
       </div>
