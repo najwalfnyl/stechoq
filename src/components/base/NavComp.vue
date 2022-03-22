@@ -144,6 +144,7 @@ const submitForm = (input) => {
               type="text"
               class="mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black"
               placeholder="John Doe"
+              required
             />
           </label>
           <label class="block col-span-2">
@@ -153,6 +154,7 @@ const submitForm = (input) => {
               type="text"
               class="mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black"
               placeholder="PT Stechoq Robotika Indonesia"
+              required
             />
           </label>
           <label class="block">
@@ -162,6 +164,7 @@ const submitForm = (input) => {
               type="email"
               class="mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black"
               placeholder="john@example.com"
+              required
             />
           </label>
           <label class="block">
@@ -171,6 +174,7 @@ const submitForm = (input) => {
               type="tel"
               class="mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black"
               placeholder="628123456789"
+              required
             />
           </label>
           <label class="block col-span-2">
@@ -180,6 +184,7 @@ const submitForm = (input) => {
               class="mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black"
               rows="2"
               placeholder="Tulis pesan"
+              required
             ></textarea>
           </label>
           <button class="border py-2 px-4" type="reset" @click="closeContact">Batalkan</button>
