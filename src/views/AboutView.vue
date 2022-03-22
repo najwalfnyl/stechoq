@@ -83,7 +83,7 @@ const award1 = assetsImg('award/award 1 1.png');
             kemajuan Indonesia.“
           </p>
         </div>
-        <div class="flex order-first">
+        <div class="flex order-first md:order-last">
           <div class="w-full">
             <img class="object-cover w-full h-full" :src="imgLogo" alt="" />
           </div>

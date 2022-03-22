@@ -17,10 +17,10 @@ import CarouselComp from '@/components/partial/CarouselComp.vue';
     <div
       class="main-container grid grid-cols-2 md:grid-cols-4 md:gap-8 place-content-center text-center h-full"
     >
-      <div class="flex align-middle"><img :src="assetsImg('stechoq-logo.svg')" /></div>
-      <div class="flex align-middle"><img :src="assetsImg('stechoq-logo.svg')" /></div>
-      <div class="flex align-middle"><img :src="assetsImg('stechoq-logo.svg')" /></div>
-      <div class="flex align-middle"><img :src="assetsImg('stechoq-logo.svg')" /></div>
+      <div class="flex align-middle"><img :src="assetsImg('brand/ypti-vertical.svg')" /></div>
+      <div class="flex align-middle"><img :src="assetsImg('brand/sugity.svg')" /></div>
+      <div class="flex align-middle"><img :src="assetsImg('brand/toyota.svg')" /></div>
+      <div class="flex align-middle"><img :src="assetsImg('brand/kubota.svg')" /></div>
     </div>
   </section>
   <section id="products" class="py-2 grid grid-flow-row gap-4 my-4">
@@ -28,7 +28,7 @@ import CarouselComp from '@/components/partial/CarouselComp.vue';
       <div class="h-96 overflow-hidden bg-gradient-to-l from-neutral-700 via-neutral-500 to-neutral-400">
         <img
           class="object-cover h-full w-full mix-blend-overlay"
-          :src="assetsImg('product/mps.png')"
+          :src="assetsImg('product/dcs.png')"
           alt=""
         />
       </div>
@@ -37,8 +37,8 @@ import CarouselComp from '@/components/partial/CarouselComp.vue';
           class="grid grid-cols-2 content-center main-container mx-auto h-full text-white"
         >
           <div class="col-start-2">
-            <p class="text-3xl">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            <p class="text-3xl mb-4 font-medium">
+              Digital Control System
             </p>
             <p class="hidden md:block text-lg">
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos
@@ -63,8 +63,8 @@ import CarouselComp from '@/components/partial/CarouselComp.vue';
           class="grid grid-cols-2 content-center main-container mx-auto h-full text-white"
         >
           <div class="col-start-2">
-            <p class="text-3xl">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            <p class="text-3xl mb-4 font-medium">
+              Mini Production System
             </p>
             <p class="hidden md:block text-lg">
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos
@@ -80,7 +80,7 @@ import CarouselComp from '@/components/partial/CarouselComp.vue';
       <div class="h-96 overflow-hidden bg-gradient-to-l from-neutral-700 via-neutral-500 to-neutral-400">
         <img
           class="object-cover h-full w-full mix-blend-overlay"
-          :src="assetsImg('product/mps.png')"
+          :src="assetsImg('product/ventilator.png')"
           alt=""
         />
       </div>
@@ -89,8 +89,34 @@ import CarouselComp from '@/components/partial/CarouselComp.vue';
           class="grid grid-cols-2 content-center main-container mx-auto h-full text-white"
         >
           <div class="col-start-2">
-            <p class="text-3xl">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            <p class="text-3xl mb-4 font-medium">
+              ICU Ventilator
+            </p>
+            <p class="hidden md:block text-lg">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos
+              laboriosam optio vel, magnam, illum mollitia explicabo cumque
+              fugit ab accusamus non est? Adipisci excepturi in fugit molestiae
+              consequatur obcaecati eligendi.
+            </p>
+          </div>
+        </div>
+      </div>
+    </article>
+    <article>
+      <div class="h-96 overflow-hidden bg-gradient-to-l from-neutral-700 via-neutral-500 to-neutral-400">
+        <img
+          class="object-cover h-full w-full mix-blend-overlay"
+          :src="assetsImg('product/mbkm.png')"
+          alt=""
+        />
+      </div>
+      <div class="absolute -mt-96 w-full h-96">
+        <div
+          class="grid grid-cols-2 content-center main-container mx-auto h-full text-white"
+        >
+          <div class="col-start-2">
+            <p class="text-3xl mb-4 font-medium">
+              Kampus Merdeka
             </p>
             <p class="hidden md:block text-lg">
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos
