@@ -1,11 +1,13 @@
 <template>
   <section id="headings">
-    <div class="container">
-      <div class="grid grid-cols-2 gap-32">
-        <h1 class="text-6xl font-bold text-gray-900 py-6">
-          Berkarya Untuk Bangsa
+    <div class="main-container">
+      <div id="head">
+        <h1 id="title-page">
+          <slot name="title" />
         </h1>
-        <p class="text-xl flex items-center p-6">We research, develops, and build robotics for medical, education and industrial purposes.</p>
+        <p id="subtitle-page">
+          <slot name="subtitle" />
+        </p>
       </div>
     </div>
   </section>

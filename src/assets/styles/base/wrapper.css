@@ -1,2 +1,3 @@
-#wrapper {
+.main-container {
+  @apply container px-2 md:px-0;
 }
