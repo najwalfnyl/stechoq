@@ -2,24 +2,22 @@
 import { onMounted, onUnmounted, ref } from 'vue';
 
 const props = defineProps({
+  images: {
+    type: Array,
+    default: () => [],
+  },
   outsideiIndicator: {
     type: Boolean,
     default: false,
   },
 });
 
-const images = [
-  'https://picsum.photos/id/237/1024/800',
-  'https://picsum.photos/id/238/1024/800',
-  'https://picsum.photos/id/239/1024/800',
-];
-
 const active = ref(0);
 
 let index = 0;
 let setActiveInterval;
 function setActive() {
-  if (index === images.length - 1) {
+  if (index === props.images.length - 1) {
     index = 0;
   } else {
     index += 1;
@@ -40,7 +38,7 @@ onUnmounted(() => {
   <div class="slide">
     <div class="carousel-inner overflow-hidden h-[750px] w-full">
       <div
-        v-for="(img, i) in images"
+        v-for="(img, i) in props.images"
         :id="`slide-${i}`"
         :key="i"
         :class="`${i === active ? 'active' : 'right-full'}`"
@@ -59,7 +57,7 @@ onUnmounted(() => {
     >
       <ol class="z-50 flex w-fit justify-center space-x-2">
         <li
-          v-for="(img, idx) in images"
+          v-for="(img, idx) in props.images"
           :key="idx"
           class="md:w-4 md:h-4 bg-gray-300 rounded-full cursor-pointer"
           :class="[idx === active ? 'bg-slate-500' : '']"

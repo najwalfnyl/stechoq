@@ -106,13 +106,14 @@ const submitForm = (input) => {
         </div>
       </div>
 
-      <DisclosurePanel class="lg:hidden">
+      <DisclosurePanel v-slot="{ close }" class="lg:hidden">
         <div class="pt-2 pb-3">
           <router-link
             v-for="item in navs"
             :key="item.name"
             :to="item.path"
             class="block py-2"
+            @click="close"
           >
             {{ item.name }}
           </router-link>

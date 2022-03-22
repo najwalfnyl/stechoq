@@ -7,14 +7,48 @@ const imgProduct = assetsImg('product/mps.png');
 
 const imgLogo = assetsImg('stechoq-logo.svg');
 
-const award1 = assetsImg('award/award 1 1.png');
+const awards = [
+  {
+    img: assetsImg('award/award1.png'),
+    title: 'Leader of the national defense day ceremony 2016',
+  },
+  {
+    img: assetsImg('award/award2.png'),
+    title: 'Pioner youth international 2016',
+  },
+  {
+    img: assetsImg('award/award3.png'),
+    title: 'Youth defense country',
+  },
+  {
+    img: assetsImg('award/award4.png'),
+    title: 'Oustanding student for the world',
+  },
+  {
+    img: assetsImg('award/award5.png'),
+    title: 'Fire fighting robogames, California 2013',
+  },
+  {
+    img: assetsImg('award/award6.png'),
+    title: 'Balancer robogames, California 2013',
+  },
+  {
+    img: assetsImg('award/award7.png'),
+    title: 'Natcar robogames, California 2013',
+  },
+  {
+    img: assetsImg('award/award8.png'),
+    title: 'National robogames, Indonesia 2013',
+  },
+];
 </script>
 
 <template>
-  <section id="products" class="py-2 grid grid-flow-row gap-4">
+  <section id="products" class= "py-2 grid grid-flow-row gap-4">
     <article>
-      <div class="">
+      <div class="w-full h-96 object-fill">
         <img
+          class="h-full w-full object-cover"
           :src="imgProduct"
         />
       </div>
@@ -22,7 +56,7 @@ const award1 = assetsImg('award/award 1 1.png');
   </section>
   <section id="title" class="my-4 py-4">
     <article class="main-container max-w-5xl">
-      <h2 class="text-4xl">
+      <h2 class="text-xl lg:text-2xl font-semibold">
         Leading world class R&D company that develops applicative technology for
         the empowerment of Indonesia
       </h2>
@@ -74,7 +108,7 @@ const award1 = assetsImg('award/award 1 1.png');
       <h3 class="text-center text-3xl font-medium my-4">Profil Founder</h3>
       <div class="grid md:grid-cols-3 gap-4">
         <div class="flex md:col-span-2">
-          <p class="text-neutral-800 text-2xl">
+          <p class="text-neutral-800 text-lg lg:text-xl">
             “Stechoq merupakan perusahaan R&D yang berfokus dalam mengembangkan
             inovasi produk teknologi robotika dan industri 4.0, didirikan pada
             tahun 2015 oleh para milenial berprestasi yang berhasil meraih belasan
@@ -91,42 +125,16 @@ const award1 = assetsImg('award/award 1 1.png');
       </div>
     </article>
   </section>
-  <section id="awards" class="my-8">
+  <section id="awards" class="my-8 py-8">
     <article class="main-container">
       <h3 class="text-3xl font-medium text-center my-4">Pencapaian & Penghargaan</h3>
       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 justify-center gap-4 lg:gap-8">
-        <div class="flex flex-col p-4">
-          <img :src="award1" alt="">
-          <p class="text-center font-medium">Leader of the national defense day ceremony 2016</p>
-        </div>
-        <div class="flex flex-col p-4">
-          <img :src="award1" alt="">
-          <p class="text-center font-medium">Leader of the national defense day ceremony 2016</p>
-        </div>
-        <div class="flex flex-col p-4">
-          <img :src="award1" alt="">
-          <p class="text-center font-medium">Leader of the national defense day ceremony 2016</p>
-        </div>
-        <div class="flex flex-col p-4">
-          <img :src="award1" alt="">
-          <p class="text-center font-medium">Leader of the national defense day ceremony 2016</p>
-        </div>
-        <div class="flex flex-col p-4">
-          <img :src="award1" alt="">
-          <p class="text-center font-medium">Leader of the national defense day ceremony 2016</p>
-        </div>
-        <div class="flex flex-col p-4">
-          <img :src="award1" alt="">
-          <p class="text-center font-medium">Leader of the national defense day ceremony 2016</p>
-        </div>
-        <div class="flex flex-col p-4">
-          <img :src="award1" alt="">
-          <p class="text-center font-medium">Leader of the national defense day ceremony 2016</p>
-        </div>
-        <div class="flex flex-col p-4">
-          <img :src="award1" alt="">
-          <p class="text-center font-medium">Leader of the national defense day ceremony 2016</p>
-        </div>
+        <template v-for="(award, i) in awards" :key="i">
+          <div class="flex flex-col p-4">
+            <img :src="award.img" alt="">
+            <p class="text-center font-medium">{{award.title}}</p>
+          </div>
+        </template>
       </div>
     </article>
   </section>
