@@ -15,7 +15,7 @@ const img = assetsImg('people/soldering.png');
 
 <template>
   <heading-comp>
-    <template #title>Kampus Merdeka</template>
+    <template #title>Merdeka Belajar Kampus Merdeka</template>
     <template #subtitle>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita
       architecto qui, nemo voluptates, similique ipsum vel officia maxime minima
@@ -89,7 +89,7 @@ const img = assetsImg('people/soldering.png');
   >
     <article>
       <div
-        class="h-[500px] overflow-hidden z-0 bg-gradient-to-r from-neutral-600 via-neutral-500 to-neutral-400"
+        class="h-[650px] overflow-hidden z-0 bg-gradient-to-r from-neutral-600 via-neutral-500 to-neutral-400"
       >
         <img
           class="object-cover h-full w-full mix-blend-overlay"
@@ -97,12 +97,12 @@ const img = assetsImg('people/soldering.png');
           alt=""
         />
       </div>
-      <div class="-mt-[500px] px-8 w-full h-[500px]">
+      <div class="-mt-[650px] px-8 w-full h-[650px]">
         <div
           class="grid grid-cols-2 content-center main-container mx-auto h-full text-white"
         >
           <div class="col-start-1">
-            <p class="text-3xl font-medium">
+            <p class="text-5xl font-medium">
               Mari buat inovasi lokal berkualitas international
             </p>
           </div>

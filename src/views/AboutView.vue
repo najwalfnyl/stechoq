@@ -128,11 +128,11 @@ const awards = [
   <section id="awards" class="my-8 py-8">
     <article class="main-container">
       <h3 class="text-3xl font-medium text-center my-4">Pencapaian & Penghargaan</h3>
-      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 justify-center gap-4 lg:gap-8">
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 justify-center gap-4 lg:gap-10">
         <template v-for="(award, i) in awards" :key="i">
           <div class="flex flex-col p-4">
             <img :src="award.img" alt="">
-            <p class="text-center font-medium">{{award.title}}</p>
+            <p class="text-center font-medium py-4">{{award.title}}</p>
           </div>
         </template>
       </div>
