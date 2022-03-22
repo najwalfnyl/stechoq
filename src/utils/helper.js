@@ -3,10 +3,6 @@ const assetsImg = function resolver(file) {
   return new URL(`/src/assets/img/${file}`, import.meta.url).href;
 };
 
-const assetsImgs = function resolver(file) {
-  return new URL(`/src/assets/img/${file}`, import.meta.url).href;
-};
-
 // function date utc formatter
 const formatDate = function formatDate(date) {
   const dateString = new Intl.DateTimeFormat('en-ID', {
@@ -16,4 +12,4 @@ const formatDate = function formatDate(date) {
   return dateString;
 };
 
-export { assetsImg, assetsImgs, formatDate };
+export { assetsImg, formatDate };
