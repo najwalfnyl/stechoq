@@ -5,7 +5,12 @@ import HeadingComp from '@/components/base/HeadingComp.vue';
 import CarouselComp from '@/components/partial/CarouselComp.vue';
 import TestimonialSliderComp from '@/components/partial/TestimonialSliderComp.vue';
 
-const imgProduct = assetsImg('product/mps.png');
+const mbkm = [
+  assetsImg('product/mps.png'),
+  assetsImg('product/mbkm.png'),
+];
+
+const img = assetsImg('people/soldering.png');
 </script>
 
 <template>
@@ -18,22 +23,25 @@ const imgProduct = assetsImg('product/mps.png');
       corrupti!
     </template>
   </heading-comp>
-  <section id="kampus-merdeka" class="my-8">
+  <section id="kampus-merdeka" class="my-8 py-8">
     <article class="main-container">
-      <carousel-comp :outsidei-indicator="true" />
-
+      <carousel-comp :outsidei-indicator="true" :images="mbkm" />
+    </article>
+  </section>
+  <section id="kampus-merdeka" class="my-8 py-8">
+    <article class="main-container">
       <div id="content" class="my-8">
         <div id="what-you-get">
-          <h3 class="text-5xl font-medium text-center my-4">
+          <h3 class="text-3xl font-medium text-center my-8">
             Apa yang akan kamu dapatkan?
           </h3>
 
           <div class="grid lg:grid-cols-3 gap-8 my-8">
             <div class="bg-white rounded-lg py-8 px-4">
-              <h4 class="text-3xl text-center font-medium mb-6">
+              <h4 class="text-2xl text-center font-medium mb-6">
                 Research Funding
               </h4>
-              <p class="text-lg">
+              <p class="text-lg font-normal">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Corrupti, reprehenderit distinctio itaque consequuntur numquam
                 aperiam, nostrum aliquid similique perferendis qui fugiat
@@ -42,10 +50,10 @@ const imgProduct = assetsImg('product/mps.png');
               </p>
             </div>
             <div class="bg-white rounded-lg py-8 px-4">
-              <h4 class="text-3xl text-center font-medium mb-6">
+              <h4 class="text-2xl text-center font-medium mb-6">
                 1 on 1 Mentoring
               </h4>
-              <p class="text-lg">
+              <p class="text-lg font-normal">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Corrupti, reprehenderit distinctio itaque consequuntur numquam
                 aperiam, nostrum aliquid similique perferendis qui fugiat
@@ -54,10 +62,10 @@ const imgProduct = assetsImg('product/mps.png');
               </p>
             </div>
             <div class="bg-white rounded-lg py-8 px-4">
-              <h4 class="text-3xl text-center font-medium mb-6">
+              <h4 class="text-2xl text-center font-medium mb-6">
                 Collaboration
               </h4>
-              <p class="text-lg">
+              <p class="text-lg font-normal">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Corrupti, reprehenderit distinctio itaque consequuntur numquam
                 aperiam, nostrum aliquid similique perferendis qui fugiat
@@ -68,29 +76,28 @@ const imgProduct = assetsImg('product/mps.png');
           </div>
         </div>
 
-        <div id="testimonial">
-          <h3 class="text-5xl font-medium text-center my-4">Testimoni</h3>
-
-          <testimonial-slider-comp />
-        </div>
       </div>
     </article>
   </section>
+  <section id="testimonial" class="my-8 py-8">
+    <h3 class="text-3xl font-medium text-center my-4">Testimoni</h3>
+    <testimonial-slider-comp />
+  </section>
   <section
     id="products"
-    class="main-container py-2 grid grid-flow-row gap-4 my-4"
+    class="main-container py-2 grid grid-flow-row gap-4 my-8 py-8"
   >
     <article>
       <div
-        class="h-96 overflow-hidden z-0 bg-gradient-to-r from-neutral-600 via-neutral-500 to-neutral-400"
+        class="h-[500px] overflow-hidden z-0 bg-gradient-to-r from-neutral-600 via-neutral-500 to-neutral-400"
       >
         <img
           class="object-cover h-full w-full mix-blend-overlay"
-          :src="imgProduct"
+          :src="img"
           alt=""
         />
       </div>
-      <div class="-mt-96 px-8 w-full h-96">
+      <div class="-mt-[500px] px-8 w-full h-[500px]">
         <div
           class="grid grid-cols-2 content-center main-container mx-auto h-full text-white"
         >

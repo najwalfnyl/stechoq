@@ -12,7 +12,7 @@
       @apply flex flex-col gap-2 md:gap-4 lg:gap-8;
 
       .feature-detail {
-        @apply flex flex-col text-center md:text-left md:odd:flex-row-reverse gap-2 md:gap-4 lg:gap-8;
+        @apply flex flex-col text-center md:text-left md:even:flex-row md:odd:flex-row-reverse gap-2 md:gap-4 lg:gap-8;
 
         .feature-image {
           @apply w-full h-96 object-fill;

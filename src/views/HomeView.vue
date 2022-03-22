@@ -2,6 +2,13 @@
 import { assetsImg } from '@/utils/helper';
 import HeadingComp from '@/components/base/HeadingComp.vue';
 import CarouselComp from '@/components/partial/CarouselComp.vue';
+
+const images = [
+  assetsImg('product/dcs.png'),
+  assetsImg('product/mps.png'),
+  assetsImg('product/ventilator.png'),
+  assetsImg('product/mbkm.png'),
+];
 </script>
 
 <template>
@@ -12,10 +19,10 @@ import CarouselComp from '@/components/partial/CarouselComp.vue';
       industrial purposes.
     </template>
   </heading-comp>
-  <carousel-comp />
+  <carousel-comp :images="images" />
   <section id="client" class="h-32 my-8">
     <div
-      class="main-container grid grid-cols-2 md:grid-cols-4 md:gap-8 place-content-center text-center h-full"
+      class="main-container grid grid-cols-4 md:gap-8 place-content-center text-center h-full"
     >
       <div class="flex align-middle"><img :src="assetsImg('brand/ypti-vertical.svg')" /></div>
       <div class="flex align-middle"><img :src="assetsImg('brand/sugity.svg')" /></div>
