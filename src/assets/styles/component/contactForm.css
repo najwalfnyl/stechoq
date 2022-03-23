@@ -2,6 +2,6 @@
   @apply p-4 md:p-8 md:w-1/2 rounded-md;
 
   &::backdrop {
-    @apply bg-gradient-to-br to-neutral-700;
+    backdrop-filter: blur(8px);
   }
 }
