@@ -72,36 +72,34 @@ const submitForm = (input) => {
           </router-link>
         </div>
         <div class="hide-in-tablet">
-          <div class="flex items-baseline">
+          <div id="navbar-items">
             <router-link
               v-for="item in navs"
               :key="item.name"
               :to="{ path: item.path }"
-              class="p-3 mx-2"
             >
               {{ item.name }}
             </router-link>
           </div>
         </div>
         <div class="hide-in-tablet">
-          <div class="flex items-center">
+          <div id="btn-contact">
             <button
               type="button"
-              class="bg-blue-500 text-white p-2 rounded-md"
               @click="openContact"
             >
               Kontak Kami
             </button>
           </div>
         </div>
-        <div class="flex lg:hidden">
+        <div id="mobile-menu">
           <!-- Mobile menu button -->
           <DisclosureButton
-            class="inline-flex items-center justify-center p-2 rounded-md"
+            id="mobile-menu-btn"
           >
             <span class="sr-only">Open main menu</span>
-            <MenuIcon v-if="!open" class="block h-6 w-6" aria-hidden="true" />
-            <XIcon v-else class="block h-6 w-6" aria-hidden="true" />
+            <MenuIcon v-if="!open" class="hero-icon" aria-hidden="true" />
+            <XIcon v-else class="hero-icon" aria-hidden="true" />
           </DisclosureButton>
         </div>
       </div>

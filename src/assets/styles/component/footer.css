@@ -6,5 +6,42 @@
     #bottom-menu {
       @apply grid md:grid-cols-5 gap-8 md:gap-12 py-4;
     }
+
+    #bottom-about {
+      @apply order-last md:order-first col-span-2;
+
+      h3 {
+        @apply font-medium text-2xl;
+      }
+
+      address {
+        @apply not-italic my-2;
+      }
+    }
+
+    div {
+      @apply text-sm;
+
+      h3 {
+        @apply font-medium text-xl;
+      }
+
+      a {
+        @apply block my-2;
+        @apply hover:text-neutral-600;
+
+        &.active {
+          @apply text-neutral-600;
+        }
+      }
+    }
+  }
+
+  #copyright {
+    @apply text-center;
+
+    p {
+      @apply font-medium py-4
+    }
   }
 }
