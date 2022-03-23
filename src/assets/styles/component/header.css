@@ -1,5 +1,5 @@
 #header {
-  @apply min-h-full;
+  @apply min-h-full sticky top-0 z-20 bg-slate-50;
 
   #main-navbar {
     @apply flex items-center justify-between h-20;
