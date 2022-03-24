@@ -72,36 +72,34 @@ const submitForm = (input) => {
           </router-link>
         </div>
         <div class="hide-in-tablet">
-          <div class="flex items-baseline">
+          <div id="navbar-items">
             <router-link
               v-for="item in navs"
               :key="item.name"
               :to="{ path: item.path }"
-              class="p-3 mx-2"
             >
               {{ item.name }}
             </router-link>
           </div>
         </div>
         <div class="hide-in-tablet">
-          <div class="flex items-center">
+          <div class="btn-contact">
             <button
               type="button"
-              class="bg-blue-500 text-white p-2 rounded-md"
               @click="openContact"
             >
               Kontak Kami
             </button>
           </div>
         </div>
-        <div class="flex lg:hidden">
+        <div id="mobile-menu">
           <!-- Mobile menu button -->
           <DisclosureButton
-            class="inline-flex items-center justify-center p-2 rounded-md"
+            id="mobile-menu-btn"
           >
             <span class="sr-only">Open main menu</span>
-            <MenuIcon v-if="!open" class="block h-6 w-6" aria-hidden="true" />
-            <XIcon v-else class="block h-6 w-6" aria-hidden="true" />
+            <MenuIcon v-if="!open" class="hero-icon" aria-hidden="true" />
+            <XIcon v-else class="hero-icon" aria-hidden="true" />
           </DisclosureButton>
         </div>
       </div>
@@ -119,10 +117,9 @@ const submitForm = (input) => {
           </router-link>
         </div>
         <div class="pt-4 pb-3 border-t border-gray-700">
-          <div class="flex items-center">
+          <div class="btn-contact">
             <button
               type="button"
-              class="bg-blue-500 grow text-white p-2 rounded-md"
               @click="openContact"
             >
               Kontak Kami
@@ -135,60 +132,55 @@ const submitForm = (input) => {
   <dialog id="contactForm" ref="contactForm">
     <form method="dialog" @submit.prevent="submitForm(form)">
       <h2 class="text-2xl font-bold">Mari membuat inovasi teknologi bersama STECHOQ</h2>
-      <div class="mt-8">
-        <div class="grid grid-cols-2 gap-6">
-          <label class="block col-span-2">
-            <span class="text-gray-700 font-medium">Nama Lengkap</span>
+      <div id="form-container">
+        <div id="form-fields">
+          <label>
+            <span>Nama Lengkap</span>
             <input
               v-model.trim="form.name"
               type="text"
-              class="mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black"
               placeholder="John Doe"
               required
             />
           </label>
-          <label class="block col-span-2">
-            <span class="text-gray-700 font-medium">Perusahaan</span>
+          <label>
+            <span>Perusahaan</span>
             <input
               v-model.trim="form.company"
               type="text"
-              class="mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black"
               placeholder="PT Stechoq Robotika Indonesia"
               required
             />
           </label>
-          <label class="block">
-            <span class="text-gray-700 font-medium">Alamat Email</span>
+          <label class="halfs">
+            <span>Alamat Email</span>
             <input
               v-model.trim="form.email"
               type="email"
-              class="mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black"
               placeholder="john@example.com"
               required
             />
           </label>
-          <label class="block">
-            <span class="text-gray-700 font-medium">Nomer Telepon</span>
+          <label class="halfs">
+            <span>Nomer Telepon</span>
             <input
               v-model.trim="form.phone"
               type="tel"
-              class="mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black"
               placeholder="628123456789"
               required
             />
           </label>
-          <label class="block col-span-2">
-            <span class="text-gray-700 font-medium">Pesan</span>
+          <label>
+            <span>Pesan</span>
             <textarea
               v-model.trim="form.message"
-              class="mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black"
-              rows="2"
+              rows="3"
               placeholder="Tulis pesan"
               required
             ></textarea>
           </label>
-          <button class="border py-2 px-4" type="reset" @click="closeContact">Batalkan</button>
-          <button class="bg-primary py-2 px-4 text-white" type="submit">Kirim Email</button>
+          <button id="btn-contact-cancel" type="reset" @click="closeContact">Batalkan</button>
+          <button id="btn-contact-submit" type="submit">Kirim Email</button>
         </div>
       </div>
     </form>

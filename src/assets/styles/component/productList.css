@@ -13,6 +13,10 @@
           @apply w-full h-full object-cover mix-blend-overlay;
         }
       }
+
+      .product-title {
+        @apply -mt-96 h-96 p-8 flex items-end;
+      }
     }
   }
 }

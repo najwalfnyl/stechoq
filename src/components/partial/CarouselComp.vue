@@ -55,11 +55,11 @@ onUnmounted(() => {
       class="main-container carousel-indicators flex h-16 w-full items-center"
       :class="[props.outsideiIndicator ? '' : '-mt-16']"
     >
-      <ol class="z-50 flex w-fit justify-center space-x-2">
+      <ol class="z-10 flex w-fit justify-center space-x-2">
         <li
           v-for="(img, idx) in props.images"
           :key="idx"
-          class="md:w-4 md:h-4 bg-gray-300 rounded-full cursor-pointer"
+          class="w-4 h-4 bg-gray-300 rounded-full cursor-pointer"
           :class="[idx === active ? 'bg-slate-500' : '']"
         ></li>
       </ol>

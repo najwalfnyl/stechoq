@@ -1,6 +1,7 @@
 #product-detail {
   #featured-image {
     @apply object-fill overflow-hidden w-full h-[500px] bg-gradient-to-t from-neutral-600 via-neutral-500 to-neutral-400;
+    @apply my-8;
 
     img {
       @apply w-full h-full object-cover mix-blend-overlay;
@@ -8,6 +9,8 @@
   }
 
   #content {
+    @apply py-8;
+
     #features {
       @apply flex flex-col gap-2 md:gap-4 lg:gap-8;
 
@@ -26,7 +29,7 @@
           @apply w-full flex flex-col justify-center;
           
           h4 {
-            @apply font-medium text-xl;
+            @apply font-medium text-xl mb-4;
           }
 
           p {

@@ -15,5 +15,40 @@
     .hide-in-tablet {
       @apply hidden lg:block;
     }
+
+    #navbar-items {
+      @apply flex items-baseline;
+
+      a {
+        @apply p-3 mx-2;
+        @apply hover:text-neutral-600;
+
+        &.active {
+          @apply text-neutral-600;
+          @apply underline underline-offset-4;
+        }
+      }
+    }
+  }
+
+  .btn-contact {
+    @apply flex items-center;
+
+    button {
+      @apply bg-blue-500 text-white p-2 rounded-md;
+      @apply hover:bg-blue-600;
+    }
+  }
+
+  #mobile-menu {
+    @apply flex lg:hidden;
+
+    #mobile-menu-btn {
+      @apply inline-flex items-center justify-center p-2 rounded-md;
+
+      .hero-icon {
+        @apply block h-6 w-6;
+      }
+    }
   }
 }

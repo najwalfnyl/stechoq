@@ -1,5 +1,7 @@
 #app {
   @apply bg-slate-50;
+  @apply select-none !important;
+
   /* cyrillic-ext */
   @font-face {
     font-family: 'Inter';
