@@ -29,25 +29,25 @@
         }
       }
     }
+  }
 
-    #btn-contact {
-      @apply flex items-center;
+  .btn-contact {
+    @apply flex items-center;
 
-      button {
-        @apply bg-blue-500 text-white p-2 rounded-md;
-        @apply hover:bg-blue-600;
-      }
+    button {
+      @apply bg-blue-500 text-white p-2 rounded-md;
+      @apply hover:bg-blue-600;
     }
+  }
 
-    #mobile-menu {
-      @apply flex lg:hidden;
+  #mobile-menu {
+    @apply flex lg:hidden;
 
-      #mobile-menu-btn {
-        @apply inline-flex items-center justify-center p-2 rounded-md;
+    #mobile-menu-btn {
+      @apply inline-flex items-center justify-center p-2 rounded-md;
 
-        .hero-icons {
-          @apply block h-6 w-6;
-        }
+      .hero-icon {
+        @apply block h-6 w-6;
       }
     }
   }

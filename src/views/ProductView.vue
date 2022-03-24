@@ -49,25 +49,28 @@ const products = [
 </script>
 
 <template>
-  <heading-comp>
-    <template #title>Our Products</template>
-  </heading-comp>
-  <section id="product-list" class="my-8 py-8">
-    <div id="product-container" class="main-container">
-      <template v-for="(item, i) in products" :key="i">
-      <router-link :to="{ name: 'productDetail', params: { id: item.id } }">
-        <article class="product-item">
-          <div class="product-image">
-            <img
-              :src="item.img"
-            />
-          </div>
-          <div class="-mt-28 h-28 px-8">
-            <h3 class="text-white font-medium text-4xl">{{item.name}}</h3>
-          </div>
-        </article>
-      </router-link>
-      </template>
-    </div>
-  </section>
+  <template v-if="$route.name === 'products'">
+    <heading-comp>
+      <template #title>Our Products</template>
+    </heading-comp>
+    <section id="product-list" class="my-8 py-8">
+      <div id="product-container" class="main-container">
+        <template v-for="(item, i) in products" :key="i">
+          <router-link :to="{ name: 'productDetail', params: { id: item.id } }">
+            <article class="product-item">
+              <div class="product-image">
+                <img
+                  :src="item.img"
+                />
+              </div>
+              <div class="product-title">
+                <h3 class="text-white font-medium text-4xl">{{item.name}}</h3>
+              </div>
+            </article>
+          </router-link>
+        </template>
+      </div>
+    </section>
+  </template>
+  <router-view v-else />
 </template>

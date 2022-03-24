@@ -18,11 +18,13 @@ const routes = [
     path: '/products',
     name: 'products',
     component: () => import('@/views/ProductView.vue'),
-  },
-  {
-    path: '/products/:id',
-    name: 'productDetail',
-    component: () => import('@/views/ProductDetailView.vue'),
+    children: [
+      {
+        path: '/products/:id',
+        name: 'productDetail',
+        component: () => import('@/views/ProductDetailView.vue'),
+      },
+    ],
   },
   {
     path: '/e-learning',
