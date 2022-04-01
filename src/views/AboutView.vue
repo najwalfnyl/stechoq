@@ -1,4 +1,5 @@
 <script setup>
+import { useHead } from '@vueuse/head';
 import useAwardStore from '@/stores/award';
 import { assetsImg } from '@/utils/helper';
 
@@ -7,9 +8,17 @@ const imgClient2 = assetsImg('stechoq-logo.svg');
 const imgProduct = assetsImg('product/mps.png');
 
 const imgLogo = assetsImg('stechoq-logo.svg');
-
-
 const awards = useAwardStore();
+
+useHead({
+  title: `Tentang Kami | STECHOQ`,
+  meta: [
+    {
+      name: `description`,
+      content: `Tentang Stechoq Robotika Indonesia`,
+    },
+  ],
+});
 </script>
 
 <template>
