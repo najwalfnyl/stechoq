@@ -1,9 +1,26 @@
 <script setup>
+import { useRoute } from 'vue-router';
+import useProductStore from '@/stores/product';
 import { assetsImg } from '@/utils/helper';
+import { useHead } from '@vueuse/head';
 
 import HeadingComp from '@/components/base/HeadingComp.vue';
 
 const imgProduct = assetsImg('product/mps.png');
+const route = useRoute();
+const product = useProductStore();
+
+const { name } = product.detail(route.params.id);
+
+useHead({
+  title: `${name} | STECHOQ`,
+  meta: [
+    {
+      name: `description`,
+      content: `Detail produk ${name} Stechoq`,
+    },
+  ],
+});
 
 const fitur = [
   {
@@ -19,13 +36,13 @@ const fitur = [
 
 <template>
   <heading-comp>
-    <template #title>{{ $route.params.id }}</template>
-    <template #subtitle
-      >Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita
+    <template #title>{{ name }}</template>
+    <template #subtitle>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita
       architecto qui, nemo voluptates, similique ipsum vel officia maxime minima
       reprehenderit quam vitae pariatur provident id natus error aliquam odit
-      corrupti!</template
-    >
+      corrupti!
+    </template>
   </heading-comp>
   <section id="product-detail" class="my-8">
     <article class="main-container">

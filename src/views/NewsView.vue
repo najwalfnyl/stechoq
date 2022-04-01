@@ -1,5 +1,16 @@
 <script setup>
+import { useHead } from '@vueuse/head';
 import HeadingComp from '@/components/base/HeadingComp.vue';
+
+useHead({
+  title: `Berita | STECHOQ`,
+  meta: [
+    {
+      name: `description`,
+      content: `Berita tentang Stechoq Robotika Indonesia`,
+    },
+  ],
+});
 </script>
 
 <template>

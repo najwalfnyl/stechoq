@@ -1,4 +1,6 @@
 <script setup>
+import { useHead } from '@vueuse/head';
+import useAwardStore from '@/stores/award';
 import { assetsImg } from '@/utils/helper';
 
 const imgClient2 = assetsImg('stechoq-logo.svg');
@@ -6,41 +8,17 @@ const imgClient2 = assetsImg('stechoq-logo.svg');
 const imgProduct = assetsImg('product/mps.png');
 
 const imgLogo = assetsImg('stechoq-logo.svg');
+const awards = useAwardStore();
 
-const awards = [
-  {
-    img: assetsImg('award/award1.png'),
-    title: 'Leader of the national defense day ceremony 2016',
-  },
-  {
-    img: assetsImg('award/award2.png'),
-    title: 'Pioner youth international 2016',
-  },
-  {
-    img: assetsImg('award/award3.png'),
-    title: 'Youth defense country',
-  },
-  {
-    img: assetsImg('award/award4.png'),
-    title: 'Oustanding student for the world',
-  },
-  {
-    img: assetsImg('award/award5.png'),
-    title: 'Fire fighting robogames, California 2013',
-  },
-  {
-    img: assetsImg('award/award6.png'),
-    title: 'Balancer robogames, California 2013',
-  },
-  {
-    img: assetsImg('award/award7.png'),
-    title: 'Natcar robogames, California 2013',
-  },
-  {
-    img: assetsImg('award/award8.png'),
-    title: 'National robogames, Indonesia 2013',
-  },
-];
+useHead({
+  title: `Tentang Kami | STECHOQ`,
+  meta: [
+    {
+      name: `description`,
+      content: `Tentang Stechoq Robotika Indonesia`,
+    },
+  ],
+});
 </script>
 
 <template>
@@ -129,7 +107,7 @@ const awards = [
     <article class="main-container">
       <h3 class="text-3xl font-medium text-center my-4">Pencapaian & Penghargaan</h3>
       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 justify-center gap-4 lg:gap-10">
-        <template v-for="(award, i) in awards" :key="i">
+        <template v-for="(award, i) in awards.list" :key="i">
           <div class="flex flex-col p-4">
             <img :src="award.img" alt="">
             <p class="text-center font-medium py-4">{{award.title}}</p>

@@ -1,9 +1,19 @@
 <script setup>
 import { assetsImg } from '@/utils/helper';
-
+import { useHead } from '@vueuse/head';
 import HeadingComp from '@/components/base/HeadingComp.vue';
 import CarouselComp from '@/components/partial/CarouselComp.vue';
 import TestimonialSliderComp from '@/components/partial/TestimonialSliderComp.vue';
+
+useHead({
+  title: `Kampus Merdeka | STECHOQ`,
+  meta: [
+    {
+      name: `description`,
+      content: `Kampus Merdeka di Stechoq Robotika Indonesia`,
+    },
+  ],
+});
 
 const mbkm = [
   assetsImg('product/mps.png'),

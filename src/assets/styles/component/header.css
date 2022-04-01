@@ -25,7 +25,7 @@
 
         &.active {
           @apply text-neutral-600;
-          @apply underline underline-offset-4;
+          @apply underline underline-offset-4 decoration-2;
         }
       }
     }
