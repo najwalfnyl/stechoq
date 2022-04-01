@@ -12,9 +12,7 @@ const useSiteMetaStore = defineStore({
   }),
   getters: {
     siteMeta: (state) => ({
-      title: state.title,
-      description: state.description,
-      logo: state.logo,
+      ...state,
     }),
   },
   actions: {

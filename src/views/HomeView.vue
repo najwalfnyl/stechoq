@@ -1,7 +1,18 @@
 <script setup>
+import { useHead } from '@vueuse/head';
 import { assetsImg } from '@/utils/helper';
 import HeadingComp from '@/components/base/HeadingComp.vue';
 import CarouselComp from '@/components/partial/CarouselComp.vue';
+
+useHead({
+  title: `Home | STECHOQ`,
+  meta: [
+    {
+      name: `description`,
+      content: `Homepage Stechoq Robotika Indonesia`,
+    },
+  ],
+});
 
 const sliders = [
   assetsImg('product/dcs.png'),
