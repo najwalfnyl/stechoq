@@ -1,8 +1,10 @@
 <script setup>
 import { useHead } from '@vueuse/head';
+import { RouterLink } from 'vue-router';
 import { assetsImg } from '@/utils/helper';
 import HeadingComp from '@/components/base/HeadingComp.vue';
-import CarouselComp from '@/components/partial/CarouselComp.vue';
+import useProfilePhoto from '../stores/profile';
+import useHomeStore from '../stores/home';
 
 useHead({
   title: `Home | STECHOQ`,
@@ -14,92 +16,84 @@ useHead({
   ],
 });
 
-const sliders = [
-  assetsImg('product/dcs.png'),
-  assetsImg('product/mps.png'),
-  assetsImg('product/ventilator.png'),
-  assetsImg('product/mbkm.png'),
-];
-
 const partners = [
   assetsImg('brand/ypti-vertical.svg'),
   assetsImg('brand/sugity.svg'),
   assetsImg('brand/toyota.svg'),
   assetsImg('brand/kubota.svg'),
+  assetsImg('brand/ypti-vertical.svg'),
+  assetsImg('brand/sugity.svg'),
+  assetsImg('brand/toyota.svg'),
+  assetsImg('brand/kubota.svg'),
+  assetsImg('brand/ypti-vertical.svg'),
+  assetsImg('brand/sugity.svg'),
+  assetsImg('brand/toyota.svg'),
+  assetsImg('brand/kubota.svg'),
+  assetsImg('brand/ypti-vertical.svg'),
+  assetsImg('brand/sugity.svg'),
+  assetsImg('brand/toyota.svg'),
+  assetsImg('brand/kubota.svg'),
+  assetsImg('brand/toyota.svg'),
+  assetsImg('brand/kubota.svg'),
 ];
+const profiles = useProfilePhoto();
 
-const headlineHome = [
-  {
-    name: 'Digital Control System',
-    img: assetsImg('product/dcs.png'),
-    alt: 'digital control system',
-  },
-  {
-    name: 'Mini Production System',
-    img: assetsImg('product/mps.png'),
-    alt: 'mini production system',
-  },
-  {
-    name: 'ICU Ventilator',
-    img: assetsImg('product/ventilator.png'),
-    alt: 'ventilator icu',
-  },
-  {
-    name: 'Kampus Merdeka',
-    img: assetsImg('product/mbkm.png'),
-    alt: 'merdeka belajar kampus merdeka',
-  },
-];
+const homelists = useHomeStore();
+
 </script>
 
 <template>
   <heading-comp>
-    <template #title>Berkarya Untuk Bangsa</template>
-    <template #subtitle>
-      We research, develops, and build robotics for medical, education and
-      industrial purposes.
+    
+    <template #title>
+      <span class="company-name text-white">RnD Company</span> <br>
+      <span class="subtitle text-white">From Idea to Mass Production</span>
     </template>
+    <template #subtitle>
+      Berkarya untuk Bangsa
+    </template>
+    <div class="btn-heading">
+        <button type="button" class="bg-white text-black p-2 hover:bg-gray-200">
+            What we do?
+        </button>
+          <button type="button" class="bg-opacity-100 text-white p-2 flex items-center gap-2 hover:bg-gray-200 hover:bg-opacity-50">
+          <img src="src\assets\img\icon\Play.svg" alt="Icon" class="h-5 w-5" />
+            Play Video
+        </button>
+    </div>
   </heading-comp>
-  <carousel-comp :images="sliders" />
-  <section id="client" class="h-32 my-8">
+  <section id="home-list" class="my-8 py-8">
+    <div id="list-container" class="main-container">
+      <template v-for="(item, i) in homelists.list" :key="i">
+        <article class="list-item">
+          <div class="list-image" :style="{ backgroundImage: `url(${item.img})` }">
+            <div class="list-container">
+            <div class="list-title text-white font-bold text-md mt-2">{{ item.name }}</div>
+            <div class="list-sub text-wi text-sm">{{ item.sub }}</div>
+            <div class="btn-heading ">
+                  <button type="button" class="bg-white text-black hover:bg-gray-200">
+                      Learn More
+                  </button>
+              </div>
+              </div>
+          </div>
+        </article>
+      </template>
+    </div>
+  </section>
+  <section id="client" class="h-580 my-10" >
+    <div>
+      <h3 class="font-bold text-6xl text-center text-navy-prim mb-10">
+        Our<br>
+        Clients
+      </h3>
+    </div>
     <div
-      class="main-container grid grid-cols-4 md:gap-8 place-content-center text-center h-full"
+      class="main-container grid grid-cols-6 grid-rows-4 md:gap-2 place-content-center text-center h-full"
     >
       <template v-for="(partner, i) in partners" :key="i">
         <div class="flex align-middle"><img :src="partner" /></div>
       </template>
     </div>
-  </section>
-  <section id="products" class="py-2 grid grid-flow-row gap-4 my-4">
-    <template v-for="(featured, i) in headlineHome" :key="i">
-      <article>
-        <div
-          class="h-96 overflow-hidden bg-gradient-to-l from-neutral-700 via-neutral-500 to-neutral-400"
-        >
-          <img
-            class="object-cover h-full w-full mix-blend-overlay"
-            :src="featured.img"
-            :alt="featured.alt"
-          />
-        </div>
-        <div class="absolute -mt-96 w-full h-96">
-          <div
-            class="grid grid-cols-2 gap-4 content-center main-container mx-auto h-full text-white"
-          >
-            <div class="col-start-2">
-              <p class="text-3xl mb-4 font-medium">
-                {{ featured.name }}
-              </p>
-              <p class="hidden md:block text-lg">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos
-                laboriosam optio vel, magnam, illum mollitia explicabo cumque
-                fugit ab accusamus non est? Adipisci excepturi in fugit
-                molestiae consequatur obcaecati eligendi.
-              </p>
-            </div>
-          </div>
-        </div>
-      </article>
-    </template>
   </section>
 </template>

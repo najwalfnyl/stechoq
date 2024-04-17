@@ -32,10 +32,15 @@ const routes = [
     component: () => import('@/views/LearningView.vue'),
   },
   {
-    path: '/news',
+    path: '/contact-us',
     name: 'news',
     component: () => import('@/views/NewsView.vue'),
   },
+  {
+    path: '/contact',
+    name: 'contactus',
+    component: () => import('@/views/ContactView.vue')
+  }
 ];
 
 export default routes;

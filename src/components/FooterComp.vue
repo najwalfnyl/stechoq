@@ -8,37 +8,39 @@ const year = d.getFullYear();
     <div class="main-container">
       <section id="bottom-nav">
         <div id="bottom-menu">
-          <div id="bottom-about">
+          <div id="bottom-about"> 
             <h3>PT Stechoq Robotika Indonesia</h3>
             <address>
-              Jl Belimbing A17 Perumahan Sidoarum Blok II, Godean, Kramat,
-              Sidoarum, Kabupaten Sleman, Daerah Istimewa Yogyakarta
+              Research, Develop, & Build Robotics for medical, <br>
+              educational, and industrial purposes
             </address>
+            <div class="socmed">
+              <a href="//www.instagram.com/stechoq/" target="_blank">
+                <img src="src\assets\img\icon\instagram.svg" alt="Instagram">
+              </a>
+              <a href="//www.youtube.com/channel/UCHFzQRs5xuTMc7RinkMVwfA" target="_blank">
+                <img src="src\assets\img\icon\youtube.svg" alt="Youtube">
+              </a>
+              <a href="//www.youtube.com/channel/UCHFzQRs5xuTMc7RinkMVwfA" target="_blank">
+                <img src="src\assets\img\icon\linkedin.svg" alt="Linkedin">
+              </a>
+              <a href="//twitter.com/stechoq/" target="_blank">
+                <img src="src\assets\img\icon\twitter.svg" alt="Twitter">
+              </a>
+            </div>
           </div>
-          <div>
-            <h3>Tentang Kami</h3>
-            <router-link to="#">Visi Misi</router-link>
-            <router-link to="#">Profil Founder</router-link>
-          </div>
-          <div>
-            <h3>Product</h3>
-            <router-link to="#">Ventilator ICU</router-link>
-            <router-link to="#">Automatic Guided Vehicle</router-link>
-            <router-link to="#">Mini Production System</router-link>
-            <router-link to="#">Digital Control System</router-link>
-          </div>
-          <div class="md:block hidden">
-            <h3>Social Media</h3>
-            <a href="//twitter.com/stechoq/" target="_blank">Twitter</a>
-            <a href="//facebook.com/stechoq" target="_blank">Facebook</a>
-            <a href="//www.instagram.com/stechoq/" target="_blank">Instagram</a>
-            <a href="//www.youtube.com/channel/UCHFzQRs5xuTMc7RinkMVwfA" target="_blank">YouTube</a>
-          </div>
+          <contact>
+            <h3>Contact</h3>
+            <a>(0274) 282 9384
+            </a>
+            <a>info@stechoq.com </a>
+            <a>Jalan Belimbing Perumahan <br>
+              Sidoarum Blok II No.A17, <br>
+              Kramat, Sidoarum, Godean, <br>
+              Sleman Regency, Special <br>
+              Region of Yogyakarta 55564</a>
+          </contact>
         </div>
-      </section>
-      <hr class="border" />
-      <section id="copyright">
-        <p>&COPY; {{ year }} &mdash; {{ siteMeta.title }}</p>
       </section>
     </div>
   </footer>

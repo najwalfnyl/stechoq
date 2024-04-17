@@ -3668,6 +3668,7 @@ __metadata:
     vite: ^2.9.1
     vue: ^3.2.31
     vue-router: ^4.0.14
+    vue3-carousel: ^0.3.1
   languageName: unknown
   linkType: soft
 
@@ -4018,6 +4019,15 @@ __metadata:
   peerDependencies:
     vue: ^3.2.0
   checksum: 694f6a85f82c11321ecbbb181db9b1a63fe99f781f33feab56c6ed1924370553b9d4325a9bdc1fbd3bfacb4cea12ef37cee77bc91974c1c6314e07fe8193941b
+  languageName: node
+  linkType: hard
+
+"vue3-carousel@npm:^0.3.1":
+  version: 0.3.1
+  resolution: "vue3-carousel@npm:0.3.1"
+  peerDependencies:
+    vue: ^3.2.0
+  checksum: 804a074b79003bff40a2dc72e9eb9c5e808527410d2dc2c0c09681cc07872ee40269fc592b08e246eee45ada6646f667cb997cdd1b277cbca6bc7c83700382cb
   languageName: node
   linkType: hard
 

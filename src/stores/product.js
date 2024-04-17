@@ -7,44 +7,22 @@ const useProductStore = defineStore({
   state: () => ({
     products: [
       {
-        id: 'agv',
-        name: 'Automatic Guided Vehicle',
-        img: assetsImg('list-product/agv.png'),
+        id: 'Digital-Manufactuing',
+        name: 'Digital Manufacturing',
+        img: assetsImg('product/dm.png'),
+        sub: 'Lorem ipsum dolor sit amet',
       },
       {
-        id: 'dcs-inject',
-        name: 'Digital Control System Injection',
-        img: assetsImg('list-product/dcs-inject.png'),
+        id: 'Medical-Device',
+        name: 'High Tech Medical Device',
+        img: assetsImg('product/dm.png'),
+        sub: 'Lorem ipsum dolor sit amet',
       },
       {
-        id: 'dcs-stamping',
-        name: 'Digital Control System Stamping',
-        img: assetsImg('list-product/dcs-stamping.png'),
-      },
-      {
-        id: 'dcs-warehouse',
-        name: 'Digital Control System Warehouse',
-        img: assetsImg('list-product/dcs-warehouse.png'),
-      },
-      {
-        id: 'dcs-erp',
-        name: 'Digital Control System ERP',
-        img: assetsImg('list-product/dcs-erp.png'),
-      },
-      {
-        id: 'ventilator-icu',
-        name: 'Ventilator ICU',
-        img: assetsImg('list-product/ventilator-icu.png'),
-      },
-      {
-        id: 'arm-robot',
-        name: 'ARM Robot Transfer',
-        img: assetsImg('list-product/arm-robot.png'),
-      },
-      {
-        id: 'qc-camera',
-        name: 'QC Camera',
-        img: assetsImg('list-product/qc-camera.png'),
+        id: 'Stechoq-Academy',
+        name: 'Stechoq Academy',
+        img: assetsImg('product/dm.png'),
+        sub: 'Lorem ipsum dolor sit amet',
       },
     ],
   }),

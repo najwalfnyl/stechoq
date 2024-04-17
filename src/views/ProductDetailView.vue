@@ -31,24 +31,29 @@ const fitur = [
     name: 'Feature B',
     img: assetsImg('product/dcs.png'),
   },
+  {
+    name: 'Feature c',
+    img: assetsImg('product/dcs.png'),
+  },
 ];
 </script>
 
 <template>
-  <heading-comp>
-    <template #title>{{ name }}</template>
-    <template #subtitle>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita
-      architecto qui, nemo voluptates, similique ipsum vel officia maxime minima
-      reprehenderit quam vitae pariatur provident id natus error aliquam odit
-      corrupti!
-    </template>
-  </heading-comp>
+  <section id="heading-product">
+    <article class="main-container">
+      <div id="head">
+        <div id="title-page">
+          <h3> {{ name }} </h3>
+        </div>
+        <div id="subtitle-page">
+          <p class="my-[10px]">  Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita
+      architecto qui, nemo voluptates</p>
+        </div>
+      </div>
+    </article>
+  </section>
   <section id="product-detail" class="my-8">
     <article class="main-container">
-      <div id="featured-image">
-        <img :src="imgProduct" />
-      </div>
 
       <div id="content" class="my-8">
         <h3 class="text-5xl font-medium text-center my-4">Features</h3>

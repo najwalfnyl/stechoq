@@ -1,0 +1,54 @@
+#home-list {
+    @apply py-5;
+    @apply text-white;
+  
+    #list-container {
+      @apply grid lg:grid-cols-1 my-2 gap-10;
+  
+      .list-item {
+
+  
+        .list-image {
+          @apply object-fill overflow-hidden w-full bg-gradient-to-t from-neutral-700 via-neutral-500 to-neutral-400;
+          background-size: cover; 
+          height: 300px;
+          border-radius: 20px;
+          
+        }
+
+        .list-container{
+        @apply  ml-40 mr-40 py-10;
+
+        .list-title {
+          font-family: 'Poppins', sans-serif; 
+          @apply px-20 text-4xl  ;
+          @apply  flex items-center justify-center ;
+        }
+        
+        .list-sub {
+          font-family: 'Poppins', sans-serif; 
+          line-height: 120%;
+          text-align: center;
+          @apply mt-4 px-40;
+          font-size: 16px; 
+          @apply  flex items-center justify-center ml-40 mr-40;
+        }
+      }
+  
+      .btn-heading {
+        @apply  flex items-center justify-center ;
+        @apply mt-6;
+        font-size: 16px;
+      }
+    
+        .btn-heading button {
+          font-family: 'Poppins', sans-serif; 
+          height: 51px;
+          width: 148px;
+          border-radius: 4px;
+          @apply  flex items-center justify-center ;
+        }
+    }
+    }
+  }
+  

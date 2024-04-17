@@ -1,30 +1,25 @@
 <script setup>
-import { RouterLink } from 'vue-router';
-
+import { RouterLink, useRoute } from 'vue-router';
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue';
 import { MenuIcon, XIcon } from '@heroicons/vue/outline';
 import { ref, reactive } from 'vue';
 
 const navs = [
   {
-    name: 'Tentang Kami',
+    name: 'Home',
+    path: '/',
+  },  
+  {
+    name: 'About Us',
     path: '/about-us',
   },
   {
-    name: 'Produk',
+    name: 'Products',
     path: '/products',
   },
   {
     name: 'E-Learning',
     path: '/e-learning',
-  },
-  {
-    name: 'Kampus Merdeka',
-    path: '/kampus-merdeka',
-  },
-  {
-    name: 'Berita',
-    path: '/news',
   },
 ];
 
@@ -43,7 +38,8 @@ const reset = () => {
 const contactForm = ref(null);
 
 const openContact = () => {
-  contactForm.value.showModal();
+  const route = useRoute();
+  route.push('/news'); 
 };
 
 const closeContact = () => {
@@ -60,6 +56,19 @@ const submitForm = (input) => {
     closeContact();
   }
 };
+
+const isOpen = ref(false);
+
+const openDropdown = () => {
+  isOpen.value = !isOpen.value;
+};
+
+// Close the dropdown if the user clicks outside of it
+window.addEventListener('click', (event) => {
+  if (!event.target.closest('.dropdown')) {
+    isOpen.value = false;
+  }
+});
 </script>
 
 <template>
@@ -82,13 +91,22 @@ const submitForm = (input) => {
             </router-link>
           </div>
         </div>
+        <div class="dropdown" @click="openDropdown">
+          <button class="dropbtn">
+            Language
+          </button>
+          <div v-if="isOpen" class="dropdown-content">
+            <a href="#">ID</a>
+            <a href="#">ENG</a>
+          </div>
+        </div>
         <div class="hide-in-tablet">
           <div class="btn-contact">
             <button
               type="button"
               @click="openContact"
             >
-              Kontak Kami
+              Contact Us
             </button>
           </div>
         </div>
@@ -129,60 +147,8 @@ const submitForm = (input) => {
       </DisclosurePanel>
     </Disclosure>
   </header>
-  <dialog id="contactForm" ref="contactForm">
-    <form method="dialog" @submit.prevent="submitForm(form)">
-      <h2 class="text-2xl font-bold">Mari membuat inovasi teknologi bersama STECHOQ</h2>
-      <div id="form-container">
-        <div id="form-fields">
-          <label>
-            <span>Nama Lengkap</span>
-            <input
-              v-model.trim="form.name"
-              type="text"
-              placeholder="John Doe"
-              required
-            />
-          </label>
-          <label>
-            <span>Perusahaan</span>
-            <input
-              v-model.trim="form.company"
-              type="text"
-              placeholder="PT Stechoq Robotika Indonesia"
-              required
-            />
-          </label>
-          <label class="halfs">
-            <span>Alamat Email</span>
-            <input
-              v-model.trim="form.email"
-              type="email"
-              placeholder="john@example.com"
-              required
-            />
-          </label>
-          <label class="halfs">
-            <span>Nomer Telepon</span>
-            <input
-              v-model.trim="form.phone"
-              type="tel"
-              placeholder="628123456789"
-              required
-            />
-          </label>
-          <label>
-            <span>Pesan</span>
-            <textarea
-              v-model.trim="form.message"
-              rows="3"
-              placeholder="Tulis pesan"
-              required
-            ></textarea>
-          </label>
-          <button id="btn-contact-cancel" type="reset" @click="closeContact">Batalkan</button>
-          <button id="btn-contact-submit" type="submit">Kirim Email</button>
-        </div>
-      </div>
-    </form>
-  </dialog>
 </template>
+
+<style scoped>
+
+</style>

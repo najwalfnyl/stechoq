@@ -1,0 +1,27 @@
+#profile-list {
+    @apply py-5;
+  
+    #profile-container {
+      @apply grid lg:grid-cols-5 my-2 gap-6;
+  
+      .profile-item {
+  
+        .profile-image {
+          @apply object-fill overflow-hidden w-full h-60 bg-gradient-to-t from-neutral-700 via-neutral-500 to-neutral-400;
+          background-size: cover; /* Ensure the background image covers the entire container */
+          border-radius: 20px;
+        }
+  
+        .profile-name {
+          font-family: 'Poppins', sans-serif; 
+          @apply p-0 flex items-center justify-center ;
+        }
+        
+        .profile-position {
+          font-family: 'Poppins', sans-serif; 
+          @apply  p-0 flex items-center justify-center; 
+        }
+      }
+    }
+  }
+  

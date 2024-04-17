@@ -1,14 +1,17 @@
 #header {
   @apply min-h-full sticky top-0 z-20 bg-slate-50;
+  font-family: 'Poppins', sans-serif; 
 
   #main-navbar {
-    @apply flex items-center justify-between h-20;
+    @apply flex items-center;
+    height: 83px;
 
     #brand {
       @apply flex items-center;
+      @apply mr-8;
 
       img {
-        @apply h-12;
+        height:51.11px;
       }
     }
 
@@ -17,26 +20,82 @@
     }
 
     #navbar-items {
-      @apply flex items-baseline;
-
+      
+      font-size: 22.14px; 
+      @apply text-navy-prim mx-16 px-10;
+    
       a {
-        @apply p-3 mx-2;
-        @apply hover:text-neutral-600;
-
+        @apply p-4;
+        @apply hover:text-navy-prim;
+    
         &.active {
-          @apply text-neutral-600;
-          @apply underline underline-offset-4 decoration-2;
+          @apply text-navy-prim font-bold;
         }
       }
-    }
+    }    
+  }
+
+  .dropbtn {
+    border: 1px solid lightgrey; 
+    border-radius: 5px; 
+    padding: 10px 16px;
+    background-color: white;
+    color: #333;
+    cursor: pointer;
+    @apply mx-10;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    @apply mx-10;
+    background-color: #f9f9f9;
+    min-width: 120px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 5px; 
+    border: 1px solid lightgrey;
+  }
+  
+  .dropdown-link {
+    display: block;
+    padding: 10px 16px;
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .dropdown-link:hover {
+    background-color: #ddd;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  .dropdown-content {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .dropdown-content a {
+    display: block;
+    padding: 10px 16px;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #ddd;
   }
 
   .btn-contact {
     @apply flex items-center;
+    font-size: 22.14px;
 
     button {
-      @apply bg-blue-500 text-white p-2 rounded-md;
-      @apply hover:bg-blue-600;
+      @apply bg-navy-sec text-white p-2;
+      @apply hover:bg-navy-sec;
+      height: 58px;
+      width: 150px;
+      border-radius: 29px;
     }
   }
 

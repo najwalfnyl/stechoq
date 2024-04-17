@@ -1,16 +1,53 @@
 #headings {
-  @apply my-8 pb-8;
+  height: 735px;
+   font-family: 'Poppins', sans-serif; 
+   background-image: url('D:\XAMPP2\htdocs\web-stechoq\src\assets\img\home\BGheading.jpg'); 
+   background-size: cover; 
+   background-position: center; 
 
-  #head {
-    @apply grid md:grid-cols-2 md:gap-12 lg:gap-64;
+   #head {
+    @apply grid md:grid-rows-4 md:grid-flow-col md:grid-cols-1;
     @apply text-center md:text-left;
+    grid-template-columns: 90%; 
+    grid-template-rows: auto 80px auto;
+    color: white;
+  }  
+  
+  
+  #title-page {
+    font-size: 64px;
+    line-height: 93%;
+    margin-top: 140px;
+    font-weight: 900;
 
-    #title-page {
-      @apply text-2xl md:text-6xl font-bold flex items-center justify-center md:justify-start text-neutral-900 py-6;
+    .company-name {
+      font-size: 41px; 
     }
-
-    #subtitle-page {
-      @apply text-xl flex items-center md:p-6;
+    .subtitle {
+      font-size: 64px; 
     }
   }
+  
+  #subtitle-page {
+    height: 80px;
+    margin-top: 5px;
+    font-size: 33px;
+    line-height: 120%;
+    font-weight: 300;
+  }
+  
+  .btn-heading {
+    margin-top: 40px;
+    font-size: 16px;
+    font-weight: 500;
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  .btn-heading button {
+    height: 51px;
+    width: 148px;
+    border-radius: 15px;
+  }
+
 }

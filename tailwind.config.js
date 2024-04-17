@@ -1,7 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
-const forms = require('@tailwindcss/forms');
-const typography = require('@tailwindcss/typography');
-
 module.exports = {
   content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
   theme: {
@@ -12,11 +8,18 @@ module.exports = {
       colors: {
         primary: '#006',
         secondary: '#f00',
-      }
+        navy: {
+          prim: '#1F336D',
+          sec: '#25408F'
+        }
+      },
+      fontFamily: {
+        poppins: ['Poppins', 'sans-serif'],
+      },
     },
   },
   plugins: [
-    forms,
-    typography,
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/typography'),
   ],
 };
