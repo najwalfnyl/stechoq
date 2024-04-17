@@ -28,12 +28,15 @@ const routes = [
   },
   {
     path: '/e-learning',
-    name: 'eLearning',
-    component: () => import('@/views/LearningView.vue'),
+    // name: 'eLearning',
+    // component: () => import('@/views/LearningView.vue'),
+    beforeEnter : () => {
+      window.location.href = 'https://academy.stechoq.com/'
+    },
   },
   {
     path: '/contact-us',
-    name: 'news',
+    name: 'contact-us',
     component: () => import('@/views/NewsView.vue'),
   },
   {

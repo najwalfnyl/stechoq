@@ -1,5 +1,5 @@
 <script setup>
-import { RouterLink, useRoute } from 'vue-router';
+import { RouterLink, useRouter } from 'vue-router';
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue';
 import { MenuIcon, XIcon } from '@heroicons/vue/outline';
 import { ref, reactive } from 'vue';
@@ -37,9 +37,10 @@ const reset = () => {
 
 const contactForm = ref(null);
 
+const router = useRouter();
 const openContact = () => {
-  const route = useRoute();
-  route.push('/news'); 
+  console.log(router);
+  router.push({name : 'contact-us'});  
 };
 
 const closeContact = () => {
