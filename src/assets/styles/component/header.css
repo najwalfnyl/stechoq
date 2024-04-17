@@ -5,7 +5,7 @@
 
 #main-navbar {
   @apply flex items-center;
-  justify-content: center; /* Menengahkan isi navbar */
+  justify-content: center; 
   height: 83px;
 
   #brand {
