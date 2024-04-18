@@ -1,6 +1,8 @@
 <script setup>
 import { useHead } from '@vueuse/head';
-import HeadingComp from '@/components/base/HeadingComp.vue';
+// import HeadingComp from '@/components/base/HeadingComp.vue';
+import axios from 'axios';
+import { ref } from 'vue';
 
 useHead({
   title: `Kontak | STECHOQ`,
@@ -11,6 +13,28 @@ useHead({
     },
   ],
 });
+
+const name = ref('');
+const company = ref('');
+const email = ref('');
+const phone = ref('');
+const message = ref('');
+
+async function submitForm() {
+  try {
+    const response = await axios.post('http://127.0.0.1:8000/api/contactUs', {
+      name: name.value,
+      company: company.value,
+      email: email.value,
+      phone: phone.value,
+      message: message.value
+    });
+    console.log('Respon dari server:', response.data);
+  } catch (error) {
+    console.error('Error saat mengirim formulir:', error);
+  }
+}
+
 </script>
 
 <template>
@@ -70,31 +94,5 @@ useHead({
     </form>
   </div>
 </template>
-
-<script>
-export default {
-  data() {
-    return {
-      name: '',
-      company: '',
-      email: '',
-      phone: '',
-      message: ''
-    };
-  },
-  methods: {
-    submitForm() {
-      // Logika untuk mengirim formulir
-      console.log('Formulir dikirim dengan data:', {
-        name: this.name,
-        company: this.company,
-        phone: this.phone,
-        message: this.message,
-        email:this.email
-      });
-    }
-  }
-};
-</script>
 
 

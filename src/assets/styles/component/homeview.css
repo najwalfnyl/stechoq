@@ -1,54 +1,83 @@
 #home-list {
-    @apply py-5;
-    @apply text-white;
-  
-    #list-container {
-      @apply grid lg:grid-cols-1 my-2 gap-10;
-  
-      .list-item {
+  @apply py-5;
+  @apply text-white;
 
-  
-        .list-image {
-          @apply object-fill overflow-hidden w-full bg-gradient-to-t from-neutral-700 via-neutral-500 to-neutral-400;
-          background-size: cover; 
-          height: 300px;
-          border-radius: 20px;
-          
-        }
+  #list-container {
+    @apply grid lg:grid-cols-1 my-2 gap-10;
 
-        .list-container{
-        @apply  ml-40 mr-40 py-10;
-
-        .list-title {
-          font-family: 'Poppins', sans-serif; 
-          @apply px-20 text-4xl  ;
-          @apply  flex items-center justify-center ;
-        }
-        
-        .list-sub {
-          font-family: 'Poppins', sans-serif; 
-          line-height: 120%;
-          text-align: center;
-          @apply mt-4 px-40;
-          font-size: 16px; 
-          @apply  flex items-center justify-center ml-40 mr-40;
-        }
+    .list-item {
+      .list-image {
+        @apply object-fill overflow-hidden w-full bg-gradient-to-t from-neutral-700 via-neutral-500 to-neutral-400;
+        background-size: cover;
+        height: 300px;
+        border-radius: 20px;
       }
-  
+
+      .list-container {
+        @apply py-10;
+      }
+
+      .list-title {
+        font-family: 'Poppins', sans-serif;
+        @apply px-5 text-4xl;
+        @apply flex items-center justify-center;
+        padding-left: 5%;
+        padding-right: 5%;
+      }
+
+      .list-sub {
+        font-family: 'Poppins', sans-serif;
+        line-height: 120%;
+        text-align: center;
+        @apply mt-4 px-5;
+        font-size: 16px;
+        @apply flex items-center justify-center;
+        padding-left: 5%;
+        padding-right: 5%;
+      }
+
       .btn-heading {
-        @apply  flex items-center justify-center ;
+        @apply flex items-center justify-center;
         @apply mt-6;
         font-size: 16px;
       }
-    
-        .btn-heading button {
-          font-family: 'Poppins', sans-serif; 
-          height: 51px;
-          width: 148px;
-          border-radius: 4px;
-          @apply  flex items-center justify-center ;
-        }
-    }
+
+      .btn-heading button {
+        font-family: 'Poppins', sans-serif;
+        height: 51px;
+        width: 148px;
+        border-radius: 4px;
+        @apply flex items-center justify-center;
+        padding-left: 5%;
+        padding-right: 5%;
+      }
     }
   }
-  
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  #home-list #list-container .list-item .list-title {
+    @apply px-3 text-2xl;
+    padding-left: 3%;
+    padding-right: 3%;
+  }
+
+  #home-list #list-container .list-item .list-sub {
+    @apply px-3 text-sm;
+    padding-left: 3%;
+    padding-right: 3%;
+  }
+
+  #home-list #list-container .list-item .btn-heading {
+    @apply mt-3;
+  }
+
+  #home-list #list-container .list-item .btn-heading button {
+    height: 35px;
+    width: 100px;
+    font-size: 12px;
+    padding-left: 3%;
+    padding-right: 3%;
+  }
+}
