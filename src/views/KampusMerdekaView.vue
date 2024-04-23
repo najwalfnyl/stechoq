@@ -1,7 +1,6 @@
 <script setup>
 import { assetsImg } from '@/utils/helper';
 import { useHead } from '@vueuse/head';
-import HeadingComp from '@/components/base/HeadingComp.vue';
 import CarouselComp from '@/components/partial/CarouselComp.vue';
 import TestimonialSliderComp from '@/components/partial/TestimonialSliderComp.vue';
 
@@ -24,15 +23,97 @@ const img = assetsImg('people/soldering.png');
 </script>
 
 <template>
-  <heading-comp>
-    <template #title>Merdeka Belajar Kampus Merdeka</template>
-    <template #subtitle>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita
-      architecto qui, nemo voluptates, similique ipsum vel officia maxime minima
-      reprehenderit quam vitae pariatur provident id natus error aliquam odit
-      corrupti!
-    </template>
-  </heading-comp>
+  <div class="full-box w-full relative" :style="{ 'background-image': 'url(src/assets/img/people/stechoq1.png)' }">
+    <div class="text-center text-white main-container px-40">
+      <h1 class=" font-bold text-5xl font-poppins">Stechoq Academy</h1>
+      <h2 class=" font-medium text-xl font-poppins">merupakan platform belajar online gratis yang dikembangkan oleh Stechoq Robotika Indonesia. 
+        Stechoq Academy hadir untuk menjawab kebutuhan zaman dengan mengembangkan kurikulum pendidikan berbasis industri.</h2>
+    </div>
+  </div>
+  <article class="main-container max-w  py-8 grid md:grid-cols-2 md:gap-4">
+      <div class="w-3/4 md:w-auto"> 
+        <div class="flex flex-row items-center gap-8">
+          <div class="w-1/4 border border-solid border-navy-prim"></div>
+          <h1 class="text-sm font-poppins font-medium" style="white-space: nowrap;"> KNOW ABOUT US</h1>
+        </div>
+        <ul class=" font-poppins list-disc text-5xl text-navy-prim font-bold my-0 py-5">
+            Kurikulum Berbasis Industri
+        </ul>
+      </div>
+      <div class=" mx-10 px-10">
+        <ul class=" font-poppins text-navy-prim  text-lg font-bold my-2 pt-8">
+          mentor bersama ahli mengembangkan kurikulum bersama agar kompetensi yang 
+          dipelajari dapat diterapkan langsung ke dalam dunia Industri
+        </ul>
+        <ul class="font-poppins text-navy-prim  text-lg font-light">
+          memadukan kurikulum pembelajaran dengan kebutuhan industri diperlukan 
+          untuk menghasilkan kompetensi yang unggul dan kompetitif agar dapat lebih bersaing.
+        </ul>
+      </div>
+    </article>
+
+    <section id="benefit">
+    <article style="background-color: #1F336D;">
+    <article class="main-container max-w py-8">
+      <div class="text-center text-white main-container ">
+        <h1 class=" font-bold text-4xl font-poppins">Benefit Our Program</h1>
+        <h2 class=" font-medium text-lg font-poppins px-0 mx-20 mt-4">mengembangkan kemampuan kalian dengan kurikulum yang telah disusun secara terstruktur</h2>
+      </div>
+      <div id="content" class="my-8">
+        <div id="what-you-get">
+          <div class="grid lg:grid-cols-3 gap-8 my-8">
+            <div class=" rounded-lg py-8 px-4 h-246" :style="{ 'background-image': 'url(src/assets/img/people/mentoring.png)' }">
+              <h4 class="text-2xl text-center text-white font-medium mb-6">
+                Sesi Mentoring
+              </h4>
+              <p class="text-lg font-normal">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Corrupti, reprehenderit distinctio itaque consequuntur numquam
+                aperiam, nostrum aliquid similique perferendis qui fugiat
+                tenetur necessitatibus voluptates culpa ex quam. Sunt, ad
+                aliquam!
+              </p>
+            </div>
+            <div class="bg-white rounded-lg py-8 px-4">
+              <h4 class="text-2xl text-center font-medium mb-6">
+                1 on 1 Mentoring
+              </h4>
+              <p class="text-lg font-normal">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Corrupti, reprehenderit distinctio itaque consequuntur numquam
+                aperiam, nostrum aliquid similique perferendis qui fugiat
+                tenetur necessitatibus voluptates culpa ex quam. Sunt, ad
+                aliquam!
+              </p>
+            </div>
+            <div class="bg-white rounded-lg py-8 px-4">
+              <h4 class="text-2xl text-center font-medium mb-6">
+                Collaboration
+              </h4>
+              <p class="text-lg font-normal">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Corrupti, reprehenderit distinctio itaque consequuntur numquam
+                aperiam, nostrum aliquid similique perferendis qui fugiat
+                tenetur necessitatibus voluptates culpa ex quam. Sunt, ad
+                aliquam!
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+  </article>
+  </section>
+
+    <section id="benefit">
+    <article class="main-container max-w py-8">
+      <div class="text-center text-white main-container ">
+        <h1 class=" font-bold text-navy-prim text-4xl font-poppins">Kelas Belajar</h1>
+        <h2 class=" font-medium text-navy-prim text-lg font-poppins  mx-20 mt-4">kelas belajar yang telah kami kembangkan dan dapat diakses secara gratis oleh siapapun dan darimanapun</h2>
+      </div>
+    </article>
+  </section>
+
   <section id="kampus-merdeka" class="my-8 py-8">
     <article class="main-container">
       <carousel-comp :outsidei-indicator="true" :images="mbkm" />
@@ -48,7 +129,7 @@ const img = assetsImg('people/soldering.png');
 
           <div class="grid lg:grid-cols-3 gap-8 my-8">
             <div class="bg-white rounded-lg py-8 px-4">
-              <h4 class="text-2xl text-center font-medium mb-6">
+              <h4 class="text-2xl etext-cnter font-medium mb-6">
                 Research Funding
               </h4>
               <p class="text-lg font-normal">
@@ -121,3 +202,18 @@ const img = assetsImg('people/soldering.png');
     </article>
   </section>
 </template>
+
+<style scoped>
+.full-box {
+  @apply object-fill overflow-hidden w-full  ;
+  background-image: src="src\assets\img\people\stechoq.png";
+  height: 700px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+</style>

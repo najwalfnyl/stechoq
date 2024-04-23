@@ -85,7 +85,7 @@ Become a leading company that committed at improving the quality of human resour
       <h3 class="text-3xl font-medium text-center my-4">Pencapaian & Penghargaan</h3>
       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 justify-center gap-4 lg:gap-10">
         <template v-for="(award, i) in awards.list" :key="i">
-          <div class="flex flex-col p-4">
+          <div class="flex flex-col p-4 justify-center">
             <img :src="award.img" alt="">
             <p class="text-center font-medium py-4">{{award.title}}</p>
           </div>

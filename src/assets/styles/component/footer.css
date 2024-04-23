@@ -2,29 +2,23 @@
   @apply bg-navy-prim;
   font-family: 'Poppins', sans-serif; 
   height: 24rem;
-
   display: flex;
   justify-content: center;
   align-items: center;
-  .main-container {
-    width: 100%; 
-  }
+
+
 
   #bottom-nav {
-    
     #bottom-menu {
-      grid-template-columns: 70% auto; 
-      gap: 50%; 
+      grid-template-columns: auto auto; 
       display: flex;
-      justify-content: center;
-      align-items: center;
+      justify-content: space-between;
     }    
-    
+
     #bottom-about {
-    
       h3 {
-        margin-top: 10px;
-        font-size: 26px;
+        margin-top: 1rem; 
+        font-size: 1.625rem; 
         font-weight: 700;
         margin-bottom: 0.938rem;
       }
@@ -32,8 +26,8 @@
       address {
         @apply not-italic;
         font-weight: 300;
-        font-size: 15px;
-        margin-bottom: 3rem;
+        font-size: 1rem; 
+        margin-bottom: 1.5rem;
       }
     
       .socmed {
@@ -50,8 +44,9 @@
       @apply text-sm;
 
       h3 {
-        font-size: 26px;
+        font-size: 1.625rem; 
         font-weight: 600;
+        margin: 1rem 0; 
       }
 
       a {

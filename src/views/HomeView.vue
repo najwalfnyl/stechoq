@@ -3,7 +3,6 @@ import { useHead } from '@vueuse/head';
 import { RouterLink } from 'vue-router';
 import { assetsImg } from '@/utils/helper';
 import HeadingComp from '@/components/base/HeadingComp.vue';
-import useProfilePhoto from '../stores/profile';
 import useHomeStore from '../stores/home';
 
 useHead({
@@ -36,7 +35,7 @@ const partners = [
   assetsImg('brand/toyota.svg'),
   assetsImg('brand/kubota.svg'),
 ];
-const profiles = useProfilePhoto();
+
 
 const homelists = useHomeStore();
 
@@ -69,10 +68,10 @@ const homelists = useHomeStore();
           <div class="list-image" :style="{ backgroundImage: `url(${item.img})` }">
             <div class="list-container">
             <div class="list-title text-white font-bold text-md mt-2">{{ item.name }}</div>
-            <div class="list-sub text-wi text-sm">{{ item.sub }}</div>
+            <div class="list-sub text-white text-sm">{{ item.sub }}</div>
             <div class="btn-heading ">
                   <button type="button" class="bg-white text-black hover:bg-gray-200">
-                      Learn More
+                    Learn More  
                   </button>
               </div>
               </div>
@@ -92,7 +91,7 @@ const homelists = useHomeStore();
       class="main-container grid grid-cols-6 grid-rows-4 md:gap-2 place-content-center text-center h-full"
     >
       <template v-for="(partner, i) in partners" :key="i">
-        <div class="flex align-middle"><img :src="partner" /></div>
+        <div class="flex align-middle "><img :src="partner" /></div>
       </template>
     </div>
   </section>

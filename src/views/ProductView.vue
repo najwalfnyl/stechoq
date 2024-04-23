@@ -46,11 +46,25 @@ const products = useProductStore();
               </div>
               <div class="product-title text-black font-bold text-xl mt-2 ml-4">{{ item.name }}</div>
               <div class="product-sub text-black text-md mt-2 ml-4">{{ item.sub }}</div>
-              <div class="btn-heading ml-4">
-                  <button type="button" class="bg-opacity-100 text-black hover:bg-gray-200">
-                      Learn More
-                  </button>
-            </div>
+            </article>
+          </router-link>
+        </template>
+      </div>
+    </section>
+  </template>
+  <div class="font-bold text-6xl text-center text-navy-prim mt-10">
+      Robotics and Automations
+    </div>
+    <template v-if="$route.name === 'products'">
+    <section id="product-list" class="my-8 py-8">
+      <div id="product-container" class="main-container">
+        <template v-for="(item, i) in products.list" :key="i">
+          <router-link :to="{ name: 'productDetail', params: { id: item.id } }">
+            <article class="product-item">
+              <div class="product-image" :style="{ backgroundImage: `url(${item.img})` }">
+              </div>
+              <div class="product-title text-black font-bold text-xl mt-2 ml-4">{{ item.name }}</div>
+              <div class="product-sub text-black text-md mt-2 ml-4">{{ item.sub }}</div>
             </article>
           </router-link>
         </template>

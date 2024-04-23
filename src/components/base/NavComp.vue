@@ -39,7 +39,7 @@ const contactForm = ref(null);
 
 const openContact = () => {
   const route = useRoute();
-  route.push('/news'); 
+  route.push('/contact-us'); 
 };
 
 const closeContact = () => {
@@ -137,10 +137,10 @@ window.addEventListener('click', (event) => {
         <div class="pt-4 pb-3 border-t border-gray-700">
           <div class="btn-contact">
             <button
-              type="button"
+              type="button" class="font-sm"
               @click="openContact"
             >
-              Kontak Kami
+              Contact Us
             </button>
           </div>
         </div>

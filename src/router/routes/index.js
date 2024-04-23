@@ -34,13 +34,8 @@ const routes = [
   {
     path: '/contact-us',
     name: 'news',
-    component: () => import('@/views/NewsView.vue'),
+    component: () => import('@/views/ContactView.vue'),
   },
-  {
-    path: '/contact',
-    name: 'contactus',
-    component: () => import('@/views/ContactView.vue')
-  }
 ];
 
 export default routes;
