@@ -1,10 +1,10 @@
 #headings {
   height: 735px;
    font-family: 'Poppins', sans-serif; 
-   background-image: url('D:\XAMPP2\htdocs\web-stechoq\src\assets\img\home\BGheading.jpg'); 
-   background-size: cover; 
-   background-position: center; 
-
+   background-image: url('../../img/home/BGheading.jpg'); 
+   background-size: cover;
+   background-position: center;
+    
    #head {
     @apply grid md:grid-rows-4 md:grid-flow-col md:grid-cols-1;
     @apply text-center md:text-left;

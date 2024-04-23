@@ -60,47 +60,37 @@ const img = assetsImg('people/soldering.png');
         <h2 class=" font-medium text-lg font-poppins px-0 mx-20 mt-4">mengembangkan kemampuan kalian dengan kurikulum yang telah disusun secara terstruktur</h2>
       </div>
       <div id="content" class="my-8">
-        <div id="what-you-get">
-          <div class="grid lg:grid-cols-3 gap-8 my-8">
-            <div class=" rounded-lg py-8 px-4 h-246" :style="{ 'background-image': 'url(src/assets/img/people/mentoring.png)' }">
-              <h4 class="text-2xl text-center text-white font-medium mb-6">
-                Sesi Mentoring
-              </h4>
-              <p class="text-lg font-normal">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Corrupti, reprehenderit distinctio itaque consequuntur numquam
-                aperiam, nostrum aliquid similique perferendis qui fugiat
-                tenetur necessitatibus voluptates culpa ex quam. Sunt, ad
-                aliquam!
-              </p>
-            </div>
-            <div class="bg-white rounded-lg py-8 px-4">
-              <h4 class="text-2xl text-center font-medium mb-6">
-                1 on 1 Mentoring
-              </h4>
-              <p class="text-lg font-normal">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Corrupti, reprehenderit distinctio itaque consequuntur numquam
-                aperiam, nostrum aliquid similique perferendis qui fugiat
-                tenetur necessitatibus voluptates culpa ex quam. Sunt, ad
-                aliquam!
-              </p>
-            </div>
-            <div class="bg-white rounded-lg py-8 px-4">
-              <h4 class="text-2xl text-center font-medium mb-6">
-                Collaboration
-              </h4>
-              <p class="text-lg font-normal">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Corrupti, reprehenderit distinctio itaque consequuntur numquam
-                aperiam, nostrum aliquid similique perferendis qui fugiat
-                tenetur necessitatibus voluptates culpa ex quam. Sunt, ad
-                aliquam!
-              </p>
-            </div>
-          </div>
-        </div>
+  <div id="what-you-get">
+    <div class="flex justify-center items-center my-8 px-6 gap-10">
+      <div class="w-1/3 rounded-xl py-8 px-5" :style="{ 'background-image': 'url(src/assets/img/people/mentoring.png)' }" style="height: 190px;">
+        <h4 class="text-2xl text-center text-white font-medium mb-6">
+          Sesi Mentoring
+        </h4>
+        <p class="text-lg text-white font-normal">
+          membahas tiap problem beserta penyelesaiannya dalam pengerjaan projek 
+        </p>
       </div>
+      <div class="w-1/3 rounded-xl py-8 px-8" :style="{ 'background-image': 'url(src/assets/img/people/industri.png)' }" style="height: 240px;">
+        <h4 class="text-2xl text-white text-center font-medium mb-6">
+          Mengerjakan project berskala industri
+        </h4>
+        <p class="text-lg text-white font-normal">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Corrupti,
+        </p>
+      </div>
+      <div class="w-1/3 rounded-xl py-8 px-5" :style="{ 'background-image': 'url(src/assets/img/people/kolaborasi.png)' }" style="height: 190px;">
+        <h4 class="text-2xl text-white text-center font-medium mb-6">
+          Kolaborasi
+        </h4>
+        <p class="text-lg text-white font-normal">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Corrupti, 
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
     </article>
   </article>
   </section>
@@ -111,6 +101,39 @@ const img = assetsImg('people/soldering.png');
         <h1 class=" font-bold text-navy-prim text-4xl font-poppins">Kelas Belajar</h1>
         <h2 class=" font-medium text-navy-prim text-lg font-poppins  mx-20 mt-4">kelas belajar yang telah kami kembangkan dan dapat diakses secara gratis oleh siapapun dan darimanapun</h2>
       </div>
+      <div id="content" class="my-8">
+  <div id="what-you-get">
+    <div class="flex justify-center items-center my-8 px-6 gap-10">
+      <div class="w-1/3 rounded-xl py-8 bg-navy-prim px-5"  style="height: 160px;">
+        <h4 class="text-2xl text-center text-white font-medium mb-6">
+          Sesi Mentoring
+        </h4>
+        <p class=" text-lg text-white font-normal">
+          membahas tiap problem beserta penyelesaiannya dalam pengerjaan projek 
+        </p>
+      </div>
+      <div class="w-1/3 rounded-xl py-8 bg-navy-prim px-8" style="height: 160px;">
+        <h4 class="text-2xl text-white text-center font-medium mb-6">
+          Mengerjakan project
+        </h4>
+        <p class="text-lg text-white font-normal">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Corrupti,
+        </p>
+      </div>
+      <div class="w-1/3 rounded-xl py-8 bg-navy-prim px-5" style="height: 160px;">
+        <h4 class="text-2xl text-white text-center font-medium mb-6">
+          Kolaborasi
+        </h4>
+        <p class="text-white font-normal">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Corrupti, 
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
     </article>
   </section>
 

@@ -52,13 +52,6 @@ const homelists = useHomeStore();
       Berkarya untuk Bangsa
     </template>
     <div class="btn-heading">
-        <button type="button" class="bg-white text-black p-2 hover:bg-gray-200">
-            What we do?
-        </button>
-          <button type="button" class="bg-opacity-100 text-white p-2 flex items-center gap-2 hover:bg-gray-200 hover:bg-opacity-50">
-          <img src="src\assets\img\icon\Play.svg" alt="Icon" class="h-5 w-5" />
-            Play Video
-        </button>
     </div>
   </heading-comp>
   <section id="home-list" class="my-8 py-8">
