@@ -1,14 +1,11 @@
 <script setup>
+import axios from 'axios';
 import { useHead } from '@vueuse/head';
 import useAwardStore from '@/stores/award';
 import { assetsImg } from '@/utils/helper';
-
-const imgClient2 = assetsImg('stechoq-logo.svg');
+import { onMounted,ref } from 'vue';
 
 const imgProduct = assetsImg('product/mps.png');
-const imgCeo = assetsImg('home/profile2.png');
-
-const imgLogo = assetsImg('stechoq-logo.svg');
 const awards = useAwardStore();
 
 useHead({
@@ -20,10 +17,27 @@ useHead({
     },
   ],
 });
+
+// get respone api about us
+const aboutUs = ref(null);
+const url = 'http://127.0.0.1:8000/storage/';
+async function fetchAboutUs () {
+  try {
+    const response = await axios.get('http://127.0.0.1:8000/api/aboutUs');
+    aboutUs.value = response.data;
+    // console.log(response.data);
+  } catch (error) {
+    console.log('Error fetching data : ',error);
+  }
+}
+
+onMounted(fetchAboutUs);
+
 </script>
 
 <template>
   <section id="about-us">
+    <div v-for="(about,index) in aboutUs" :key="index">
     <article class="main-container max-w  py-8 grid md:grid-cols-2 md:gap-4">
       <div class="w-3/4 md:w-auto"> 
         <div class="flex flex-row items-center gap-8">
@@ -31,8 +45,7 @@ useHead({
           <h1 class="text-sm font-bold" style="white-space: nowrap;"> ABOUT US</h1>
         </div>
         <ul class="list-disc pl-6 text-2xl font-bold my-2 py-8">
-            Leading world class R&D company that develops applicative technology for
-        the empowerment of Indonesia
+          {{ about.heading }}
         </ul>
       </div>
       <div class="flex mx-10 px-10">
@@ -41,7 +54,7 @@ useHead({
     </article>
     <article class="main-container py-8 max-w grid md:grid-cols-2 md:gap-8">
       <div class="flex order-last md:order-first px-24 mx-8">
-        <img :src="imgCeo" alt="" />
+        <img  v-for="(image, index) in about.ceo_photo" :key="index" :src="url + image" alt="Image" />
       </div>
       <div>
         <div class="flex flex-row items-center gap-4">
@@ -49,10 +62,7 @@ useHead({
           <div class="w-full border border-solid border-navy-prim"></div>
         </div>
         <ul class="list-disc pl-6 text-lg my-2 py-6">
-          STECHOQ didirikan oleh para milenial sukses yang telah meraih puluhan prestasi di bidang robotika, 
-          baik di dalam maupun luar negeri. STECHOQ telah berhasil dan akan terus mengembangkan produk-produk 
-          inovatif dalam upaya mendukung program "Making Indonesia 4.0" dari pemerintah. 
-        </ul>
+         {{ about.ceo_talk_text }}</ul>
       </div>
     </article>
     <article style="background-color: #1F336D;">
@@ -63,8 +73,7 @@ useHead({
           <div class="w-full border border-solid border-white"></div>
         </div>
         <ul class="list-disc pl-6 text-white font-light text-lg my-2">
-          Become a leading research & manfucature company that committed at developing appropriate technology and producing global quality products innovation needed to meet the needs of the domestic component leveltowards an advance Indonesia
-Become a leading company that committed at improving the quality of human resources and developing MSMEs in order to create a more qualified and highly competitive Indonesian society to encourage the realization of an advanced Indonesia.
+          {{ about.vision }}
         </ul>
       </div>
       <div>
@@ -73,11 +82,12 @@ Become a leading company that committed at improving the quality of human resour
           <div class="w-full border border-solid border-white"></div>
         </div>
         <ul class="list-disc pl-6 text-white font-light text-lg my-2">
-          Carryout collabroartive research and development of appropriate technology accrordance of community needs Carryout prduction process from result of research that has been carried out with lead production system Conduct training and certification in technology education, specially for students Conduct training for public and MSME with sustainable program as a form of corporate social responsbility
+          {{ about.missions }}
         </ul>
       </div>
     </article>
   </article>
+  </div>
   </section>
 
   <section id="awards" class="my-8 py-8">

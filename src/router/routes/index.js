@@ -39,11 +39,11 @@ const routes = [
     name: 'contact-us',
     component: () => import('@/views/NewsView.vue'),
   },
-  {
-    path: '/contact',
-    name: 'contactus',
-    component: () => import('@/views/ContactView.vue')
-  }
+  // {
+  //   path: '/contact',
+  //   name: 'contactus',
+  //   component: () => import('@/views/ContactView.vue')
+  // }
 ];
 
 export default routes;

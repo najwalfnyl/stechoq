@@ -1,18 +1,15 @@
 <script setup>
+
 import { RouterLink, useRouter } from 'vue-router';
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue';
 import { MenuIcon, XIcon } from '@heroicons/vue/outline';
-import { ref, reactive } from 'vue';
+import { ref} from 'vue';
 
 const navs = [
   {
     name: 'Home',
     path: '/',
   },  
-  {
-    name: 'About Us',
-    path: '/about-us',
-  },
   {
     name: 'Products',
     path: '/products',
@@ -21,21 +18,12 @@ const navs = [
     name: 'E-Learning',
     path: '/e-learning',
   },
+  {
+    name: 'About Us',
+    path: '/about-us',
+  },
 ];
 
-const initialForm = {
-  name: '',
-  company: '',
-  email: '',
-  phone: '',
-  message: '',
-};
-const form = reactive({ ...initialForm });
-const reset = () => {
-  Object.assign(form, initialForm);
-};
-
-const contactForm = ref(null);
 
 const router = useRouter();
 const openContact = () => {
@@ -43,20 +31,6 @@ const openContact = () => {
   router.push({name : 'contact-us'});  
 };
 
-const closeContact = () => {
-  contactForm.value.close();
-};
-
-const submitForm = (input) => {
-  try {
-    window.open(`mailto:${import.meta.env.VITE_MAILTO}?subject=${input.name}&body=${input.message}%0D%0A%0D%0A${input.company}%0D%0A${input.phone}`);
-  } catch (error) {
-    console.log(error);
-  } finally {
-    reset();
-    closeContact();
-  }
-};
 
 const isOpen = ref(false);
 
@@ -70,6 +44,7 @@ window.addEventListener('click', (event) => {
     isOpen.value = false;
   }
 });
+
 </script>
 
 <template>
