@@ -57,7 +57,7 @@ const img = assetsImg('people/soldering.png');
     <article class="main-container max-w py-8">
       <div class="text-center text-white main-container ">
         <h1 class=" font-bold text-4xl font-poppins">Benefit Our Program</h1>
-        <h2 class=" font-medium text-lg font-poppins px-0 mx-20 mt-4">mengembangkan kemampuan kalian dengan kurikulum yang telah disusun secara terstruktur</h2>
+        <h2 class=" font-medium text-lg font-poppins px-0  xl:mx-60 lg:mx-40 md:mx-20 sm:mx-10 mt-4">mengembangkan kemampuan kalian dengan kurikulum yang telah disusun secara terstruktur</h2>
       </div>
       <div id="content" class="my-8">
   <div id="what-you-get">
@@ -99,131 +99,111 @@ const img = assetsImg('people/soldering.png');
     <article class="main-container max-w py-8">
       <div class="text-center text-white main-container ">
         <h1 class=" font-bold text-navy-prim text-4xl font-poppins">Kelas Belajar</h1>
-        <h2 class=" font-medium text-navy-prim text-lg font-poppins  mx-20 mt-4">kelas belajar yang telah kami kembangkan dan dapat diakses secara gratis oleh siapapun dan darimanapun</h2>
+        <h2 class=" font-medium text-navy-prim text-lg font-poppins  xl:mx-60 lg:mx-40 md:mx-20 sm:mx-10 mt-4">kelas belajar yang telah kami kembangkan dan dapat diakses secara gratis oleh siapapun dan darimanapun</h2>
       </div>
       <div id="content" class="my-8">
-  <div id="what-you-get">
-    <div class="flex justify-center items-center my-8 px-6 gap-10">
-      <div class="w-1/3 rounded-xl py-8 bg-navy-prim px-5"  style="height: 160px;">
-        <h4 class="text-2xl text-center text-white font-medium mb-6">
-          Sesi Mentoring
-        </h4>
-        <p class=" text-lg text-white font-normal">
-          membahas tiap problem beserta penyelesaiannya dalam pengerjaan projek 
-        </p>
-      </div>
-      <div class="w-1/3 rounded-xl py-8 bg-navy-prim px-8" style="height: 160px;">
-        <h4 class="text-2xl text-white text-center font-medium mb-6">
-          Mengerjakan project
-        </h4>
-        <p class="text-lg text-white font-normal">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Corrupti,
-        </p>
-      </div>
-      <div class="w-1/3 rounded-xl py-8 bg-navy-prim px-5" style="height: 160px;">
-        <h4 class="text-2xl text-white text-center font-medium mb-6">
-          Kolaborasi
-        </h4>
-        <p class="text-white font-normal">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Corrupti, 
-        </p>
-      </div>
-    </div>
-  </div>
-</div>
-
-    </article>
-  </section>
-
-  <section id="kampus-merdeka" class="my-8 py-8">
-    <article class="main-container">
-      <carousel-comp :outsidei-indicator="true" :images="mbkm" />
-    </article>
-  </section>
-  <section id="kampus-merdeka" class="my-8 py-8">
-    <article class="main-container">
-      <div id="content" class="my-8">
-        <div id="what-you-get">
-          <h3 class="text-3xl font-medium text-center my-8">
-            Apa yang akan kamu dapatkan?
-          </h3>
-
-          <div class="grid lg:grid-cols-3 gap-8 my-8">
-            <div class="bg-white rounded-lg py-8 px-4">
-              <h4 class="text-2xl etext-cnter font-medium mb-6">
-                Research Funding
-              </h4>
-              <p class="text-lg font-normal">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Corrupti, reprehenderit distinctio itaque consequuntur numquam
-                aperiam, nostrum aliquid similique perferendis qui fugiat
-                tenetur necessitatibus voluptates culpa ex quam. Sunt, ad
-                aliquam!
-              </p>
-            </div>
-            <div class="bg-white rounded-lg py-8 px-4">
-              <h4 class="text-2xl text-center font-medium mb-6">
-                1 on 1 Mentoring
-              </h4>
-              <p class="text-lg font-normal">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Corrupti, reprehenderit distinctio itaque consequuntur numquam
-                aperiam, nostrum aliquid similique perferendis qui fugiat
-                tenetur necessitatibus voluptates culpa ex quam. Sunt, ad
-                aliquam!
-              </p>
-            </div>
-            <div class="bg-white rounded-lg py-8 px-4">
-              <h4 class="text-2xl text-center font-medium mb-6">
-                Collaboration
-              </h4>
-              <p class="text-lg font-normal">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Corrupti, reprehenderit distinctio itaque consequuntur numquam
-                aperiam, nostrum aliquid similique perferendis qui fugiat
-                tenetur necessitatibus voluptates culpa ex quam. Sunt, ad
-                aliquam!
-              </p>
-            </div>
+      <div id="what-you-get">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-10 my-8 px-8">
+          <div class="w-full rounded-xl bg-white px-5 border border-solid border-navy-prim">
+            <img src="src\assets\img\list-product\software-class.png" alt="Image" class="mx-auto my-4" style="height: 150px;">
+            <h4 class="text-xl text-black text-left font-medium ">
+              Sesi Mentoring
+            </h4>
+            <p class="text-sm text-black text-left font-normal mb-4">
+              Lorem ipsum dolor sit amet
+            </p>
           </div>
-        </div>
-
-      </div>
-    </article>
-  </section>
-  <section id="testimonial" class="my-8 py-8">
-    <h3 class="text-3xl font-medium text-center my-4">Testimoni</h3>
-    <testimonial-slider-comp />
-  </section>
-  <section
-    id="products"
-    class="main-container py-2 grid grid-flow-row gap-4 my-8 py-8"
-  >
-    <article>
-      <div
-        class="h-[650px] overflow-hidden z-0 bg-gradient-to-r from-neutral-600 via-neutral-500 to-neutral-400"
-      >
-        <img
-          class="object-cover h-full w-full mix-blend-overlay"
-          :src="img"
-          alt=""
-        />
-      </div>
-      <div class="-mt-[650px] px-8 w-full h-[650px]">
-        <div
-          class="grid grid-cols-2 content-center main-container mx-auto h-full text-white"
-        >
-          <div class="col-start-1">
-            <p class="text-5xl font-medium">
-              Mari buat inovasi lokal berkualitas international
+          <div class="w-full rounded-xl bg-white px-5 border border-solid border-navy-prim">
+            <img src="src\assets\img\list-product\software-class.png" alt="Image" class="mx-auto my-4" style="height: 150px;">
+            <h4 class="text-xl text-black text-left font-medium ">
+              Mengerjakan project
+            </h4>
+            <p class="text-sm text-black text-left font-normal mb-4">
+              Lorem ipsum dolor sit amet 
+            </p>
+          </div>
+          <div class="w-full rounded-xl bg-white px-5 border border-solid border-navy-prim">
+            <img src="src\assets\img\list-product\software-class.png" alt="Image" class="mx-auto my-4" style="height: 150px;">
+            <h4 class="text-xl text-black text-left font-medium ">
+              Kolaborasi
+            </h4>
+            <p class="text-sm text-black text-left font-normal mb-4">
+              Lorem ipsum dolor sit amet 
+            </p>
+          </div>
+          <div class="w-full rounded-xl bg-white px-5 border border-solid border-navy-prim">
+            <img src="src\assets\img\list-product\software-class.png" alt="Image" class="mx-auto my-4" style="height: 150px;">
+            <h4 class="text-xl text-black text-left font-medium ">
+              Sesi Mentoring
+            </h4>
+            <p class="text-sm text-black text-left font-normal mb-4">
+              Lorem ipsum dolor sit amet
+            </p>
+          </div>
+          <div class="w-full rounded-xl bg-white px-5 border border-solid border-navy-prim">
+            <img src="src\assets\img\list-product\software-class.png" alt="Image" class="mx-auto my-4" style="height: 150px;">
+            <h4 class="text-xl text-black text-left font-medium ">
+              Mengerjakan project
+            </h4>
+            <p class="text-sm text-black text-left font-normal mb-4">
+              Lorem ipsum dolor sit amet 
+            </p>
+          </div>
+          <div class=" rounded-xl bg-white px-5 border border-solid border-navy-prim">
+            <img src="src\assets\img\list-product\software-class.png" alt="Image" class="mx-auto my-4" style="height: 150px;">
+            <h4 class="text-xl text-black text-left font-medium ">
+              Kolaborasi
+            </h4>
+            <p class="text-sm text-black text-left font-normal mb-4">
+              Lorem ipsum dolor sit amet 
+            </p>
+          </div>
+          <div class="rounded-xl bg-white px-5 border border-solid border-navy-prim">
+            <img src="src\assets\img\list-product\software-class.png" alt="Image" class="mx-auto my-4" style="height: 150px;">
+            <h4 class="text-xl text-black text-left font-medium ">
+              Sesi Mentoring
+            </h4>
+            <p class="text-sm text-black text-left font-normal mb-4">
+              Lorem ipsum dolor sit amet
+            </p>
+          </div>
+          <div class="rounded-xl bg-white px-5 border border-solid border-navy-prim">
+            <img src="src\assets\img\list-product\software-class.png" alt="Image" class="mx-auto my-4" style="height: 150px;">
+            <h4 class="text-xl text-black text-left font-medium ">
+              Mengerjakan project
+            </h4>
+            <p class="text-sm text-black text-left font-normal mb-4">
+              Lorem ipsum dolor sit amet 
+            </p>
+          </div>
+          <div class="ounded-xl bg-white px-5 border border-solid border-navy-prim">
+            <img src="src\assets\img\list-product\software-class.png" alt="Image" class="mx-auto my-4" style="height: 150px;">
+            <h4 class="text-xl text-black text-left font-medium ">
+              Kolaborasi
+            </h4>
+            <p class="text-sm text-black text-left font-normal mb-4">
+              Lorem ipsum dolor sit amet 
             </p>
           </div>
         </div>
       </div>
+      </div>
+    </article>
+
+    <article class="main-container">
+      <div class="btn-heading flex  justify-center mb-8 gap-4">
+          <button type="button" class="bg-white w-1/6 rounded-xl text-navy-prim p-2 flex items-center justify-center gap-2 hover:bg-navy-prim hover:bg-opacity-70 border border-solid border-navy-prim">
+            <img src="src\assets\img\icon\left-arrow.svg" alt="Icon" class="h-7 pr-2 " />  
+            <p class="font-semibold font-poppins">Back Home</p>
+          </button>
+          <button type="button" class="bg-navy-prim w-1/6 rounded-xl text-white p-2 flex items-center justify-center gap-2 hover:bg-gray hover:bg-opacity-60">
+            <p class="font-semibold font-poppins">Join Us</p>
+              <img src="src\assets\img\icon\right-arrow.svg" alt="Icon" class="h-7 pl-2" />
+          </button>
+        </div>
     </article>
   </section>
+
 </template>
 
 <style scoped>

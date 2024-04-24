@@ -3576,6 +3576,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"slick-carousel@npm:^1.8.1":
+  version: 1.8.1
+  resolution: "slick-carousel@npm:1.8.1"
+  peerDependencies:
+    jquery: ">=1.8.0"
+  checksum: acaad391e4d8bc1c7fdb8d361faa1f1d60829b31d618b54bc38c0550a59b26de36537e0ab4bc0364176ec11d1a61d0cf11e99d8d5b1285d656673c9a1a719257
+  languageName: node
+  linkType: hard
+
 "smart-buffer@npm:^4.2.0":
   version: 4.2.0
   resolution: "smart-buffer@npm:4.2.0"
@@ -3668,6 +3677,7 @@ __metadata:
     vite: ^2.9.1
     vue: ^3.2.31
     vue-router: ^4.0.14
+    vue-slick: ^1.2.0
     vue3-carousel: ^0.3.1
   languageName: unknown
   linkType: soft
@@ -4019,6 +4029,17 @@ __metadata:
   peerDependencies:
     vue: ^3.2.0
   checksum: 694f6a85f82c11321ecbbb181db9b1a63fe99f781f33feab56c6ed1924370553b9d4325a9bdc1fbd3bfacb4cea12ef37cee77bc91974c1c6314e07fe8193941b
+  languageName: node
+  linkType: hard
+
+"vue-slick@npm:^1.2.0":
+  version: 1.2.0
+  resolution: "vue-slick@npm:1.2.0"
+  dependencies:
+    slick-carousel: ^1.8.1
+  peerDependencies:
+    jquery: "*"
+  checksum: 3413162305d0aabda7521a367b685e88f5e3c890af7d31987000e32a62c6680ec2ef08b503373b1ba3dc93b1aa849caa8b40ab259dd123c9c9d2c3a04487dee4
   languageName: node
   linkType: hard
 
