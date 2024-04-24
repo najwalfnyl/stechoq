@@ -25,7 +25,7 @@ const img = assetsImg('people/soldering.png');
 <template>
   <div class="full-box w-full relative" :style="{ 'background-image': 'url(src/assets/img/people/stechoq1.png)' }">
     <div class="text-center text-white main-container px-40">
-      <h1 class=" font-bold text-5xl font-poppins">Stechoq Academy</h1>
+      <h1 class=" font-bold text-5xl mb-2 font-poppins">Stechoq Academy</h1>
       <h2 class=" font-medium text-xl font-poppins">merupakan platform belajar online gratis yang dikembangkan oleh Stechoq Robotika Indonesia. 
         Stechoq Academy hadir untuk menjawab kebutuhan zaman dengan mengembangkan kurikulum pendidikan berbasis industri.</h2>
     </div>
@@ -40,7 +40,7 @@ const img = assetsImg('people/soldering.png');
             Kurikulum Berbasis Industri
         </ul>
       </div>
-      <div class=" mx-10 px-10">
+      <div class=" mx-10 px-10 mb-40 pb-4">
         <ul class=" font-poppins text-navy-prim  text-lg font-bold my-2 pt-8">
           mentor bersama ahli mengembangkan kurikulum bersama agar kompetensi yang 
           dipelajari dapat diterapkan langsung ke dalam dunia Industri
@@ -55,6 +55,14 @@ const img = assetsImg('people/soldering.png');
     <section id="benefit">
     <article style="background-color: #1F336D;">
     <article class="main-container max-w py-8">
+      <div class="main-container mt-[-200px] w-5/6 mb-8 overflow-hidden">
+          <iframe class="w-full h-[350px]"
+          style="border-radius: 35px;"
+              src="https://www.youtube.com/embed/w_1ZT9Be_qc?"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+          ></iframe>
+      </div>
       <div class="text-center text-white main-container ">
         <h1 class=" font-bold text-4xl font-poppins">Benefit Our Program</h1>
         <h2 class=" font-medium text-lg font-poppins px-0  xl:mx-60 lg:mx-40 md:mx-20 sm:mx-10 mt-4">mengembangkan kemampuan kalian dengan kurikulum yang telah disusun secara terstruktur</h2>
