@@ -5,7 +5,7 @@ import CarouselComp from '@/components/partial/CarouselComp.vue';
 import TestimonialSliderComp from '@/components/partial/TestimonialSliderComp.vue';
 
 useHead({
-  title: `Kampus Merdeka | STECHOQ`,
+  title: `Digital Manufacturing | STECHOQ`,
   meta: [
     {
       name: `description`,

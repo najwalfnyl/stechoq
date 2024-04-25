@@ -41,6 +41,11 @@ const routes = [
     name: 'dmanufacture',
     component: () => import('@/views/DigitalManufacture.vue'),
   },
+  {
+    path: '/contact-sales',
+    name: 'contact sales',
+    component: () => import('@/views/ContactSales.vue'),
+  },
 
 ];
 
