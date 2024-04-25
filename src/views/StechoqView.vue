@@ -24,9 +24,9 @@ const img = assetsImg('people/soldering.png');
 
 <template>
   <div class="full-box w-full relative" :style="{ 'background-image': 'url(src/assets/img/people/stechoq1.png)' }">
-    <div class="text-center text-white main-container px-40">
+    <div class="text-center text-white main-container xl:px-40 md:px-20 sm:px-10">
       <h1 class=" font-bold text-5xl mb-2 font-poppins">Stechoq Academy</h1>
-      <h2 class=" font-medium text-xl font-poppins">merupakan platform belajar online gratis yang dikembangkan oleh Stechoq Robotika Indonesia. 
+      <h2 class=" font-medium text-xl  font-poppins">merupakan platform belajar online gratis yang dikembangkan oleh Stechoq Robotika Indonesia. 
         Stechoq Academy hadir untuk menjawab kebutuhan zaman dengan mengembangkan kurikulum pendidikan berbasis industri.</h2>
     </div>
   </div>
@@ -40,7 +40,7 @@ const img = assetsImg('people/soldering.png');
             Kurikulum Berbasis Industri
         </ul>
       </div>
-      <div class=" mx-10 px-10 mb-40 pb-4">
+      <div class=" xl:mx-10 sm:mx-6 px-10 mb-40 pb-4">
         <ul class=" font-poppins text-navy-prim  text-lg font-bold my-2 pt-8">
           mentor bersama ahli mengembangkan kurikulum bersama agar kompetensi yang 
           dipelajari dapat diterapkan langsung ke dalam dunia Industri
@@ -58,7 +58,7 @@ const img = assetsImg('people/soldering.png');
       <div class="main-container mt-[-200px] w-5/6 mb-8 overflow-hidden">
           <iframe class="w-full h-[350px]"
           style="border-radius: 35px;"
-              src="https://www.youtube.com/embed/w_1ZT9Be_qc?"
+              src="https://www.youtube.com/embed/Kxdw16gxYWk?si=mfSYPYLVRMr8djTl"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen
           ></iframe>
@@ -68,37 +68,41 @@ const img = assetsImg('people/soldering.png');
         <h2 class=" font-medium text-lg font-poppins px-0  xl:mx-60 lg:mx-40 md:mx-20 sm:mx-10 mt-4">mengembangkan kemampuan kalian dengan kurikulum yang telah disusun secara terstruktur</h2>
       </div>
       <div id="content" class="my-8">
-  <div id="what-you-get">
-    <div class="flex justify-center items-center my-8 px-6 gap-10">
-      <div class="w-1/3 rounded-xl py-8 px-5" :style="{ 'background-image': 'url(src/assets/img/people/mentoring.png)' }" style="height: 190px;">
-        <h4 class="text-2xl text-center text-white font-medium mb-6">
-          Sesi Mentoring
-        </h4>
-        <p class="text-lg text-white font-normal">
-          membahas tiap problem beserta penyelesaiannya dalam pengerjaan projek 
-        </p>
+        <div id="what-you-get">
+          <div class="flex justify-center items-center px-6 gap-10">
+            <div  class="content-box  rounded-xl" :style="{ 'background-image': 'url(src/assets/img/people/mentoring.png)' }">
+              <div id="content" class="m-2 text-white text-center">
+              <h4 class="xl:text-2xl lg:text-xl md:text-lg sm:text-sm font-medium mb-4">
+                Sesi Mentoring
+              </h4>
+              <p class="xl:text-lg sm:text-sm font-normal">
+                membahas tiap problem beserta penyelesaiannya dalam pengerjaan projek 
+              </p>
+            </div>
+            </div>
+            <div  class="content-box rounded-xl" :style="{ 'background-image': 'url(src/assets/img/people/industri.png)' }">
+              <div class="m-2 text-center text-white ">
+              <h4 class="xl:text-2xl lg:text-xl md:text-lg sm:text-sm font-medium mb-4">
+                Sesi Mentoring
+              </h4>
+              <p class="xl:text-lg  sm:text-sm font-normal">
+                membahas tiap problem beserta penyelesaiannya dalam pengerjaan projek 
+              </p>
+            </div>
+            </div>
+            <div class="content-box rounded-xl" :style="{ 'background-image': 'url(src/assets/img/people/kolaborasi.png)' }">
+              <div class="m-2 text-center text-white">
+              <h4 class="xl:text-2xl lg:text-xl md:text-lg sm:text-sm font-medium mb-4">
+                Sesi Mentoring
+              </h4>
+              <p class="xl:text-lg sm:text-sm font-normal ">
+                membahas tiap problem beserta penyelesaiannya dalam pengerjaan projek 
+              </p>
+            </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="w-1/3 rounded-xl py-8 px-8" :style="{ 'background-image': 'url(src/assets/img/people/industri.png)' }" style="height: 240px;">
-        <h4 class="text-2xl text-white text-center font-medium mb-6">
-          Mengerjakan project berskala industri
-        </h4>
-        <p class="text-lg text-white font-normal">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Corrupti,
-        </p>
-      </div>
-      <div class="w-1/3 rounded-xl py-8 px-5" :style="{ 'background-image': 'url(src/assets/img/people/kolaborasi.png)' }" style="height: 190px;">
-        <h4 class="text-2xl text-white text-center font-medium mb-6">
-          Kolaborasi
-        </h4>
-        <p class="text-lg text-white font-normal">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Corrupti, 
-        </p>
-      </div>
-    </div>
-  </div>
-</div>
     </article>
   </article>
   </section>
@@ -199,16 +203,16 @@ const img = assetsImg('people/soldering.png');
     </article>
 
     <article class="main-container">
-      <div class="btn-heading flex  justify-center mb-8 gap-4">
-          <button type="button" class="bg-white w-1/6 rounded-xl text-navy-prim p-2 flex items-center justify-center gap-2 hover:bg-navy-prim hover:bg-opacity-70 border border-solid border-navy-prim">
-            <img src="src\assets\img\icon\left-arrow.svg" alt="Icon" class="h-7 pr-2 " />  
-            <p class="font-semibold font-poppins">Back Home</p>
-          </button>
-          <button type="button" class="bg-navy-prim w-1/6 rounded-xl text-white p-2 flex items-center justify-center gap-2 hover:bg-gray hover:bg-opacity-60">
-            <p class="font-semibold font-poppins">Join Us</p>
-              <img src="src\assets\img\icon\right-arrow.svg" alt="Icon" class="h-7 pl-2" />
-          </button>
-        </div>
+      <div class="btn-heading flex justify-center mb-8 gap-4">
+        <button type="button" class="bg-white w-1/6 rounded-xl text-navy-prim p-2 flex items-center justify-center gap-2 hover:bg-navy-prim hover:bg-opacity-70 border border-solid border-navy-prim">
+          <img src="src\assets\img\icon\left-arrow.svg" alt="Icon" class="h-7 pr-2 hidden md:block" />  
+          <p class="font-semibold sm:font-regular font-poppins">Back Home</p>
+        </button>
+        <button type="button" class="bg-navy-prim w-1/6 rounded-xl text-white p-2 flex items-center justify-center gap-2 hover:bg-gray hover:bg-opacity-60">
+          <p class="font-semibold sm:font-regular font-poppins">Join Us</p>
+          <img src="src\assets\img\icon\right-arrow.svg" alt="Icon" class="h-7 pl-2 hidden md:block" />
+        </button>
+      </div>
     </article>
   </section>
 
@@ -226,5 +230,13 @@ const img = assetsImg('people/soldering.png');
   align-items: center;
 }
 
+.content-box {
+  height: 190px;
+  width:full; 
+}
 
+.content-box:hover {
+  height: 220px; 
+  width: 1/2;
+}
 </style>

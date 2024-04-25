@@ -38,7 +38,7 @@ const year = d.getFullYear();
               Sidoarum Blok II No.A17, <br>
               Kramat, Sidoarum, Godean, <br>
               Sleman Regency, Special <br>
-              Region of Yogyakarta 55564</a>
+              Region of Yogyakarta 55564</a>
           </contact>
         </div>
       </section>

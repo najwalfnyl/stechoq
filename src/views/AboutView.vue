@@ -68,7 +68,6 @@ onMounted(() => {
       </div>
     </article>
 
-    <!-- Gambar CEO -->
     <article class="main-container py-8 max-w grid md:grid-cols-2 md:gap-8">
       <div class="flex order-last md:order-first px-24 mx-8">
         <div class="image-with-text ">
@@ -124,7 +123,7 @@ onMounted(() => {
           </ul>
         </div>
       </article>
-    </article> -->
+    </article> 
   </section>
 
   <section id="awards" class="my-8 py-8">

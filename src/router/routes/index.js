@@ -36,6 +36,12 @@ const routes = [
     name: 'news',
     component: () => import('@/views/NewsView.vue'),
   },
+  {
+    path: '/digital-manufacturing',
+    name: 'dmanufacture',
+    component: () => import('@/views/DigitalManufacture.vue'),
+  },
+
 ];
 
 export default routes;

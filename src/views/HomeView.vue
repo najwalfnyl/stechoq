@@ -82,7 +82,7 @@ const homelists = useHomeStore();
   </section>
   <section id="client" class="h-580 my-10" >
     <div>
-      <h3 class="font-bold text-6xl text-center text-navy-prim mb-10">
+      <h3 class="font-bold text-6xl  text-center text-navy-prim mb-10">
         Our<br>
         Clients
       </h3>

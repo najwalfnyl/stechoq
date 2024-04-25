@@ -26,15 +26,16 @@ useHead({
         </div>
         </div>
         <div class="information" style="flex: 1 1 auto; max-width: 25%;">
-          <div class="text-lg font-light text-navy-prim mb-3 mt-4">
-              <img src="src\assets\img\icon\phone.svg" alt="Icon" style="display: inline-block; vertical-align: middle; margin-right: 10px; width: 25px; height: 25px;"/> 
-              (0274) 282 9384
-          </div>
-          <div class="text-lg font-light text-navy-prim mb-5">
-            <img src="src\assets\img\icon\mail.svg" alt="Icon" style="display: inline-block; vertical-align: middle; margin-right: 10px; width: 25px; height: 25px;"/> 
-              info@stechoq.com
-          </div>
-        </div>
+  <div class="text-lg font-light text-navy-prim mb-3 mt-4 flex items-center">
+    <img src="src\assets\img\icon\phone.svg" alt="Icon" style="width: 25px; height: 25px; margin-right: 10px;" /> 
+    <span>(0274) 282 9384</span>
+  </div>
+  <div class="text-lg font-light text-navy-prim mb-5 flex items-center">
+    <img src="src\assets\img\icon\mail.svg" alt="Icon" style="width: 25px; height: 25px; margin-right: 10px;" /> 
+    <span>info@stechoq.com lorem ipsum dolor sit amet shsdjdnd dhdhdh</span>
+  </div>
+</div>
+
     </div>
 
       <div class="grid grid-cols-2 gap-5">
