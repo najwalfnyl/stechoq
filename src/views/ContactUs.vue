@@ -20,6 +20,8 @@ const email = ref('');
 const phone = ref('');
 const message = ref('');
 
+const showAlert= ref(false);
+
 async function submitForm() {
   try {
     const response = await axios.post('http://127.0.0.1:8000/api/contactUs', {
@@ -29,7 +31,22 @@ async function submitForm() {
       phone: phone.value,
       message: message.value
     });
+
+    // clear form
+    name.value = '';
+    company.value = '';
+    email.value = '';
+    phone.value = '';
+    message.value = '';
+
+    // display alert
+    showAlert.value = true;
+    setTimeout(() => {
+      showAlert.value = false;
+    }, 3000);
+
     console.log('Respon dari server:', response.data);
+    
   } catch (error) {
     console.error('Error saat mengirim formulir:', error);
   }
@@ -40,6 +57,11 @@ async function submitForm() {
 <template>
   <div class="container mx-auto mt-10">
     <form class="max-w-screen-lg mx-auto bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 w-full"> 
+       <!-- alert -->
+       <div v-if="showAlert" class="p-4 mb-4 text-sm text-green-800 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400" role="alert">
+        <span class="font-medium">Successfully sent message</span>
+      </div>
+
       <div class="flex-container" style="display: flex; flex-wrap: wrap; justify-content: space-between;">
         <div class="contact" style="flex: 1 1 auto; max-width: 65%;">
         <div class="text-4xl font-bold text-black my-2">

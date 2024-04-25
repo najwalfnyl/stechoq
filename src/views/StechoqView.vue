@@ -1,8 +1,9 @@
 <script setup>
-import { assetsImg } from '@/utils/helper';
+// import { assetsImg } from '@/utils/helper';
 import { useHead } from '@vueuse/head';
-import CarouselComp from '@/components/partial/CarouselComp.vue';
-import TestimonialSliderComp from '@/components/partial/TestimonialSliderComp.vue';
+import { useRouter } from 'vue-router';
+// import CarouselComp from '@/components/partial/CarouselComp.vue';
+// import TestimonialSliderComp from '@/components/partial/TestimonialSliderComp.vue';
 
 useHead({
   title: `Kampus Merdeka | STECHOQ`,
@@ -14,12 +15,23 @@ useHead({
   ],
 });
 
-const mbkm = [
-  assetsImg('product/mps.png'),
-  assetsImg('product/mbkm.png'),
-];
+const navigationToAcademy = () => {
+  window.open('https://academy.stechoq.com/');
+}
 
-const img = assetsImg('people/soldering.png');
+const router = useRouter();
+const backHome = () => {
+  router.push({
+    name : 'home'
+  });
+}
+
+// const mbkm = [
+//   assetsImg('product/mps.png'),
+//   assetsImg('product/mbkm.png'),
+// ];
+
+// const img = assetsImg('people/soldering.png');
 </script>
 
 <template>
@@ -200,11 +212,11 @@ const img = assetsImg('people/soldering.png');
 
     <article class="main-container">
       <div class="btn-heading flex  justify-center mb-8 gap-4">
-          <button type="button" class="bg-white w-1/6 rounded-xl text-navy-prim p-2 flex items-center justify-center gap-2 hover:bg-navy-prim hover:bg-opacity-70 border border-solid border-navy-prim">
+          <button type="button" class="bg-white w-1/6 rounded-xl text-navy-prim p-2 flex items-center justify-center gap-2 hover:bg-navy-prim hover:bg-opacity-70 border border-solid border-navy-prim" @click="backHome">
             <img src="src\assets\img\icon\left-arrow.svg" alt="Icon" class="h-7 pr-2 " />  
             <p class="font-semibold font-poppins">Back Home</p>
           </button>
-          <button type="button" class="bg-navy-prim w-1/6 rounded-xl text-white p-2 flex items-center justify-center gap-2 hover:bg-gray hover:bg-opacity-60">
+          <button type="button" class="bg-navy-prim w-1/6 rounded-xl text-white p-2 flex items-center justify-center gap-2 hover:bg-gray hover:bg-opacity-60" @click="navigationToAcademy">
             <p class="font-semibold font-poppins">Join Us</p>
               <img src="src\assets\img\icon\right-arrow.svg" alt="Icon" class="h-7 pl-2" />
           </button>

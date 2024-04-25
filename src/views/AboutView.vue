@@ -33,33 +33,33 @@ async function fetchAboutUs () {
 
 onMounted(fetchAboutUs);
 
-onMounted(() => {
-  $('.center').slick({
-    centerMode: true,
-    centerPadding: '60px',
-    slidesToShow: 3,
-    responsive: [
-      {
-        breakpoint: 768,
-        settings: {
-          arrows: false,
-          centerMode: true,
-          centerPadding: '40px',
-          slidesToShow: 3
-        }
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          arrows: false,
-          centerMode: true,
-          centerPadding: '40px',
-          slidesToShow: 1
-        }
-      }
-    ]
-  });
-});
+// onMounted(() => {
+//   $('.center').slick({
+//     centerMode: true,
+//     centerPadding: '60px',
+//     slidesToShow: 3,
+//     responsive: [
+//       {
+//         breakpoint: 768,
+//         settings: {
+//           arrows: false,
+//           centerMode: true,
+//           centerPadding: '40px',
+//           slidesToShow: 3
+//         }
+//       },
+//       {
+//         breakpoint: 480,
+//         settings: {
+//           arrows: false,
+//           centerMode: true,
+//           centerPadding: '40px',
+//           slidesToShow: 1
+//         }
+//       }
+//     ]
+//   });
+// });
 </script>
 
 <template>
@@ -80,10 +80,17 @@ onMounted(() => {
       </div>
     </article>
 
-    <!-- Gambar CEO -->
+    <!-- Image CEO -->
     <article class="main-container py-8 max-w grid md:grid-cols-2 md:gap-8">
-      <div class="flex order-last md:order-first px-24 mx-8">
+      <!-- <div class="flex order-last md:order-first px-24 mx-8">
         <img  v-for="(image, index) in about.ceo_photo" :key="index" :src="url + image" alt="Image" />
+      </div> -->
+      <div class="flex order-last md:order-first px-24 mx-8">
+        <div class="image-with-text ">
+          <img  v-for="(image, index) in about.ceo_photo" :key="index" :src="url + image" alt="Image" />
+          <h1 class="mt-4 text-xl text-center font-poppins font-bold">{{ about.ceo_name}}</h1>
+          <h1 class=" text-lg text-center font-poppins font-normal">CEO Stechoq Robotika Indonesia</h1>
+        </div>
       </div>
       <div>
         <div class="flex flex-row items-center gap-4">
@@ -96,7 +103,7 @@ onMounted(() => {
     </article>
 
      <article style="background-color: #1F336D;">
-      <article class="main-container">
+      <!-- <article class="main-container">
         <div> Image Carousel </div>
         <div class="d-flex item-center">
           <img :src="imgCeo" alt="" />
@@ -106,10 +113,10 @@ onMounted(() => {
           <img :src="imgCeo" alt="" />
           <img :src="imgCeo" alt="" />
         </div>    
-      </article>
+      </article> -->
       
       <article class="main-container max-w py-8 grid md:grid-cols-2 md:gap-10">
-        <div>
+        <!-- <div>
           <div class="flex flex-row items-center gap-8">
             <h1 class="text-xl font-bold text-white" style="white-space: nowrap;"> Our Vision</h1>
             <div class="w-full border border-solid border-white"></div>
@@ -118,11 +125,10 @@ onMounted(() => {
             Become a leading research & manfucature company that committed at developing appropriate technology and producing global quality products innovation needed to meet the needs of the domestic component leveltowards an advance Indonesia
             Become a leading company that committed at improving the quality of human resources and developing MSMEs in order to create a more qualified and highly competitive Indonesian society to encourage the realization of an advanced Indonesia.
           </ul>
-        </div>
+        </div> -->
         <ul class="list-disc pl-6 text-white font-light text-lg my-2">
           {{ about.vision }}
         </ul>
-      </div>
       <div>
       <div class="flex flex-row items-center gap-8">
         <h1 class="text-xl text-white font-bold" style="white-space: nowrap;"> Our Mission</h1>

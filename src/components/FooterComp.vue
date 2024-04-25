@@ -2,6 +2,12 @@
 import axios from 'axios';
 import { ref, onMounted } from 'vue';
 
+
+// icon
+const location = 'src/assets/img/icon/icon_location.svg';
+const email = 'src/assets/img/icon/icon_email.svg';
+const phone = 'src/assets/img/icon/icon_phone.svg';
+
 // get the social media icon from the name of the api response
 function getIconSosmed(name) {
   switch(name.toUpperCase()) {
@@ -45,23 +51,25 @@ onMounted(fetchContactInformation);
     <div class="main-container">
       <section id="bottom-nav">
         <div id="bottom-menu">
-          <div v-for="(contact, index) in contactInfo" :key="index" class="contact-container">
-            <div id="bottom-about"> 
+          <div v-for="(contact, index) in contactInfo" :key="index" class="contact-container" style="display: flex; flex-wrap: wrap; justify-content: space-between;">
+            <div id="bottom-about" style="flex: 1 1 auto; max-width: 50%;">
               <h3>PT Stechoq Robotika Indonesia</h3>
               <address>
                 Research, Develop, & Build Robotics for medical, educational, and industrial purposes
               </address>
-              <div class="socmed">
+              <div class="socmed" >
                 <a v-for="(value, key) in contact.social_media" :href="value" :key="key" target="_blank">
                   <img :src="getIconSosmed(key)" :alt="key">
                 </a>
               </div>              
             </div>
-            <div class="contact-info">
-              <h3>Contact</h3>
-              <a>{{ contact.phone }}</a>
-              <a>{{ contact.email }}</a>
-              <a>{{ contact.address }}</a>
+            <div class="contact-info" style="flex: 1 1 auto; max-width: 25%;">
+              <h3 >Contact</h3>
+              <!-- <a>{{ contact.phone }}</a>
+              <a>{{ contact.email }}</a> -->
+              <a class="flex items-center"><img :src="phone" style="display: inline-block; vertical-align: middle;">{{ contact.phone }}</a>
+              <a class="flex items-center"><img :src="email" style="display: inline-block; vertical-align: middle;">{{ contact.email }}</a>
+              <a class="flex items-center"><img :src="location" style="display: inline-block; vertical-align: middle;">{{ contact.address }}</a>
             </div>
           </div>
         </div>
@@ -69,13 +77,3 @@ onMounted(fetchContactInformation);
     </div>
   </footer>
 </template>
-
-<style scoped>
-.contact-container {
-  display: flex;
-}
-
-.contact-info {
-  margin-left: auto; 
-}
-</style>

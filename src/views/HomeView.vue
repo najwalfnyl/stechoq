@@ -35,7 +35,7 @@ onMounted (() => {
 const router = useRouter();
 const NavigationTo = ($id) => {
     if($id === 'Stechoq Academy') {
-      router.push('/kampus-merdeka')
+      router.push('/stechoq-academy')
     }
 }
 

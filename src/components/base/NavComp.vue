@@ -27,17 +27,14 @@ const navs = [
 
 const router = useRouter();
 const openContact = () => {
-  console.log(router);
   router.push({name : 'contact-us'});  
 };
 
-
+// open dropdown languange
 const isOpen = ref(false);
-
 const openDropdown = () => {
   isOpen.value = !isOpen.value;
 };
-
 // Close the dropdown if the user clicks outside of it
 window.addEventListener('click', (event) => {
   if (!event.target.closest('.dropdown')) {
