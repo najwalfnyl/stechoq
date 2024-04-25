@@ -7,22 +7,22 @@ const useProductStore = defineStore({
   state: () => ({
     products: [
       {
-        id: 'Digital-Manufactuing',
-        name: 'Digital Manufacturing',
+        id: 'Digital-Control-System ',
+        name: 'Digital Control System',
         img: assetsImg('product/dm.png'),
-        sub: 'Lorem ipsum dolor sit amet',
+        sub: 'Learn More',
       },
       {
-        id: 'Medical-Device',
-        name: 'High Tech Medical Device',
+        id: 'Guided-Vehicle',
+        name: 'Automated Guided Vehicle',
         img: assetsImg('product/dm.png'),
-        sub: 'Lorem ipsum dolor sit amet',
+        sub: 'Learn More',
       },
       {
-        id: 'Stechoq-Academy',
-        name: 'Stechoq Academy',
+        id: 'Seal-Insert-Machine',
+        name: 'Automated Seal Insert Machine',
         img: assetsImg('product/dm.png'),
-        sub: 'Lorem ipsum dolor sit amet',
+        sub: 'Learn More',
       },
     ],
   }),

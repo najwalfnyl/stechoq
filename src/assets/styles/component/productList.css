@@ -9,7 +9,7 @@
       .product-image {
         @apply object-fill overflow-hidden w-full h-60 bg-gradient-to-t from-neutral-700 via-neutral-500 to-neutral-400;
         background-size: cover; 
-        border-radius: 18px;
+        border-radius: 1.125rem;
       }
 
       .product-title {
@@ -24,16 +24,14 @@
     }
 
     .btn-heading {
-      font-size: 16px;
+      font-size: 1rem; 
     }
   
       .btn-heading button {
         font-family: 'Poppins', sans-serif; 
-        height: 51px;
-        width: 110px;
-        border-radius: 2px;
+        height: 3.1875rem; 
+        width: 7.1875rem; 
+        border-radius: 0.125rem; 
       }
   }
-
-
 }

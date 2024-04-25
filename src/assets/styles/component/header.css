@@ -95,7 +95,7 @@
   button {
     @apply bg-navy-sec text-white p-2;
     @apply hover:bg-navy-sec;
-    height: 58px;
+    height: 50px;
     width: 150px;
     border-radius: 29px;
   }

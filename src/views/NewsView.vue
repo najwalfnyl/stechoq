@@ -40,12 +40,27 @@ async function submitForm() {
 <template>
   <div class="container mx-auto mt-10">
     <form class="max-w-screen-lg mx-auto bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 w-full"> 
-    <div class="text-4xl font-bold text-navy-prim mb-1">
-    Contact Us
+      <div class="flex-container" style="display: flex; flex-wrap: wrap; justify-content: space-between;">
+        <div class="contact" style="flex: 1 1 auto; max-width: 65%;">
+        <div class="text-4xl font-bold text-black my-2">
+            Contact Us
+        </div>
+        <div class="text-lg font-light text-black mb-5">
+            If you have any question or need more information, you can contact us at
+        </div>
+        </div>
+        <div class="information" style="flex: 1 1 auto; max-width: 25%;">
+          <div class="text-lg font-light text-navy-prim mb-3 mt-4">
+              <img src="src\assets\img\icon\phone.svg" alt="Icon" style="display: inline-block; vertical-align: middle; margin-right: 10px; width: 25px; height: 25px;"/> 
+              (0274) 282 9384
+          </div>
+          <div class="text-lg font-light text-navy-prim mb-5">
+            <img src="src\assets\img\icon\mail.svg" alt="Icon" style="display: inline-block; vertical-align: middle; margin-right: 10px; width: 25px; height: 25px;"/> 
+              info@stechoq.com
+          </div>
+        </div>
     </div>
-    <div class="text-lg font-light text-navy-prim mb-5">
-      If you have any question or need more information, you can contact us at
-    </div>
+
       <div class="grid grid-cols-2 gap-5">
         <div class="mb-4">
           <label class="block text-gray-700 text-sm font-bold mb-2" for="name">
@@ -60,7 +75,7 @@ async function submitForm() {
             Company
           </label>
           <input v-model="company" 
-            class="shadow-none appearance-none border-none bg-transparent w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="company" type="text" placeholder="Masukkan alamat perusahaan" 
+            class="shadow-none appearance-none border-none bg-transparent w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="company" type="text" placeholder="Masukkan nama perusahaan" 
             style="border-bottom: 2px solid #4A5568;">
         </div>
         <div class="mb-4">
@@ -68,7 +83,7 @@ async function submitForm() {
             Email
           </label>
           <input v-model="email" 
-            class="shadow-none appearance-none border-none bg-transparent w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="email" type="tel" placeholder="Masukkan nomor telepon"
+            class="shadow-none appearance-none border-none bg-transparent w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="email" type="tel" placeholder="Masukkan alamat email"
             style="border-bottom: 2px solid #4A5568;">
         </div>
         <div class="mb-4">
@@ -76,7 +91,7 @@ async function submitForm() {
             Phone Number
           </label>
           <input v-model="phone" 
-            class="shadow-none appearance-none border-none bg-transparent w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="phone" type="text" placeholder="Masukkan nama perusahaan"
+            class="shadow-none appearance-none border-none bg-transparent w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="phone" type="text" placeholder="Masukkan nomor telepon"
             style="border-bottom: 2px solid #4A5568;">
         </div>
       </div>

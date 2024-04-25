@@ -33,6 +33,33 @@ async function fetchAboutUs () {
 
 onMounted(fetchAboutUs);
 
+onMounted(() => {
+  $('.center').slick({
+    centerMode: true,
+    centerPadding: '60px',
+    slidesToShow: 3,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          arrows: false,
+          centerMode: true,
+          centerPadding: '40px',
+          slidesToShow: 3
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          arrows: false,
+          centerMode: true,
+          centerPadding: '40px',
+          slidesToShow: 1
+        }
+      }
+    ]
+  });
+});
 </script>
 
 <template>
@@ -40,8 +67,8 @@ onMounted(fetchAboutUs);
     <div v-for="(about,index) in aboutUs" :key="index">
     <article class="main-container max-w  py-8 grid md:grid-cols-2 md:gap-4">
       <div class="w-3/4 md:w-auto"> 
-        <div class="flex flex-row items-center gap-8">
-          <div class="w-full border border-solid border-navy-prim"></div>
+        <div class="flex flex-row items-center gap-6">
+          <div class="w-[40px] border border-solid border-navy-prim"></div>
           <h1 class="text-sm font-bold" style="white-space: nowrap;"> ABOUT US</h1>
         </div>
         <ul class="list-disc pl-6 text-2xl font-bold my-2 py-8">
@@ -52,6 +79,8 @@ onMounted(fetchAboutUs);
         <img :src="imgProduct" alt="" style="border-radius: 12px;" />
       </div>
     </article>
+
+    <!-- Gambar CEO -->
     <article class="main-container py-8 max-w grid md:grid-cols-2 md:gap-8">
       <div class="flex order-last md:order-first px-24 mx-8">
         <img  v-for="(image, index) in about.ceo_photo" :key="index" :src="url + image" alt="Image" />
@@ -65,12 +94,30 @@ onMounted(fetchAboutUs);
          {{ about.ceo_talk_text }}</ul>
       </div>
     </article>
-    <article style="background-color: #1F336D;">
-    <article class="main-container max-w py-8 grid md:grid-cols-2 md:gap-10">
-      <div>
-        <div class="flex flex-row items-center gap-8">
-          <h1 class="text-xl font-bold text-white" style="white-space: nowrap;"> Our Vision</h1>
-          <div class="w-full border border-solid border-white"></div>
+
+     <article style="background-color: #1F336D;">
+      <article class="main-container">
+        <div> Image Carousel </div>
+        <div class="d-flex item-center">
+          <img :src="imgCeo" alt="" />
+          <img :src="imgCeo" alt="" />
+          <img :src="imgCeo" alt="" />
+          <img :src="imgCeo" alt="" />
+          <img :src="imgCeo" alt="" />
+          <img :src="imgCeo" alt="" />
+        </div>    
+      </article>
+      
+      <article class="main-container max-w py-8 grid md:grid-cols-2 md:gap-10">
+        <div>
+          <div class="flex flex-row items-center gap-8">
+            <h1 class="text-xl font-bold text-white" style="white-space: nowrap;"> Our Vision</h1>
+            <div class="w-full border border-solid border-white"></div>
+          </div>
+          <ul class="list-disc  text-white font-light text-lg my-2">
+            Become a leading research & manfucature company that committed at developing appropriate technology and producing global quality products innovation needed to meet the needs of the domestic component leveltowards an advance Indonesia
+            Become a leading company that committed at improving the quality of human resources and developing MSMEs in order to create a more qualified and highly competitive Indonesian society to encourage the realization of an advanced Indonesia.
+          </ul>
         </div>
         <ul class="list-disc pl-6 text-white font-light text-lg my-2">
           {{ about.vision }}
@@ -93,9 +140,9 @@ onMounted(fetchAboutUs);
   <section id="awards" class="my-8 py-8">
     <article class="main-container">
       <h3 class="text-3xl font-medium text-center my-4">Pencapaian & Penghargaan</h3>
-      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 justify-center gap-4 lg:gap-10">
+      <div class=" flex, flex-wrap, grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 justify-center a gap-4 lg:gap-10">
         <template v-for="(award, i) in awards.list" :key="i">
-          <div class="flex flex-col p-4">
+          <div class="flex flex-col p-4 justify-center">
             <img :src="award.img" alt="">
             <p class="text-center font-medium py-4">{{award.title}}</p>
           </div>

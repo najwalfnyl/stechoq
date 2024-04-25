@@ -76,7 +76,14 @@ onMounted(getClients);
         </button>
     </div>
   </heading-comp>
-  <section id="home-list" class="my-8 py-8">
+  <section>
+    <div class=" main-container flex flex-row items-center gap-6 mt-[-100px] ">
+      <h1 class="text-sm text-white font-poppins font-light" style="white-space: wrap;"> 
+        technology is bringing a massive wave of evolution on learning things on different ways</h1>
+          <div class="w-full border border-solid border-white"></div>
+    </div>
+  </section>
+  <section id="home-list" class="mb-8 mt-24 py-8">
     <div id="list-container" class="main-container">
       <template v-for="(item, i) in homeStore.list" :key="i">
         <article class="list-item">
