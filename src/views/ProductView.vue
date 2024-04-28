@@ -18,26 +18,26 @@ const products = useProductStore();
 
 <template>
   <div>
-      <h3 class="font-bold text-4xl text-center text-navy-prim mb-8 mt-10">
-        Featured Products
-      </h3>
-      <div class="flex justify-center">
-  <div class="w-20 border border-solid border-navy-prim"></div>
-</div>
+    <h3 class="font-bold text-4xl text-center text-navy-prim mb-8 mt-10">
+      Featured Products
+    </h3>
+    <div class="flex justify-center">
+      <div class="w-20 border border-solid border-navy-prim"></div>
     </div>
-    <div class="font-bold text-6xl text-center text-navy-prim mt-10">
-      Stechoq Academy
-    </div>
-    <div class="full-box main-container " :style="{ 'background-image': 'url(src/assets/img/product/stechoq.png)' }">
+  </div>
+  <div class="font-bold text-6xl text-center text-navy-prim mt-10">
+    Stechoq Academy
+  </div>
+  <div class="full-box main-container " :style="{ 'background-image': 'url(src/assets/img/product/stechoq.png)' }">
     <div class="text-center">
       <h1 class="text-white font-bold text-4xl">Learn More</h1>
     </div>
   </div>
   <div class="font-bold text-6xl text-center text-navy-prim mt-10">
-      Digital Manufacturing
-    </div>
-    <template v-if="$route.name === 'products'">
-    <section id="product-list" class="my-8 py-8">
+    Digital Manufacturing
+  </div>
+  <template v-if="$route.name === 'products'">
+    <section id="product-list" class="my-8 py-8 mx-20">
       <div id="product-container" class="main-container">
         <template v-for="(item, i) in products.list" :key="i">
           <router-link :to="{ name: 'productDetail', params: { id: item.id } }">
@@ -53,10 +53,10 @@ const products = useProductStore();
     </section>
   </template>
   <div class="font-bold text-6xl text-center text-navy-prim mt-10">
-      Robotics and Automations
-    </div>
-    <template v-if="$route.name === 'products'">
-    <section id="product-list" class="my-8 py-8">
+    Robotics and Automations
+  </div>
+  <template v-if="$route.name === 'products'">
+    <section id="product-list" class="my-8 py-8 mx-20">
       <div id="product-container" class="main-container">
         <template v-for="(item, i) in products.list" :key="i">
           <router-link :to="{ name: 'productDetail', params: { id: item.id } }">
@@ -83,6 +83,6 @@ const products = useProductStore();
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 20px; 
+  border-radius: 20px;
 }
 </style>

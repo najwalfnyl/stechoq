@@ -116,19 +116,15 @@ onMounted(fetchAboutUs);
       </article> -->
       
       <article class="main-container max-w py-8 grid md:grid-cols-2 md:gap-10">
-        <!-- <div>
+        <div>
           <div class="flex flex-row items-center gap-8">
             <h1 class="text-xl font-bold text-white" style="white-space: nowrap;"> Our Vision</h1>
             <div class="w-full border border-solid border-white"></div>
           </div>
-          <ul class="list-disc  text-white font-light text-lg my-2">
-            Become a leading research & manfucature company that committed at developing appropriate technology and producing global quality products innovation needed to meet the needs of the domestic component leveltowards an advance Indonesia
-            Become a leading company that committed at improving the quality of human resources and developing MSMEs in order to create a more qualified and highly competitive Indonesian society to encourage the realization of an advanced Indonesia.
+          <ul class="list-disc pl-6 text-white font-light text-lg my-2">
+            {{ about.vision }}
           </ul>
-        </div> -->
-        <ul class="list-disc pl-6 text-white font-light text-lg my-2">
-          {{ about.vision }}
-        </ul>
+        </div>
       <div>
       <div class="flex flex-row items-center gap-8">
         <h1 class="text-xl text-white font-bold" style="white-space: nowrap;"> Our Mission</h1>

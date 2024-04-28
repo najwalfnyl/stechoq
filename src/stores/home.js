@@ -36,7 +36,7 @@ const useHomeStore = defineStore({
       try {
         const respone = await axios.get('http://127.0.0.1:8000/api/categoryProduct');
         this.homelists = respone.data;
-        // console.log('Data Api: ',respone.data);
+        console.log('Data Api: ',respone.data);
 
       } catch (error) {
         console.log('error fetching data : ',error);

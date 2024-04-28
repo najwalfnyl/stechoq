@@ -22,34 +22,39 @@ const homeStore = useHomeStore();
 const fetchDataCategory = async () => {
   try {
     await homeStore.fetchCategoryProduct();
-    console.log('Data : ',homeStore.list);
+    // console.log('Data : ',homeStore.list);
   } catch (error) {
     console.error('Error fetching data:', error);
   }
 }
 
-onMounted (() => {
+onMounted(() => {
   fetchDataCategory();
 });
 
+
 const router = useRouter();
-const NavigationTo = ($id) => {
-    if($id === 'Stechoq Academy') {
-      router.push('/stechoq-academy')
-    }
+const NavigationTo = ($name) => {
+  if ($name === 'Stechoq Academy') {
+    router.push('/stechoq-academy')
+  } else {
+    // router.push('/digital-manufacturing')
+    router.push(`/product-category/${$name}`);
+  }
 }
+
 
 // get respone api client 
 const clientsItem = ref(null);
 const url = 'http://127.0.0.1:8000/storage/';
-async function getClients () {
+async function getClients() {
   try {
     const response = await axios.get('http://127.0.0.1:8000/api/client');
     clientsItem.value = response.data;
     console.log(response.data);
 
   } catch (error) {
-    console.log('error fetching data : ',error);
+    console.log('error fetching data : ', error);
   }
 }
 onMounted(getClients);
@@ -58,7 +63,7 @@ onMounted(getClients);
 
 <template>
   <heading-comp>
-    
+
     <template #title>
       <span class="company-name text-white">RnD Company</span> <br>
       <span class="subtitle text-white">From Idea to Mass Production</span>
@@ -67,51 +72,51 @@ onMounted(getClients);
       Berkarya untuk Bangsa
     </template>
     <div class="btn-heading">
-        <button type="button" class="bg-white text-black p-2 hover:bg-gray-200">
-            What we do?
-        </button>
-        <button type="button" class="bg-opacity-100 text-white p-2 flex items-center gap-2 hover:bg-gray-200 hover:bg-opacity-50" >
-          <img src="src\assets\img\icon\Play.svg" alt="Icon" class="h-5 w-5" />
-            Play Video
-        </button>
+      <button type="button" class="bg-white text-black p-2 hover:bg-gray-200">
+        What we do?
+      </button>
+      <button type="button"
+        class="bg-opacity-100 text-white p-2 flex items-center gap-2 hover:bg-gray-200 hover:bg-opacity-50">
+        <img src="src\assets\img\icon\Play.svg" alt="Icon" class="h-5 w-5" />
+        Play Video
+      </button>
     </div>
   </heading-comp>
   <section>
     <div class=" main-container flex flex-row items-center gap-6 mt-[-100px] ">
-      <h1 class="text-sm text-white font-poppins font-light" style="white-space: wrap;"> 
+      <h1 class="text-sm text-white font-poppins font-light" style="white-space: wrap;">
         technology is bringing a massive wave of evolution on learning things on different ways</h1>
-          <div class="w-full border border-solid border-white"></div>
+      <div class="w-full border border-solid border-white"></div>
     </div>
   </section>
   <section id="home-list" class="mb-8 mt-24 py-8">
     <div id="list-container" class="main-container">
       <template v-for="(item, i) in homeStore.list" :key="i">
         <article class="list-item">
-          <div class="list-image" :style="{ backgroundImage: `url(${item})` }">
+          <div class="list-image" :style="{ backgroundImage: `url(${url + item.thumbnail})` }">
             <div class="list-container">
-            <div class="list-title text-white font-bold text-md mt-2">{{ item.category_name }}</div>
-            <div class="list-sub text-wi text-sm">{{ item.short_description }}</div>
-            <div class="btn-heading ">
-                  <button type="button" class="bg-white text-black hover:bg-gray-200" @click="NavigationTo(item.category_name)">
-                      Learn More
-                  </button>
+              <div class="list-title text-white font-bold text-md mt-2">{{ item.category_name }}</div>
+              <div class="list-sub text-wi text-sm">{{ item.short_description }}</div>
+              <div class="btn-heading ">
+                <button type="button" class="bg-white text-black hover:bg-gray-200"
+                  @click="NavigationTo(item.category_name)">
+                  Learn More
+                </button>
               </div>
-              </div>
+            </div>
           </div>
         </article>
       </template>
     </div>
   </section>
-  <section id="client" class="h-580 my-10" >
+  <section id="client" class="h-580 my-10">
     <div>
-      <h3 class="font-bold text-6xl text-center text-navy-prim mb-10">
+      <h3 class="font-bold text-6xl  text-center text-navy-prim mb-10">
         Our<br>
         Clients
       </h3>
     </div>
-    <div
-      class="main-container grid grid-cols-6 grid-rows-4 md:gap-2 place-content-center text-center h-full"
-    >
+    <div class="main-container grid grid-cols-6 grid-rows-4 md:gap-2 place-content-center text-center h-full">
       <template v-for="(logoItem, i) in clientsItem" :key="i">
         <div class="flex align-middle"><img :src="url + logoItem.client_logo" /></div>
       </template>

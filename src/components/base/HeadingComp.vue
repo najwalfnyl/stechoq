@@ -23,7 +23,7 @@
 
 const playVideo = ()  => {
     console.log('Klik Video')
-    window.open('https://www.youtube.com/@STECHOQROBOTIKAINDONESIA','_blank');
+    window.open('https://www.youtube.com/watch?v=w_1ZT9Be_qc&t=31s','_blank');
 }
 
 </script>

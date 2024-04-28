@@ -31,7 +31,7 @@ const routes = [
     // name: 'eLearning',
     // component: () => import('@/views/LearningView.vue'),
     beforeEnter : () => {
-      window.location.href = 'https://academy.stechoq.com/'
+      window.open('https://academy.stechoq.com/');
     },
   },
   {
@@ -44,6 +44,17 @@ const routes = [
   //   name: 'contactus',
   //   component: () => import('@/views/ContactView.vue')
   // }
+  {
+    path: '/product-category/:category_name',
+    name: 'product-category',
+    component: () => import('@/views/DigitalManufacture.vue'),
+  },
+  {
+    path: '/contact-sales',
+    name: 'contact sales',
+    component: () => import('@/views/ContactSales.vue'),
+  },
+
 ];
 
 export default routes;

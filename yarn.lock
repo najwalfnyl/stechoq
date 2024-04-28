@@ -3755,6 +3755,7 @@ __metadata:
     tailwindcss: ^3.0.23
     vite: ^2.9.1
     vue: ^3.2.31
+    vue-motion: ^0.2.3
     vue-router: ^4.0.14
     vue-slick: ^1.2.0
     vue3-carousel: ^0.3.1
@@ -4097,6 +4098,15 @@ __metadata:
   peerDependencies:
     eslint: ">=6.0.0"
   checksum: 8cc751e9fc2bfba93664ad8945732ab1c97791f9123e703de8669b65670d1e01906d80436bf4932d7ee6fa6174ed4545e8abb059206c88f4bd71957ca6cf7ba8
+  languageName: node
+  linkType: hard
+
+"vue-motion@npm:^0.2.3":
+  version: 0.2.3
+  resolution: "vue-motion@npm:0.2.3"
+  peerDependencies:
+    vue: ^2.1.10
+  checksum: ec5cec7cd3a0ea857584b55567f11ebba906ad92437160a0bacfc17ee5f1800be012e9d71a832e8f48c715da33558e69c2e7b6466233b0f9a50284e801b5d463
   languageName: node
   linkType: hard
 
