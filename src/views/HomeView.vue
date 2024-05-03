@@ -107,6 +107,20 @@ onMounted(getClients);
           </div>
         </article>
       </template>
+      <article class="list-item">
+        <div class="list-image" :style="{ 'background-Image': `url(src/assets/img/stechoq-academy/stechoq.png)` }">
+          <div class="list-container">
+            <div class="list-title text-white font-bold text-md mt-2">stechoq Academy</div>
+            <div class="list-sub text-wi text-sm">Academy Stechoq</div>
+            <div class="btn-heading ">
+              <button type="button" class="bg-white text-black hover:bg-gray-200"
+                @click="NavigationTo('Stechoq Academy')">
+                Learn More
+              </button>
+            </div>
+          </div>
+        </div>
+      </article>
     </div>
   </section>
   <section id="client" class="h-580 my-10">

@@ -61,7 +61,7 @@ async function submitForm() {
        <div v-if="showAlert" class="p-4 mb-4 text-sm text-green-800 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400" role="alert">
         <span class="font-medium">Successfully sent message</span>
       </div>
-
+      <!--  -->
       <div class="flex-container" style="display: flex; flex-wrap: wrap; justify-content: space-between;">
         <div class="contact" style="flex: 1 1 auto; max-width: 65%;">
         <div class="text-4xl font-bold text-black my-2">
@@ -81,9 +81,7 @@ async function submitForm() {
     <span>info@stechoq.com lorem ipsum dolor sit amet shsdjdnd dhdhdh</span>
   </div>
 </div>
-
     </div>
-
       <div class="grid grid-cols-2 gap-5">
         <div class="mb-4">
           <label class="block text-gray-700 text-sm font-bold mb-2" for="name">
@@ -106,7 +104,7 @@ async function submitForm() {
             Email
           </label>
           <input v-model="email" 
-            class="shadow-none appearance-none border-none bg-transparent w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="email" type="tel" placeholder="Masukkan alamat email"
+            class="shadow-none appearance-none border-none bg-transparent w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="email" type="email" placeholder="Masukkan alamat email"
             style="border-bottom: 2px solid #4A5568;">
         </div>
         <div class="mb-4">

@@ -1,5 +1,5 @@
 #app {
-  @apply bg-slate-50;
+  @apply bg-white;
   @apply select-none !important;
 
   /* cyrillic-ext */
