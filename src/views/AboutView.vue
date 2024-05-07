@@ -160,7 +160,7 @@ onMounted(() => {
       <div class=" flex, flex-wrap, grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 justify-center a gap-4 lg:gap-10">
         <template v-for="(award, i) in achievments" :key="i">
           <div class="flex flex-col p-4 justify-center">
-            <img :src=" url + award.achievement_image" alt="Image">
+            <img :src="url + award.achievement_image" alt="Image">
             <p class="text-center font-medium py-4">{{ award.achievement_title }}</p>
           </div>
         </template>

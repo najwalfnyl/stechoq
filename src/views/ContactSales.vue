@@ -69,69 +69,101 @@ useHead({
           <div class="grid grid-cols-1 gap-2">
             <div class="mb-2">
               <input v-model="first_name"
-                class="shadow-none appearance-none border-none bg-transparent w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                id="first_name " type="text" placeholder="First Name*" style="border-bottom: 2px solid #4A5568;">
+                class="shadow-none appearance-none border-none bg-transparent w-full py-2 px-3 text-gray-700 leading-tight focus:ring-0"
+                id="first_name " type="text" placeholder="First Name*" style="border-bottom: 2px solid #4A5568;"
+                required @blur="validateFirstName" @focus="firstNameFocused = true">
+              <span v-if="!first_name && firstNameFocused" class="text-red-500 text-xs">Please Complete This Required
+                Field.</span>
             </div>
             <div class="mb-2">
               <input v-model="last_name"
-                class="shadow-none appearance-none border-none bg-transparent w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                id="last_name" type="text" placeholder="Last Name*" style="border-bottom: 2px solid #4A5568;">
+                class="shadow-none appearance-none border-none bg-transparent w-full py-2 px-3 text-gray-700 leading-tight focus:ring-0"
+                id="last_name" type="text" placeholder="Last Name*" style="border-bottom: 2px solid #4A5568;" required
+                @blur="validateLastName" @focus="lastNameFocused = true">
+              <span v-if="!last_name && lastNameFocused" class="text-red-500 text-xs">Please Complete This Required
+                Field.</span>
             </div>
             <div class="mb-2">
               <input v-model="business_email"
-                class="shadow-none appearance-none border-none bg-transparent w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                id="business_email" type="email" placeholder="Business Email*"
-                style="border-bottom: 2px solid #4A5568;">
-              <p class="text-sm px-3">To speak to a sales representative, please provide your business email address.
+                class="shadow-none appearance-none border-none bg-transparent w-full py-2 px-3 text-gray-700 leading-tight focus:ring-0"
+                id="business_email" type="email" placeholder="Business Email*" style="border-bottom: 2px solid #4A5568;"
+                required @blur="validateEmail" @focus="EmailFocused = true">
+              <span v-if="!business_email && EmailFocused" class="text-red-500 text-xs">Please Complete This Required
+                Field.</span>
+              <p class="text-xs pr-3 mt-2 ">To speak to a sales representative, please provide your business email
+                address.
               </p>
             </div>
             <div class="mb-2">
               <input v-model="phone_number"
-                class="shadow-none appearance-none border-none bg-transparent w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                class="shadow-none appearance-none border-none bg-transparent w-full py-2 px-3 text-gray-700 leading-tight focus:ring-0"
                 id="phone_number" type="text" placeholder="Phone Number" style="border-bottom: 2px solid #4A5568;">
             </div>
             <div class="mb-2">
               <input v-model="company_name"
-                class="shadow-none appearance-none border-none bg-transparent w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                id="company_name" type="text" placeholder="Company Name*" style="border-bottom: 2px solid #4A5568;">
+                class="shadow-none appearance-none border-none bg-transparent w-full py-2 px-3 text-gray-700 leading-tight focus:ring-0 "
+                id="company_name" type="text" placeholder="Company Name*" style="border-bottom: 2px solid #4A5568;"
+                required @blur="validateCompany" @focus="CompanyFocused = true">
+              <span v-if="!company_name && CompanyFocused" class="text-red-500 text-xs">Please Complete This Required
+                Field.</span>
             </div>
             <div class="mb-2">
               <input v-model="job_title"
-                class="shadow-none appearance-none border-none bg-transparent w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                id="job_title" type="text" placeholder="Job Title*" style="border-bottom: 2px solid #4A5568;">
+                class="shadow-none appearance-none border-none bg-transparent w-full py-2 px-3 text-gray-700 leading-tight focus:ring-0"
+                id="job_title" type="text" placeholder="Job Title*" style="border-bottom: 2px solid #4A5568;" required
+                @blur="validateJob" @focus="JobFocused = true">
+              <span v-if="!job_title && JobFocused" class="text-red-500 text-xs">Please Complete This Required
+                Field.</span>
             </div>
             <div class="mb-2">
               <input v-model="country"
-                class="shadow-none appearance-none border-none bg-transparent w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                id="country" type="text" placeholder="Country*" style="border-bottom: 2px solid #4A5568;">
+                class="shadow-none appearance-none border-none bg-transparent w-full py-2 px-3 text-gray-700 leading-tight focus:ring-0"
+                id="country" type="text" placeholder="Country*" style="border-bottom: 2px solid #4A5568;" required
+                @blur="validateCountry" @focus="CountryFocused = true">
+              <span v-if="!country && CountryFocused" class="text-red-500 text-xs">Please Complete This Required
+                Field.</span>
             </div>
             <div class="mb-2">
               <input v-model="region"
-                class="shadow-none appearance-none border-none bg-transparent w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                id="region" type="text" placeholder="State/Region*" style="border-bottom: 2px solid #4A5568;">
-              <p class="text-sm px-3">Please do not use abbreviations.</p>
+                class="shadow-none appearance-none border-none bg-transparent w-full py-2 px-3 text-gray-700 leading-tight focus:ring-0"
+                id="region" type="text" placeholder="State/Region*" style="border-bottom: 2px solid #4A5568;" required
+                @blur="validateRegion" @focus="RegionFocused = true">
+              <span v-if="!region && RegionFocused" class="text-red-500 text-xs">Please Complete This Required
+                Field.</span>
+              <p class="text-xs">Please do not use abbreviations.</p>
             </div>
             <div class="mb-2">
               <input v-model="number_of_employees"
-                class="shadow-none appearance-none border-none bg-transparent w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                class="shadow-none appearance-none border-none bg-transparent w-full py-2 px-3 text-gray-700 leading-tight focus:ring-0 "
                 id="number_of_employees" type="text" placeholder="Number Of Employees*"
-                style="border-bottom: 2px solid #4A5568;">
+                style="border-bottom: 2px solid #4A5568;" required @blur="validateEmployee"
+                @focus="EmployeeFocused = true">
+              <span v-if="!number_of_employees && EmployeeFocused" class="text-red-500 text-xs">Please Complete This
+                Required
+                Field.</span>
             </div>
             <div class="mb-2">
               <input v-model="industry"
-                class="shadow-none appearance-none border-none bg-transparent w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                id="industry" type="text" placeholder="Industry*" style="border-bottom: 2px solid #4A5568;">
+                class="shadow-none appearance-none border-none bg-transparent w-full py-2 px-3 text-gray-700 leading-tight focus:ring-0"
+                id="industry" type="text" placeholder="Industry*" style="border-bottom: 2px solid #4A5568;" required
+                @blur="validateIndutry" @focus="IndustryFocused = true">
+              <span v-if="!industry && IndustryFocused" class="text-red-500 text-xs">Please Complete This Required
+                Field.</span>
             </div>
             <div class="mb-2">
               <input v-model="use_case"
-                class="shadow-none appearance-none border-none bg-transparent w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                class="shadow-none appearance-none border-none bg-transparent w-full py-2 px-3 text-gray-700 leading-tight focus:ring-0"
                 id="use_case" type="text" placeholder="Use Case" style="border-bottom: 2px solid #4A5568;">
             </div>
           </div>
           <div class="mb-4">
             <textarea v-model="message"
-              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              id="message" rows="6" placeholder="What Are Your Intended Applications ?"></textarea>
+              class="border-none rounded w-full py-2 px-3 text-gray-700 leading-tight focus:ring-0" id="message"
+              rows="6" placeholder="What Are You Intented Applications ? " style="border-bottom: 2px solid #4A5568;"
+              required @blur="MessageIndutry" @focus="MessageFocused = true">
+            <span v-if="!message && MessageFocused" class="text-red-500 text-xs">Please Complete This Required
+              Field.</span>
+            </textarea>
           </div>
           <div class="text-xs font-normal text-black mb-4 my-2">
             STECHOQ is committed to your privacy. We will not share
@@ -144,10 +176,10 @@ useHead({
           <div class="text-red-500 mb-4" v-if="!agreeChecked && formSubmitted">
             Please agree to the terms before submitting the form.
           </div>
-          <label class="flex items-center">
-            <input type="checkbox" class="form-checkbox h-3 w-3 text-blue-500" v-model="agreeChecked">
-            <div class="text-xs font-normal text-light-grey mb-4 my-2 ml-2 ">I agree to receive communications from
-              Stechoq.</div>
+          <label class="flex items-center mb-4">
+            <input type="checkbox" class=" form-checkbox h-3 w-3 text-blue-500">
+            <div class="text-xs font-normal text-light-grey  ml-2 ">I aree to receive communications from Boston
+              Dnamics.</div>
           </label>
           <div class="flex items-center justify-center">
             <button
@@ -179,7 +211,7 @@ export default {
       use_case: '',
       message: '',
       showAlert: false,
-      agreeChecked : false,
+      agreeChecked: false,
       formSubmitted: false,
     };
   },
@@ -201,7 +233,7 @@ export default {
         //   message: this.message,
         // });
         this.formSubmitted = true;
-        if(!this.agreeChecked) {
+        if (!this.agreeChecked) {
           console.error('Please agree to the terms before submitting the form.');
           return;
         }
