@@ -1,51 +1,3 @@
-<script setup>
-import axios from 'axios';
-import { ref, onMounted } from 'vue';
-
-
-// icon
-const location = 'src/assets/img/icon/icon_location.svg';
-const email = 'src/assets/img/icon/icon_email.svg';
-const phone = 'src/assets/img/icon/icon_phone.svg';
-
-// get the social media icon from the name of the api response
-function getIconSosmed(name) {
-  switch (name.toUpperCase()) {
-    case 'INSTAGRAM':
-      return 'src/assets/img/icon/instagram.svg';
-    case 'YOUTUBE':
-      return 'src/assets/img/icon/youtube.svg';
-    case 'LINKEDIN':
-      return 'src/assets/img/icon/linkedin.svg';
-    case 'TWITTER':
-      return 'src/assets/img/icon/twitter.svg';
-    case 'FACEBOOK':
-      return 'src/assets/img/icon/facebook.svg';
-    case 'GITHUB':
-      return 'src/assets/img/icon/github.svg';
-    case 'TIKTOK':
-      return 'src/assets/img/icon/tiktok.svg';
-    default:
-      return '';
-  }
-}
-
-// get api contact information
-const contactInfo = ref(null);
-async function fetchContactInformation() {
-  try {
-    const response = await axios.get('http://127.0.0.1:8000/api/contactInformation');
-    contactInfo.value = response.data;
-    // console.log(response.data);
-  } catch (error) {
-    console.error('Error fetching contact information:', error);
-  }
-}
-
-onMounted(fetchContactInformation);
-
-</script>
-
 <template>
   <footer id="footer">
     <div class="main-container">
@@ -81,3 +33,52 @@ onMounted(fetchContactInformation);
     </div>
   </footer>
 </template>
+
+<script setup>
+import axios from 'axios';
+import { ref, onMounted } from 'vue';
+
+// icon
+const location = 'src/assets/img/icon/icon_location.svg';
+const email = 'src/assets/img/icon/icon_email.svg';
+const phone = 'src/assets/img/icon/icon_phone.svg';
+
+// get the social media icon from the name of the api response
+function getIconSosmed(name) {
+  switch (name.toUpperCase()) {
+    case 'INSTAGRAM':
+      return 'src/assets/img/icon/instagram.svg';
+    case 'YOUTUBE':
+      return 'src/assets/img/icon/youtube.svg';
+    case 'LINKEDIN':
+      return 'src/assets/img/icon/linkedin.svg';
+    case 'TWITTER':
+      return 'src/assets/img/icon/twitter.svg';
+    case 'FACEBOOK':
+      return 'src/assets/img/icon/facebook.svg';
+    case 'GITHUB':
+      return 'src/assets/img/icon/github.svg';
+    case 'TIKTOK':
+      return 'src/assets/img/icon/tiktok.svg';
+    default:
+      return '';
+  }
+}
+
+// get respone api contact information
+const contactInfo = ref(null);
+async function fetchContactInformation() {
+  try {
+    const response = await axios.get('http://127.0.0.1:8000/api/contactInformation');
+    contactInfo.value = response.data;
+    // console.log(response.data);
+  } catch (error) {
+    console.error('Error fetching contact information:', error);
+  }
+}
+
+onMounted(() => {
+  fetchContactInformation();
+});
+
+</script>

@@ -1,85 +1,3 @@
-<script setup>
-import axios from 'axios';
-import { useHead } from '@vueuse/head';
-// import useAwardStore from '@/stores/award';
-// import { assetsImg } from '@/utils/helper';
-import { onMounted, ref } from 'vue';
-
-// const imgProduct = assetsImg('product/mps.png');
-// const awards = useAwardStore();
-
-useHead({
-  title: `Tentang Kami | STECHOQ`,
-  meta: [
-    {
-      name: `description`,
-      content: `Tentang Stechoq Robotika Indonesia`,
-    },
-  ],
-});
-
-
-// Directive define variables
-const aboutUs = ref(null);
-const achievments = ref(null);
-const url = 'http://127.0.0.1:8000/storage/';
-
-
-// get respone api about us
-async function fetchAboutUs() {
-  try {
-    const response = await axios.get('http://127.0.0.1:8000/api/aboutUs');
-    aboutUs.value = response.data;
-  } catch (error) {
-    console.log('Error fetching data : ', error);
-  }
-}
-
-// get respone api achievments
-async function fetchAchievment() {
-  try {
-    const respone = await axios.get('http://127.0.0.1:8000/api/achievment');
-    achievments.value = respone.data;
-    // console.log('Data Achievment', respone.data);
-  } catch (error) {
-    console.log('Error fetching data achievment : ', error);
-  }
-}
-
-onMounted(() => {
-  fetchAboutUs();
-  fetchAchievment();
-});
-
-// onMounted(() => {
-//   $('.center').slick({
-//     centerMode: true,
-//     centerPadding: '60px',
-//     slidesToShow: 3,
-//     responsive: [
-//       {
-//         breakpoint: 768,
-//         settings: {
-//           arrows: false,
-//           centerMode: true,
-//           centerPadding: '40px',
-//           slidesToShow: 3
-//         }
-//       },
-//       {
-//         breakpoint: 480,
-//         settings: {
-//           arrows: false,
-//           centerMode: true,
-//           centerPadding: '40px',
-//           slidesToShow: 1
-//         }
-//       }
-//     ]
-//   });
-// });
-</script>
-
 <template>
   <section id="about-us">
     <div v-for="(about, index) in aboutUs" :key="index">
@@ -168,3 +86,81 @@ onMounted(() => {
     </article>
   </section>
 </template>
+
+<script setup>
+
+import axios from 'axios';
+import { useHead } from '@vueuse/head';
+import { onMounted, ref } from 'vue';
+
+useHead({
+  title: `Tentang Kami | STECHOQ`,
+  meta: [
+    {
+      name: `description`,
+      content: `Tentang Stechoq Robotika Indonesia`,
+    },
+  ],
+});
+
+
+// Define reactive variables
+const aboutUs = ref(null);
+const achievments = ref(null);
+const url = 'http://127.0.0.1:8000/storage/';
+
+
+// get respone api about us
+async function fetchAboutUs() {
+  try {
+    const response = await axios.get('http://127.0.0.1:8000/api/aboutUs');
+    aboutUs.value = response.data;
+  } catch (error) {
+    console.log('Error fetching data : ', error);
+  }
+}
+
+// get respone api achievments
+async function fetchAchievment() {
+  try {
+    const respone = await axios.get('http://127.0.0.1:8000/api/achievment');
+    achievments.value = respone.data;
+    // console.log('Data Achievment', respone.data);
+  } catch (error) {
+    console.log('Error fetching data achievment : ', error);
+  }
+}
+
+onMounted(() => {
+  fetchAboutUs();
+  fetchAchievment();
+});
+
+// onMounted(() => {
+//   $('.center').slick({
+//     centerMode: true,
+//     centerPadding: '60px',
+//     slidesToShow: 3,
+//     responsive: [
+//       {
+//         breakpoint: 768,
+//         settings: {
+//           arrows: false,
+//           centerMode: true,
+//           centerPadding: '40px',
+//           slidesToShow: 3
+//         }
+//       },
+//       {
+//         breakpoint: 480,
+//         settings: {
+//           arrows: false,
+//           centerMode: true,
+//           centerPadding: '40px',
+//           slidesToShow: 1
+//         }
+//       }
+//     ]
+//   });
+// });
+</script>

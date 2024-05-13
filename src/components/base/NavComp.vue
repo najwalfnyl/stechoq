@@ -1,61 +1,3 @@
-<script setup>
-
-import { RouterLink, useRouter } from 'vue-router';
-import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue';
-import { MenuIcon, XIcon } from '@heroicons/vue/outline';
-import { ref } from 'vue';
-
-const navs = [
-  {
-    name: 'Home',
-    path: '/',
-  },
-  {
-    name: 'Products',
-    path: '/products',
-  },
-  {
-    name: 'E-Learning',
-    path: '/e-learning',
-  },
-  {
-    name: 'About Us',
-    path: '/about-us',
-  },
-];
-
-
-const router = useRouter();
-const openContact = () => {
-  router.push({ name: 'contact-us' });
-};
-
-const isOpen = ref(false);
-let defaultLanguage = 'ID';
-
-const openDropdown = () => {
-  isOpen.value = !isOpen.value;
-};
-
-
-document.addEventListener('DOMContentLoaded', () => {
-  const dropdownButton = document.querySelector('.dropbtn');
-  defaultLanguage = dropdownButton.textContent.trim();
-});
-
-const setDefaultLanguage = (lang) => {
-  defaultLanguage = lang;
-  isOpen.value = false;
-};
-
-window.addEventListener('click', (event) => {
-  if (!event.target.closest('.dropdown')) {
-    isOpen.value = false;
-  }
-});
-
-</script>
-
 <template>
   <header id="header">
     <Disclosure v-slot="{ open }" as="nav" class="main-container">
@@ -116,4 +58,58 @@ window.addEventListener('click', (event) => {
   </header>
 </template>
 
-<style scoped></style>
+<script setup>
+import { RouterLink, useRouter } from 'vue-router';
+import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue';
+import { MenuIcon, XIcon } from '@heroicons/vue/outline';
+import { ref } from 'vue';
+
+const navs = [
+  {
+    name: 'Home',
+    path: '/',
+  },
+  {
+    name: 'Products',
+    path: '/products',
+  },
+  {
+    name: 'E-Learning',
+    path: '/e-learning',
+  },
+  {
+    name: 'About Us',
+    path: '/about-us',
+  },
+];
+
+
+const router = useRouter();
+const openContact = () => {
+  router.push({ name: 'contact-us' });
+};
+
+const isOpen = ref(false);
+let defaultLanguage = 'ID';
+
+const openDropdown = () => {
+  isOpen.value = !isOpen.value;
+};
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const dropdownButton = document.querySelector('.dropbtn');
+  defaultLanguage = dropdownButton.textContent.trim();
+});
+
+const setDefaultLanguage = (lang) => {
+  defaultLanguage = lang;
+  isOpen.value = false;
+};
+
+window.addEventListener('click', (event) => {
+  if (!event.target.closest('.dropdown')) {
+    isOpen.value = false;
+  }
+});
+</script>

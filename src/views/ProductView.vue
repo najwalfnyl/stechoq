@@ -1,74 +1,3 @@
-<script setup>
-// import { RouterLink } from 'vue-router';
-// import useProductStore from '@/stores/product';
-import { useRouter } from 'vue-router';
-import { useHead } from '@vueuse/head';
-import { onMounted, ref } from 'vue';
-import axios from 'axios';
-
-useHead({
-  title: `Produk | STECHOQ`,
-  meta: [
-    {
-      name: `description`,
-      content: `Produk Stechoq Robotika Indonesia`,
-    },
-  ],
-});
-
-
-const router = useRouter();
-const NavigationTo = ($name) => {
-  if ($name === 'Stechoq Academy') {
-    router.push('/stechoq-academy')
-  }
-}
-// const products = useProductStore();
-const url = 'http://127.0.0.1:8000/storage/';
-const productView = ref(null);
-async function fetchProduct() {
-  try {
-    const respone = await axios.get('http://127.0.0.1:8000/api/product');
-    const products = respone.data.map(product => {
-      // Buat salinan objek product untuk menghindari "Assignment to property of function parameter" error
-      const productCopy = { ...product };
-      // Mengonversi properti product_image dari JSON menjadi array
-      productCopy.product_image = JSON.parse(product.product_image);
-      return productCopy;
-    });
-    // productView.value = products;
-    // console.log(products);
-    const groupedProducts = {};
-    products.forEach(product => {
-      if (!groupedProducts[product.category_name]) {
-        groupedProducts[product.category_name] = [];
-      }
-      groupedProducts[product.category_name].push(product);
-    });
-
-    // Mengonversi objek menjadi array untuk ditampilkan
-    const groupedProductsArray = Object.keys(groupedProducts).map(categoryName => {
-      return {
-        category_name: categoryName,
-        products: groupedProducts[categoryName]
-      };
-    });
-
-    productView.value = groupedProductsArray;
-    console.log(groupedProductsArray);
-
-  } catch (error) {
-    console.log('error fetching data product ', error);
-  }
-}
-
-onMounted(() => {
-  fetchProduct();
-})
-
-
-</script>
-
 <template>
   <div>
     <h3 class="font-bold text-4xl text-center text-navy-prim mb-8 mt-10">
@@ -107,6 +36,72 @@ onMounted(() => {
     </section>
   </div>
 </template>
+
+
+<script setup>
+import { useRouter } from 'vue-router';
+import { useHead } from '@vueuse/head';
+import { onMounted, ref } from 'vue';
+import axios from 'axios';
+
+useHead({
+  title: `Produk | STECHOQ`,
+  meta: [
+    {
+      name: `description`,
+      content: `Produk Stechoq Robotika Indonesia`,
+    },
+  ],
+});
+
+// Define reactive variables
+const router = useRouter();
+const productView = ref(null);
+const url = 'http://127.0.0.1:8000/storage/';
+
+// function route to
+const NavigationTo = ($name) => {
+  if ($name === 'Stechoq Academy') {
+    router.push('/stechoq-academy')
+  }
+}
+
+// get respone api product
+async function fetchProduct() {
+  try {
+    const respone = await axios.get('http://127.0.0.1:8000/api/product');
+    const products = respone.data.map(product => {
+      const productCopy = { ...product };
+      productCopy.product_image = JSON.parse(product.product_image);
+      return productCopy;
+    });
+    const groupedProducts = {};
+    products.forEach(product => {
+      if (!groupedProducts[product.category_name]) {
+        groupedProducts[product.category_name] = [];
+      }
+      groupedProducts[product.category_name].push(product);
+    });
+
+    const groupedProductsArray = Object.keys(groupedProducts).map(categoryName => {
+      return {
+        category_name: categoryName,
+        products: groupedProducts[categoryName]
+      };
+    });
+
+    productView.value = groupedProductsArray;
+    // console.log(groupedProductsArray);
+  } catch (error) {
+    console.log('error fetching data product ', error);
+  }
+}
+
+onMounted(() => {
+  fetchProduct();
+})
+</script>
+
 
 <style scoped>
 .full-box {

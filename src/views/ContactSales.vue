@@ -1,5 +1,4 @@
 <script setup>
-
 import { useHead } from '@vueuse/head';
 import axios from 'axios';
 

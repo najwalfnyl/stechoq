@@ -1,59 +1,3 @@
-<script setup>
-import { useHead } from '@vueuse/head';
-// import HeadingComp from '@/components/base/HeadingComp.vue';
-import axios from 'axios';
-import { ref } from 'vue';
-
-useHead({
-  title: `Kontak | STECHOQ`,
-  meta: [
-    {
-      name: `description`,
-      content: `Berita tentang Stechoq Robotika Indonesia`,
-    },
-  ],
-});
-
-const name = ref('');
-const company = ref('');
-const email = ref('');
-const phone = ref('');
-const message = ref('');
-
-const showAlert = ref(false);
-
-async function submitForm() {
-  try {
-    const response = await axios.post('http://127.0.0.1:8000/api/contactUs', {
-      name: name.value,
-      company: company.value,
-      email: email.value,
-      phone: phone.value,
-      message: message.value
-    });
-
-    // clear form
-    name.value = '';
-    company.value = '';
-    email.value = '';
-    phone.value = '';
-    message.value = '';
-
-    // display alert
-    showAlert.value = true;
-    setTimeout(() => {
-      showAlert.value = false;
-    }, 3000);
-
-    console.log('Respon dari server:', response.data);
-
-  } catch (error) {
-    console.error('Error saat mengirim formulir:', error);
-  }
-}
-
-</script>
-
 <template>
   <div class="container mx-auto mt-10">
     <form class="max-w-screen-lg mx-auto bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 w-full">
@@ -136,3 +80,56 @@ async function submitForm() {
     </form>
   </div>
 </template>
+
+<script setup>
+import { useHead } from '@vueuse/head';
+import axios from 'axios';
+import { ref } from 'vue';
+
+useHead({
+  title: `Kontak | STECHOQ`,
+  meta: [
+    {
+      name: `description`,
+      content: `Berita tentang Stechoq Robotika Indonesia`,
+    },
+  ],
+});
+
+const name = ref('');
+const company = ref('');
+const email = ref('');
+const phone = ref('');
+const message = ref('');
+const showAlert = ref(false);
+
+async function submitForm() {
+  try {
+    const response = await axios.post('http://127.0.0.1:8000/api/contactUs', {
+      name: name.value,
+      company: company.value,
+      email: email.value,
+      phone: phone.value,
+      message: message.value
+    });
+
+    // clear form
+    name.value = '';
+    company.value = '';
+    email.value = '';
+    phone.value = '';
+    message.value = '';
+
+    // display alert
+    showAlert.value = true;
+    setTimeout(() => {
+      showAlert.value = false;
+    }, 3000);
+
+    console.log('Respon dari server:', response.data);
+
+  } catch (error) {
+    console.error('Error saat mengirim formulir:', error);
+  }
+}
+</script>

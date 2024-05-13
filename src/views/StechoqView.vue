@@ -1,80 +1,3 @@
-<script setup>
-// import { assetsImg } from '@/utils/helper';
-import { useHead } from '@vueuse/head';
-import axios from 'axios';
-import { onMounted, ref } from 'vue';
-import { useRouter } from 'vue-router';
-// import CarouselComp from '@/components/partial/CarouselComp.vue';
-// import TestimonialSliderComp from '@/components/partial/TestimonialSliderComp.vue';
-
-useHead({
-  title: `Kampus Merdeka | STECHOQ`,
-  meta: [
-    {
-      name: `description`,
-      content: `Kampus Merdeka di Stechoq Robotika Indonesia`,
-    },
-  ],
-});
-
-const navigationToAcademy = () => {
-  window.open('https://academy.stechoq.com/');
-}
-
-const router = useRouter();
-const backHome = () => {
-  router.push({
-    name: 'home'
-  });
-}
-
-// variable
-const benefits = ref(null);
-const classAcademy = ref(null);
-const pageAcademy = ref(null);
-const url = 'http://127.0.0.1:8000/storage/';
-
-
-
-// get respone api page
-async function getPage() {
-  try {
-    const respone = await axios.get('http://127.0.0.1:8000/api/stechoq-academy');
-    pageAcademy.value = respone.data;
-    console.log(respone.data);
-  } catch (error) {
-    console.log('error fetching data benefits : ', error);
-  }
-}
-// get respone api benefits
-async function getBenefits() {
-  try {
-    const respone = await axios.get('http://127.0.0.1:8000/api/academy-benefits');
-    benefits.value = respone.data;
-    console.log(respone.data);
-  } catch (error) {
-    console.log('error fetching data benefits : ', error);
-  }
-}
-
-// get respone api class 
-async function getClass() {
-  try {
-    const respone = await axios.get('http://127.0.0.1:8000/api/academy-class');
-    classAcademy.value = respone.data;
-    console.log(respone.data);
-  } catch (error) {
-    console.log('error fetching data benefits : ', error);
-  }
-}
-
-onMounted(() => {
-  getBenefits();
-  getClass();
-  getPage();
-})
-</script>
-
 <template>
   <div v-for="(academyPage, index) in pageAcademy" :key="index">
     <div class="full-box w-full relative" :style="{ 'background-image': `url(${url + academyPage.hero_image})` }">
@@ -186,6 +109,78 @@ onMounted(() => {
   </section>
 
 </template>
+
+<script setup>
+import { useHead } from '@vueuse/head';
+import axios from 'axios';
+import { onMounted, ref } from 'vue';
+import { useRouter } from 'vue-router';
+
+useHead({
+  title: `Kampus Merdeka | STECHOQ`,
+  meta: [
+    {
+      name: `description`,
+      content: `Kampus Merdeka di Stechoq Robotika Indonesia`,
+    },
+  ],
+});
+
+const navigationToAcademy = () => {
+  window.open('https://academy.stechoq.com/');
+}
+
+const router = useRouter();
+const backHome = () => {
+  router.push({
+    name: 'home'
+  });
+}
+
+// Define reactive variables
+const benefits = ref(null);
+const classAcademy = ref(null);
+const pageAcademy = ref(null);
+const url = 'http://127.0.0.1:8000/storage/';
+
+// get respone api page
+async function getPage() {
+  try {
+    const respone = await axios.get('http://127.0.0.1:8000/api/stechoq-academy');
+    pageAcademy.value = respone.data;
+    console.log(respone.data);
+  } catch (error) {
+    console.log('error fetching data benefits : ', error);
+  }
+}
+// get respone api benefits
+async function getBenefits() {
+  try {
+    const respone = await axios.get('http://127.0.0.1:8000/api/academy-benefits');
+    benefits.value = respone.data;
+    console.log(respone.data);
+  } catch (error) {
+    console.log('error fetching data benefits : ', error);
+  }
+}
+
+// get respone api class 
+async function getClass() {
+  try {
+    const respone = await axios.get('http://127.0.0.1:8000/api/academy-class');
+    classAcademy.value = respone.data;
+    console.log(respone.data);
+  } catch (error) {
+    console.log('error fetching data benefits : ', error);
+  }
+}
+
+onMounted(() => {
+  getBenefits();
+  getClass();
+  getPage();
+})
+</script>
 
 <style scoped>
 .full-box {

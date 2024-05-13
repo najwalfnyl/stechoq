@@ -1,14 +1,12 @@
-import { defineStore } from 'pinia';
-
-// import { assetsImg } from '@/utils/helper';
+import { defineStore } from "pinia";
 
 const useNewsStore = defineStore({
-  id: 'news',
+  id: "news",
   state: () => ({
     news: [],
   }),
   getters: {
-    list: state => state.news,
+    list: (state) => state.news,
   },
   actions: {},
 });

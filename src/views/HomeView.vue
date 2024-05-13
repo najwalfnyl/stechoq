@@ -1,69 +1,5 @@
-<script setup>
-import { useHead } from '@vueuse/head';
-import { useRouter } from 'vue-router';
-import HeadingComp from '@/components/base/HeadingComp.vue';
-import { onMounted, ref } from 'vue';
-import axios from 'axios';
-import useHomeStore from '../stores/home';
-
-useHead({
-  title: `Home | STECHOQ`,
-  meta: [
-    {
-      name: `description`,
-      content: `Homepage Stechoq Robotika Indonesia`,
-    },
-  ],
-});
-
-
-const homeStore = useHomeStore();
-
-const fetchDataCategory = async () => {
-  try {
-    await homeStore.fetchCategoryProduct();
-    // console.log('Data : ',homeStore.list);
-  } catch (error) {
-    console.error('Error fetching data:', error);
-  }
-}
-
-onMounted(() => {
-  fetchDataCategory();
-});
-
-
-const router = useRouter();
-const NavigationTo = ($name) => {
-  if ($name === 'Stechoq Academy') {
-    router.push('/stechoq-academy')
-  } else {
-    // router.push('/digital-manufacturing')
-    router.push(`/product-category/${$name}`);
-  }
-}
-
-
-// get respone api client 
-const clientsItem = ref(null);
-const url = 'http://127.0.0.1:8000/storage/';
-async function getClients() {
-  try {
-    const response = await axios.get('http://127.0.0.1:8000/api/client');
-    clientsItem.value = response.data;
-    console.log(response.data);
-
-  } catch (error) {
-    console.log('error fetching data : ', error);
-  }
-}
-onMounted(getClients);
-
-</script>
-
 <template>
   <heading-comp>
-
     <template #title>
       <span class="company-name text-white">RnD Company</span> <br>
       <span class="subtitle text-white">From Idea to Mass Production</span>
@@ -137,3 +73,63 @@ onMounted(getClients);
     </div>
   </section>
 </template>
+
+<script setup>
+import { useHead } from '@vueuse/head';
+import { useRouter } from 'vue-router';
+import HeadingComp from '@/components/base/HeadingComp.vue';
+import { onMounted, ref } from 'vue';
+import axios from 'axios';
+import useHomeStore from '../stores/home';
+
+useHead({
+  title: `Home | STECHOQ`,
+  meta: [
+    {
+      name: `description`,
+      content: `Homepage Stechoq Robotika Indonesia`,
+    },
+  ],
+});
+
+// Define reactive variables
+const homeStore = useHomeStore();
+const router = useRouter();
+const clientsItem = ref(null);
+const url = 'http://127.0.0.1:8000/storage/';
+
+const NavigationTo = ($name) => {
+  if ($name === 'Stechoq Academy') {
+    router.push('/stechoq-academy')
+  } else {
+    // router.push('/digital-manufacturing')
+    router.push(`/product-category/${$name}`);
+  }
+}
+
+// get respone api category product
+const fetchDataCategory = async () => {
+  try {
+    await homeStore.fetchCategoryProduct();
+    // console.log('Data : ',homeStore.list);
+  } catch (error) {
+    console.error('Error fetching data:', error);
+  }
+}
+
+// get respone api client 
+async function getClients() {
+  try {
+    const response = await axios.get('http://127.0.0.1:8000/api/client');
+    clientsItem.value = response.data;
+    // console.log(response.data);
+  } catch (error) {
+    console.log('error fetching data : ', error);
+  }
+}
+
+onMounted(() => {
+  fetchDataCategory();
+  getClients();
+});
+</script>
