@@ -4,9 +4,6 @@ import useProductStore from '@/stores/product';
 import { assetsImg } from '@/utils/helper';
 import { useHead } from '@vueuse/head';
 
-import HeadingComp from '@/components/base/HeadingComp.vue';
-
-const imgProduct = assetsImg('product/mps.png');
 const route = useRoute();
 const product = useProductStore();
 
@@ -46,8 +43,8 @@ const fitur = [
           <h3> {{ name }} </h3>
         </div>
         <div id="subtitle-page">
-          <p class="my-[10px]">  Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita
-      architecto qui, nemo voluptates</p>
+          <p class="my-[10px]"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita
+            architecto qui, nemo voluptates</p>
         </div>
       </div>
     </article>

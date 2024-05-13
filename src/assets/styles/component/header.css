@@ -1,5 +1,5 @@
 #header {
-  @apply min-h-full sticky top-0 z-20 bg-slate-50;
+  @apply min-h-full sticky top-0 z-20 bg-white;
   font-family: 'Poppins', sans-serif; 
 }
 
@@ -24,7 +24,7 @@
   #navbar-items {
     
     font-size: 22.14px; 
-    @apply text-navy-prim mx-16 px-10;
+    @apply text-navy-prim  px-10;
 
     a {
       @apply p-4;

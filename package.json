@@ -11,6 +11,7 @@
     "@headlessui/vue": "^1.5.0",
     "@heroicons/vue": "^1.0.6",
     "@vueuse/head": "^0.7.5",
+    "axios": "^1.6.8",
     "pinia": "^2.0.13",
     "vue": "^3.2.31",
     "vue-motion": "^0.2.3",
