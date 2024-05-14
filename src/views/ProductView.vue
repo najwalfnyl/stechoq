@@ -37,7 +37,7 @@ const products = useProductStore();
       Digital Manufacturing
     </div>
     <template v-if="$route.name === 'products'">
-    <section id="product-list" class="my-8 py-8">
+    <section id="product-list" class="my-8 py-8 xl:mx-40 md:mx-20">
       <div id="product-container" class="main-container">
         <template v-for="(item, i) in products.list" :key="i">
           <router-link :to="{ name: 'productDetail', params: { id: item.id } }">
@@ -56,7 +56,7 @@ const products = useProductStore();
       Robotics and Automations
     </div>
     <template v-if="$route.name === 'products'">
-    <section id="product-list" class="my-8 py-8">
+    <section id="product-list" class="my-8 py-8 xl:mx-40 md:mx-20 ">
       <div id="product-container" class="main-container">
         <template v-for="(item, i) in products.list" :key="i">
           <router-link :to="{ name: 'productDetail', params: { id: item.id } }">

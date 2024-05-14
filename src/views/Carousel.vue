@@ -1,170 +1,145 @@
 <template>
-    <div>
-      <button @click="leftClick">left</button>
-      <button @click="rightClick">right</button>
-      <Motion
-        :values="styleProps"
-        tag="div"
-        class="carousel-container"
-        ref="container"
-      >
-        <template slot-scope="_styleProps">
-          <div
-            class="img-wrapper"
-            v-for="(style, idx) in _styleProps"
-            :key="idx"
-            :ref="'box' + idx"
-            :style="{
-              transform: `translateX(${style.translateX}px) scale(${style.scale})`,
-              transformOrigin:
-                idx < midIdx
-                  ? 'center left'
-                  : idx === midIdx
-                  ? 'center'
-                  : 'center right',
-              zIndex: idx < midIdx ? 0 : idx === midIdx ? 1 : midIdx - idx + 1,
-            }"
-          >
-            <img :src="images[idx].url" @load="loadedImgCount++" />
-          </div>
-        </template>
-      </Motion>
-    </div>
-  </template>
-  <script>
-  import { Motion } from "vue-motion";
-  
-  function getWidth(ele) {
-    return ele ? ele.clientWidth : 0;
-  }
-  const getInitialProps = (containerEle) => ({
-    left: {
-      translateX: () => 0,
-      scale: 0.85,
-    },
-    middle: {
-      translateX: (ele) => (getWidth(containerEle) - getWidth(ele)) / 2,
-      scale: 1,
-    },
-    right: {
-      translateX: (ele) => getWidth(containerEle) - getWidth(ele),
-      scale: 0.85,
-    },
-  });
-  
-  export default {
-    data() {
-      return {
-        images: [
-          {
-            url:
-              "https://p1.music.126.net/bUBKITTNPjGwCQIHgEfMeQ==/109951163991946900.jpg",
-          },
-          {
-            url:
-              "https://p1.music.126.net/GsPi2mWpUPf96AP91jbFEw==/109951163991276093.jpg",
-          },
-          {
-            url:
-              "https://p1.music.126.net/9ca7Dq6piQFgIQhDf-U-nw==/109951163991948354.jpg",
-          },
-          {
-            url:
-              "https://p1.music.126.net/erzqsRbQLIA5vb5lM0TSrw==/109951163991284673.jpg",
-          },
-          {
-            url:
-              "https://p1.music.126.net/b-ImQI_I85MlDJjfOKLNyw==/109951163989481527.jpg",
-          },
-          {
-            url:
-              "https://p1.music.126.net/luglqayZ4bVJRimffJk72A==/109951163991284046.jpg",
-          },
-          {
-            url:
-              "https://p1.music.126.net/IdiKVv1W1IwN0s1s2ZOOXg==/109951163991277253.jpg",
-          },
-          {
-            url:
-              "https://p1.music.126.net/auTfwjSVNXhEVQ9ywGhreQ==/109951163991950577.jpg",
-          },
-          {
-            url:
-              "https://p1.music.126.net/7HqsckYTUG-TJIrRY0I0fw==/109951163991271391.jpg",
-          },
-        ],
-        midIdx: 1,
-        loadedImgCount: 0,
-      };
-    },
-    components: {
-      Motion,
-    },
-    methods: {
-      leftClick() {
-        if (this.midIdx < this.images.length - 2) {
-          this.midIdx += 1;
-        }
-      },
-      rightClick() {
-        if (this.midIdx > 1) {
-          this.midIdx -= 1;
-        }
-      },
-      updateStyleProps() {
-        const initialProps = getInitialProps(
-          this.$refs.container ? this.$refs.container.$el : null
-        );
-        return this.images.map((_, idx) => {
-          const { translateX, scale } =
-            idx < this.midIdx
-              ? initialProps.left
-              : idx === this.midIdx
-              ? initialProps.middle
-              : initialProps.right;
-          const imgWrapper = this.$refs["box" + idx]
-            ? this.$refs["box" + idx][0]
-            : null;
-          return {
-            translateX: translateX(imgWrapper),
-            scale: scale,
-          };
+  <div class=" main-container card-carousel my-6 flex justify-center items-center">
+    <div class="my-card" style="background-image: url('src/assets/img/people/dm.png')"></div>
+    <div class="my-card" style="background-image: url('src/assets/img/people/soldering.png')"></div>
+    <div class="my-card" style="background-image: url('src/assets/img/people/stechoq1.png')"></div>
+    <div class="my-card" style="background-image: url('src/assets/img/people/kolaborasi.png')"></div>
+    <div class="my-card" style="background-image: url('src/assets/img/people/mentoring.png')"></div>
+  </div>
+</template>
+
+<script>
+export default {
+  mounted() {
+    const $cards = $('.my-card');
+    const $num = $cards.length;
+    const $carousel = $('.card-carousel');
+
+    
+    const $even = $num / 2;
+    const $odd = ($num + 1) / 2;
+
+    
+    if ($num % 2 == 0) {
+      $cards.eq($even - 1).addClass('active');
+      $cards.eq($even - 1).prev().addClass('prev');
+      $cards.eq($even - 1).next().addClass('next');
+    } else {
+      $cards.eq($odd - 1).addClass('active');
+      $cards.eq($odd - 1).prev().addClass('prev');
+      $cards.eq($odd - 1).next().addClass('next');
+    }
+
+    $cards.clone().appendTo($carousel);
+    $cards.clone().prependTo($carousel);
+
+    $('.my-card').click(function() {
+      const $slide = $(this).outerWidth();
+      if ($(this).hasClass('next')) {
+        $carousel.animate({left: '-=' + $slide}, 500, function() {
+          $carousel.append($carousel.find('.my-card').first());
+          $carousel.css('left', 0);
         });
-      },
-    },
-    computed: {
-      styleProps: function () {
-        console.log("loadedImgCount: ", this.loadedImgCount);
-        if (this.loadedImgCount < this.images.length) {
-          return this.images.map((_, idx) => ({ translateX: 0, scale: 1 }));
-        }
-        return this.updateStyleProps();
-      },
-    },
-  };
-  </script>
-  <style scoped>
-  .box {
-    height: 200px;
-    width: 200px;
-    background-color: steelblue;
+      } else if ($(this).hasClass('prev')) {
+        $carousel.animate({left: '+=' + $slide}, 500, function() {
+          $carousel.prepend($carousel.find('.my-card').last());
+          $carousel.css('left', 0);
+        });
+      }
+
+      $(this).removeClass('prev next');
+      $(this).siblings().removeClass('prev active next');
+      $(this).addClass('active');
+      $(this).prev().addClass('prev');
+      $(this).next().addClass('next');
+    });
+
+    // Keyboard navigation
+    $('body').keydown(function(e) {
+      if (e.keyCode == 37) { 
+        $('.active').prev().trigger('click');
+      } else if (e.keyCode == 39) { 
+        $('.active').next().trigger('click');
+      }
+    });
   }
-  
-  .carousel-container {
-    height: 200px;
-    position: relative;
+}
+</script>
+
+<style>
+
+.card-carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.card-carousel .my-card {
+  border-radius: 20px; 
+  height: 20rem;
+  width: 28%; 
+  min-width: calc(100% / 3); 
+  box-sizing: border-box;
+  transition: transform 0.5s ease;
+  position: relative;
+  z-index: 1;
+  transform: scale(0.6) translateY(-2rem);
+  opacity: 0;
+  cursor: pointer;
+  pointer-events: none;
+  background: black;
+  background-size: contain; 
+  background-repeat: no-repeat; 
+  background-position: center; 
+  transition: 1s;
+}
+
+@media (max-width: 1024px) { 
+  .card-carousel .my-card {
+    height: 16rem;
   }
-  .img-wrapper {
-    height: 100%;
-    font-size: 0;
-    position: absolute;
+}
+
+@media (max-width: 768px) { 
+  .card-carousel .my-card {
+    height: 12rem;
   }
-  .img-wrapper img {
-    height: 100%;
-    width: auto;
-  }
-  .left {
-    display: none;
-  }
-  </style>
-   
+}
+.card-carousel .my-card:after {
+  content: '';
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  border-radius: 100%;
+  bottom: -5rem;
+  filter: blur(4px);
+}
+
+.card-carousel .my-card.active {
+  z-index: 3;
+  transform: scale(1) translateY(0) translateX(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.card-carousel .my-card.prev, .card-carousel .my-card.next {
+  z-index: 2;
+  transform: scale(0.8) translateY(-1rem) translateX(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.card-carousel .my-card:before {
+  content: attr(data-index);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3rem;
+  font-weight: 300;
+  color: #fff;
+}
+</style>

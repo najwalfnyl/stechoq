@@ -46,7 +46,11 @@ const routes = [
     name: 'contact sales',
     component: () => import('@/views/ContactSales.vue'),
   },
-
+  {
+    path: '/carousel',
+    name: 'carousel',
+    component: () => import('@/views/Carousel.vue'),
+  },
 ];
 
 export default routes;

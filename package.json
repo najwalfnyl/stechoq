@@ -13,6 +13,7 @@
     "@vueuse/head": "^0.7.5",
     "pinia": "^2.0.13",
     "vue": "^3.2.31",
+    "vue-carousel": "^0.18.0",
     "vue-motion": "^0.2.3",
     "vue-router": "^4.0.14",
     "vue-slick": "^1.2.0",

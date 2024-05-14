@@ -58,17 +58,29 @@ const submitForm = (input) => {
 };
 
 const isOpen = ref(false);
+let defaultLanguage = 'ID'; 
 
 const openDropdown = () => {
   isOpen.value = !isOpen.value;
 };
 
-// Close the dropdown if the user clicks outside of it
+
+document.addEventListener('DOMContentLoaded', () => {
+  const dropdownButton = document.querySelector('.dropbtn');
+  defaultLanguage = dropdownButton.textContent.trim(); 
+});
+
+const setDefaultLanguage = (lang) => {
+  defaultLanguage = lang;
+  isOpen.value = false; 
+};
+
 window.addEventListener('click', (event) => {
   if (!event.target.closest('.dropdown')) {
     isOpen.value = false;
   }
 });
+
 </script>
 
 <template>
@@ -91,15 +103,16 @@ window.addEventListener('click', (event) => {
             </router-link>
           </div>
         </div>
-        <div class="dropdown" @click="openDropdown">
-          <button class="dropbtn">
-            Language
+        <div class="dropdown mr-20" @click="openDropdown">
+          <button class="dropbtn w-[120%] text-left">
+            {{ defaultLanguage }} 
           </button>
           <div v-if="isOpen" class="dropdown-content">
-            <a href="#">ID</a>
-            <a href="#">ENG</a>
+            <a href="#" @click="setDefaultLanguage('ID')" :class="{ 'selected': defaultLanguage === 'ID' }">ID</a>
+            <a href="#" @click="setDefaultLanguage('ENG')" :class="{ 'selected': defaultLanguage === 'ENG' }">ENG</a>
           </div>
         </div>
+
         <div class="hide-in-tablet">
           <div class="btn-contact">
             <button
@@ -111,6 +124,7 @@ window.addEventListener('click', (event) => {
           </div>
         </div>
         <div id="mobile-menu">
+
           <!-- Mobile menu button -->
           <DisclosureButton
             id="mobile-menu-btn"

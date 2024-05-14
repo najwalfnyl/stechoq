@@ -58,37 +58,44 @@ useHead({
               </div>
               </div>
           </div>
-            <div class="grid grid-cols-1 gap-2">
-              <div class="mb-2">
-                <input v-model="firstname" 
-                  class="shadow-none appearance-none border-none bg-transparent w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="firstname" type="text" placeholder="First Name*"
-                  style="border-bottom: 2px solid #4A5568;">
-              </div>
-              <div class="mb-2">
-                <input v-model="lastname" 
-                  class="shadow-none appearance-none border-none bg-transparent w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="lastname" type="text" placeholder="Last Name*" 
-                  style="border-bottom: 2px solid #4A5568;">
-              </div>
-              <div class="mb-2">
-                <input v-model="email" 
-                  class="shadow-none appearance-none border-none bg-transparent w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="email" type="tel" placeholder="Business Email"
-                  style="border-bottom: 2px solid #4A5568;">
-              </div>
-              <div class="mb-2">
-                <input v-model="phone" 
-                  class="shadow-none appearance-none border-none bg-transparent w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="phone" type="text" placeholder="Phone Number"
-                  style="border-bottom: 2px solid #4A5568;">
-              </div>
-              <div class="mb-2">
-                <input v-model="company" 
-                  class="shadow-none appearance-none border-none bg-transparent w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="company" type="text" placeholder="Company Name"
-                  style="border-bottom: 2px solid #4A5568;">
-              </div>
-            </div>
+          <div class="grid grid-cols-1 gap-2">
+    <div class="mb-2">
+        <input v-model="firstname" 
+            class="border-none bg-transparent w-full py-2 px-3 text-gray-700 leading-tight focus:ring-0" 
+            id="firstname" type="text" placeholder="First Name*"
+            style="border-bottom: 2px solid #4A5568;" required @blur="validateFirstName" @focus="firstNameFocused = true">
+        <span v-if="!firstname && firstNameFocused" class="text-red-500 text-xs">Please enter your first name</span>
+    </div>
+    <div class="mb-2">
+        <input v-model="lastname" 
+            class="border-none bg-transparent w-full py-2 px-3 text-gray-700 leading-tight focus:ring-0" 
+            id="lastname" type="text" placeholder="Last Name*" 
+            style="border-bottom: 2px solid #4A5568;" required @blur="validateLastName" @focus="lastNameFocused = true">
+        <span v-if="!lastname && lastNameFocused" class="text-red-500 text-xs">Please enter your last name</span>
+    </div>
+    <div class="mb-2">
+        <input v-model="email" 
+            class="border-none bg-transparent w-full py-2 px-3 text-gray-700 leading-tight focus:ring-0" 
+            id="email" type="tel" placeholder="Business Email" style="border-bottom: 2px solid #4A5568;">
+    </div>
+    <div class="mb-2">
+        <input v-model="phone" 
+            class="border-none bg-transparent w-full py-2 px-3 text-gray-700 leading-tight focus:ring-0" 
+            id="phone" type="text" placeholder="Phone Number"
+            style="border-bottom: 2px solid #4A5568;">
+    </div>
+    <div class="mb-2">
+        <input v-model="company" 
+            class="border-none bg-transparent w-full py-2 px-3 text-gray-700 leading-tight focus:ring-0" 
+            id="company" type="text" placeholder="Company Name"
+            style="border-bottom: 2px solid #4A5568;">
+    </div>
+</div>
             <div class="mb-4">
-              <textarea v-model="message" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="message" rows="6" placeholder="Tulis pesan Anda di sini..."></textarea>
+              <textarea v-model="message" class=" border-none rounded w-full py-2 px-3 text-gray-700 leading-tight focus:ring-0" id="message" rows="6" placeholder="Tulis pesan Anda di sini..." 
+              style="border-bottom: 2px solid #4A5568;"></textarea>
             </div>
-            <div class="text-xs font-normal text-black mb-4 my-2">
+            <div class="text-xs font-normal text-justify text-black mb-4 my-2">
               STECHOQ is committed to your privacy. We will not share 
               your data with any third parties. We use the information 
               you provide us to send you product news & updates, information
@@ -96,9 +103,9 @@ useHead({
                from these communications at any time. For more information, 
                check out our Privacy Policy. I agree to receive communications from Boston Dynamics.
               </div>
-              <label class="flex items-center">
-                <input type="checkbox" class="form-checkbox h-3 w-3 text-blue-500">
-                <div class="text-xs font-normal text-light-grey mb-4 my-2 ml-2 ">I agree to receive communications from Boston Dynamics.</div>
+              <label class="flex items-center mb-4">
+                <input type="checkbox" class=" form-checkbox h-3 w-3 text-blue-500">
+                <div class=" text-xs font-normal text-light-grey  ml-2 ">I aree to receive communications from Boston Dnamics.</div>
               </label>
             <div class="flex items-center justify-center">
               <button class="bg-white hover:bg-gray-200 w-full rounded-2xl text-navy-prim font-normal py-2 px-4 rounded focus:outline focus:shadow-outline" style="border: 2px solid navy;" type="button" @click="submitForm">
@@ -121,6 +128,7 @@ useHead({
   justify-content: center;
   align-items: center;
 }
+
 </style>
 
 <script>
