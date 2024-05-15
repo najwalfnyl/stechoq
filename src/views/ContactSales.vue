@@ -212,6 +212,16 @@ export default {
       showAlert: false,
       agreeChecked: false,
       formSubmitted: false,
+      CountryFocused: false,
+      firstNameFocused: false,
+      lastNameFocused: false,
+      EmailFocused: false,
+      CompanyFocused: false,
+      JobFocused: false,
+      RegionFocused: false,
+      EmployeeFocused: false,
+      IndustryFocused: false,
+      MessageFocused: false,
     };
   },
   methods: {
