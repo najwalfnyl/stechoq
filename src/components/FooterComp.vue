@@ -12,7 +12,7 @@
               </address>
               <div class="socmed">
                 <a v-for="(value, key) in contact.social_media" :href="value" :key="key" target="_blank">
-                  <img :src="getIconSosmed(key)" :alt="key">
+                  <i :class="getIconSosmed(key)"></i>
                 </a>
               </div>
             </div>
@@ -20,12 +20,30 @@
               <h3>Contact</h3>
               <!-- <a>{{ contact.phone }}</a>
               <a>{{ contact.email }}</a> -->
-              <a class="flex items-center"><img :src="phone" style="display: inline-block; vertical-align: middle;">{{
-                contact.phone }}</a>
-              <a class="flex items-center"><img :src="email" style="display: inline-block; vertical-align: middle;">{{
-                contact.email }}</a>
-              <a class="flex items-center"><img :src="location"
-                  style="display: inline-block; vertical-align: middle;">{{ contact.address }}</a>
+              <div class="flex items-center gap-2">
+                <div>
+                  <i class="fa-solid fa-phone"></i>
+                </div>
+                <div>
+                  <a>{{ contact.phone }}</a>
+                </div>
+              </div>
+              <div class="flex items-center gap-2">
+                <div>
+                  <i class="fa-regular fa-envelope"></i>
+                </div>
+                <div>
+                  <a>{{ contact.email }}</a>
+                </div>
+              </div>
+              <div class="flex items-center gap-2">
+                <div>
+                  <i class="fa-solid fa-location-dot"></i>
+                </div>
+                <div>
+                  <a>{{ contact.address }}</a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -38,28 +56,25 @@
 import axios from 'axios';
 import { ref, onMounted } from 'vue';
 
-// icon
-const location = 'src/assets/img/icon/icon_location.svg';
-const email = 'src/assets/img/icon/icon_email.svg';
-const phone = 'src/assets/img/icon/icon_phone.svg';
-
 // get the social media icon from the name of the api response
 function getIconSosmed(name) {
   switch (name.toUpperCase()) {
     case 'INSTAGRAM':
-      return 'src/assets/img/icon/instagram.svg';
+      return 'fa-brands fa-instagram';
     case 'YOUTUBE':
-      return 'src/assets/img/icon/youtube.svg';
+      return 'fa-brands fa-youtube';
     case 'LINKEDIN':
-      return 'src/assets/img/icon/linkedin.svg';
+      return 'fa-brands fa-linkedin';
     case 'TWITTER':
-      return 'src/assets/img/icon/twitter.svg';
+      return 'fa-brands fa-twitter';
     case 'FACEBOOK':
-      return 'src/assets/img/icon/facebook.svg';
+      return 'fa-brands fa-facebook';
     case 'GITHUB':
-      return 'src/assets/img/icon/github.svg';
+      return 'fa-brands fa-github';
     case 'TIKTOK':
-      return 'src/assets/img/icon/tiktok.svg';
+      return 'fa-brands fa-tiktok';
+    case 'WHATSAPP':
+      return 'fa-brands fa-whatsapp';
     default:
       return '';
   }

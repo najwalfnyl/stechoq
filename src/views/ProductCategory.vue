@@ -39,7 +39,7 @@
       <button type="button"
         class="bg-white w-1/6 rounded-xl text-navy-prim p-2 flex items-center justify-center gap-2 hover:bg-navy-prim hover:bg-opacity-70 border border-solid border-navy-prim"
         @click="backToHome">
-        <img src="/src/assets/img/icon/left-arrow.svg" alt="Icon" class="h-7 pr-2 hidden md:block" />
+        <i class="pr-2 fa-solid fa-arrow-left"></i>
         <p class="font-semibold sm:font-regular font-poppins">Back Home</p>
       </button>
     </div>
@@ -84,7 +84,6 @@ async function getProductByCategory() {
   try {
     const response = await axios.get(`http://127.0.0.1:8000/api/productByCategory/${categoryName.value}`);
     const products = response.data.map(product => {
-      // Buat salinan objek product untuk menghindari "Assignment to property of function parameter" error
       const productCopy = { ...product };
       // Mengonversi properti product_image dari JSON menjadi array
       productCopy.product_image = JSON.parse(product.product_image);

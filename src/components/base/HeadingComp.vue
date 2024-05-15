@@ -9,9 +9,11 @@
           <slot name="subtitle" />
         </p>
         <div class="btn-heading">
-          <button type="button" class="border-radius-50 bg-white text-black p-2 flex items-center gap-2 hover:bg-gray-200 hover:bg-opacity-50" @click="playVideo">
-            <img src="src\assets\img\icon\Play.svg" alt="Icon" class="h-5 w-5 ml-2" />
-              Play Video
+          <button type="button"
+            class="border-radius-50 bg-white text-black p-2 flex items-center gap-2 hover:bg-gray-200 hover:bg-opacity-50"
+            @click="playVideo">
+            <i class="fa-solid fa-play h-5 w-5 ml-2"></i>
+            Play Video
           </button>
         </div>
       </div>
@@ -21,9 +23,9 @@
 
 <script setup>
 
-const playVideo = ()  => {
-    console.log('Klik Video')
-    window.open('https://www.youtube.com/watch?v=w_1ZT9Be_qc&t=31s','_blank');
+const playVideo = () => {
+  console.log('Klik Video')
+  window.open('https://www.youtube.com/watch?v=w_1ZT9Be_qc&t=31s', '_blank');
 }
 
 </script>

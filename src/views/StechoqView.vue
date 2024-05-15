@@ -95,14 +95,14 @@
         <button type="button"
           class="bg-white w-1/6 rounded-xl text-navy-prim p-2 flex items-center justify-center gap-2 hover:bg-navy-prim hover:bg-opacity-70 border border-solid border-navy-prim"
           @click="backHome">
-          <img src="src\assets\img\icon\left-arrow.svg" alt="Icon" class="h-7 pr-2 " />
+          <i class="pr-2 fa-solid fa-arrow-left"></i>
           <p class="font-semibold font-poppins">Back Home</p>
         </button>
         <button type="button"
           class="bg-navy-prim w-1/6 rounded-xl text-white p-2 flex items-center justify-center gap-2 hover:bg-gray hover:bg-opacity-60"
           @click="navigationToAcademy">
           <p class="font-semibold font-poppins">Join Us</p>
-          <img src="src\assets\img\icon\right-arrow.svg" alt="Icon" class="h-7 pl-2" />
+          <i class="pr-2 fa-solid fa-arrow-right"></i>
         </button>
       </div>
     </article>
