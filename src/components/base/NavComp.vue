@@ -21,8 +21,11 @@
           <div v-if="isOpen" class="dropdown-content">
             <a href="#" @click="setDefaultLanguage('ID')" :class="{ 'selected': defaultLanguage === 'ID' }">ID</a>
             <a href="#" @click="setDefaultLanguage('ENG')" :class="{ 'selected': defaultLanguage === 'ENG' }">ENG</a>
+            <a href="#" @click="setDefaultLanguage('ID')" :class="{ 'selected': defaultLanguage === 'ID' }">ID</a>
+            <a href="#" @click="setDefaultLanguage('ENG')" :class="{ 'selected': defaultLanguage === 'ENG' }">ENG</a>
           </div>
         </div>
+
         <div class="hide-in-tablet">
           <div class="btn-contact">
             <button type="button" @click="openContact">
@@ -31,6 +34,7 @@
           </div>
         </div>
         <div id="mobile-menu">
+
           <!-- Mobile menu button -->
           <DisclosureButton id="mobile-menu-btn">
             <span class="sr-only">Open main menu</span>

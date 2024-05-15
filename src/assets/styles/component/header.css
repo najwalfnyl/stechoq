@@ -1,11 +1,11 @@
 #header {
   @apply min-h-full sticky top-0 z-20 bg-white;
-  font-family: 'Poppins', sans-serif; 
+  font-family: "Poppins", sans-serif;
 }
 
 #main-navbar {
   @apply flex items-center;
-  justify-content: center; 
+  justify-content: center;
   height: 83px;
 
   #brand {
@@ -22,24 +22,23 @@
   }
 
   #navbar-items {
-    
-    font-size: 22.14px; 
-    @apply text-navy-prim  px-10;
+    font-size: 22.14px;
+    @apply text-navy-prim mx-14 px-10;
 
     a {
       @apply p-4;
       @apply hover:text-navy-prim;
 
       &.active {
-        @apply text-navy-prim font-bold;
+        @apply text-navy-prim font-extrabold;
       }
     }
-  }    
+  }
 }
 
 .dropbtn {
-  border: 1px solid lightgrey; 
-  border-radius: 5px; 
+  border: 1px solid lightgrey;
+  border-radius: 5px;
   padding: 6% 6%;
   background-color: white;
   color: #333;
@@ -53,9 +52,9 @@
   @apply mx-10;
   background-color: #f9f9f9;
   min-width: 120px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
-  border-radius: 5px; 
+  border-radius: 5px;
   border: 1px solid lightgrey;
 }
 

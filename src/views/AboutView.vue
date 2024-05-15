@@ -17,7 +17,7 @@
       </article>
 
       <!-- Image CEO -->
-      <article class="main-container py-8 max-w grid md:grid-cols-2 md:gap-8">
+      <article class="main-container py-8 max-w grid md:grid-cols-2 md:gap-8 mb-36">
         <div class="flex order-last md:order-first px-24 mx-8">
           <div class="image-with-text ">
             <img v-for="(image, index) in about.ceo_photo" :key="index" :src="url + image" alt="Image" />
@@ -34,44 +34,39 @@
             {{ about.ceo_talk_text }}</ul>
         </div>
       </article>
-
-      <article style="background-color: #1F336D;">
-        <!-- <article class="main-container">
-        <div> Image Carousel </div>
-        <div class="d-flex item-center">
-          <img :src="imgCeo" alt="" />
-          <img :src="imgCeo" alt="" />
-          <img :src="imgCeo" alt="" />
-          <img :src="imgCeo" alt="" />
-          <img :src="imgCeo" alt="" />
-          <img :src="imgCeo" alt="" />
-        </div>    
-      </article> -->
-
-        <article class="main-container max-w py-8 grid md:grid-cols-2 md:gap-10">
-          <div>
-            <div class="flex flex-row items-center gap-8">
-              <h1 class="text-xl font-bold text-white" style="white-space: nowrap;"> Our Vision</h1>
-              <div class="w-full border border-solid border-white"></div>
+      <section id="visi" style="min-height: 400px;">
+        <article style="background-color: #1F336D;">
+          <article class="py-8">
+            <div class="mt-[-200px] mb-6">
+              <Carousel />
             </div>
-            <ul class="list-disc pl-6 text-white font-light text-lg my-2">
-              {{ about.vision }}
-            </ul>
-          </div>
-          <div>
-            <div class="flex flex-row items-center gap-8">
-              <h1 class="text-xl text-white font-bold" style="white-space: nowrap;"> Our Mission</h1>
-              <div class="w-full border border-solid border-white"></div>
-            </div>
-            <ul class="list-disc pl-6 text-white font-light text-lg my-2">
-              {{ about.missions }}
-            </ul>
-          </div>
+            <article>
+              <article class="main-container font-poppins max-w py-8 grid md:grid-cols-2 md:gap-10">
+                <div>
+                  <div class="flex flex-row items-center gap-8">
+                    <h1 class="text-xl font-bold text-white" style="white-space: nowrap;"> Our Vision</h1>
+                    <div class="w-full border border-solid border-white"></div>
+                  </div>
+                  <ul class="list-disc text-white font-light text-lg my-2">
+                    {{ about.vision }}
+                  </ul>
+                </div>
+                <div>
+                  <div class="flex flex-row items-center gap-8">
+                    <h1 class="text-xl text-white font-bold" style="white-space: nowrap;"> Our Mission</h1>
+                    <div class="w-full border border-solid border-white"></div>
+                  </div>
+                  <ul class="list-disc text-white font-light text-lg my-2">
+                    {{ about.missions }}
+                  </ul>
+                </div>
+              </article>
+            </article>
+          </article>
         </article>
-      </article>
+      </section>
     </div>
   </section>
-
   <section id="awards" class="my-8 py-8">
     <article class="main-container">
       <h3 class="text-3xl font-medium text-center my-4">Pencapaian & Penghargaan</h3>
@@ -88,10 +83,10 @@
 </template>
 
 <script setup>
-
 import axios from 'axios';
 import { useHead } from '@vueuse/head';
 import { onMounted, ref } from 'vue';
+import Carousel from '@/views/Carousel.vue';
 
 useHead({
   title: `Tentang Kami | STECHOQ`,
@@ -115,6 +110,7 @@ async function fetchAboutUs() {
   try {
     const response = await axios.get('http://127.0.0.1:8000/api/aboutUs');
     aboutUs.value = response.data;
+    console.log(response.data);
   } catch (error) {
     console.log('Error fetching data : ', error);
   }
@@ -136,31 +132,11 @@ onMounted(() => {
   fetchAchievment();
 });
 
-// onMounted(() => {
-//   $('.center').slick({
-//     centerMode: true,
-//     centerPadding: '60px',
-//     slidesToShow: 3,
-//     responsive: [
-//       {
-//         breakpoint: 768,
-//         settings: {
-//           arrows: false,
-//           centerMode: true,
-//           centerPadding: '40px',
-//           slidesToShow: 3
-//         }
-//       },
-//       {
-//         breakpoint: 480,
-//         settings: {
-//           arrows: false,
-//           centerMode: true,
-//           centerPadding: '40px',
-//           slidesToShow: 1
-//         }
-//       }
-//     ]
-//   });
-// });
 </script>
+
+<!-- style -->
+<style scoped>
+#visi {
+  min-height: 400px;
+}
+</style>
