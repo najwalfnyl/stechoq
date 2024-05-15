@@ -6,6 +6,7 @@
     <div class="my-card" style="background-image: url('src/assets/img/people/kolaborasi.png')"></div>
     <div class="my-card" style="background-image: url('src/assets/img/people/mentoring.png')"></div>
   </div>
+  <div class="pagination-dots flex justify-center mt-4"></div>
 </template>
 
 <script>
@@ -15,12 +16,10 @@ export default {
     const $num = $cards.length;
     const $carousel = $('.card-carousel');
 
-    
     const $even = $num / 2;
     const $odd = ($num + 1) / 2;
 
-    
-    if ($num % 2 == 0) {
+    if ($num % 2 === 0) {
       $cards.eq($even - 1).addClass('active');
       $cards.eq($even - 1).prev().addClass('prev');
       $cards.eq($even - 1).next().addClass('next');
@@ -32,6 +31,19 @@ export default {
 
     $cards.clone().appendTo($carousel);
     $cards.clone().prependTo($carousel);
+
+
+    const $paginationDots = $('.pagination-dots');
+    for (let i = 0; i < $num; i++) {
+      $paginationDots.append('<div class="dot"></div>');
+    }
+
+    function updateDots() {
+      const activeIndex = ($cards.index($cards.filter('.active')) % $num);
+      $('.dot').removeClass('active').eq(activeIndex).addClass('active');
+    }
+    
+    updateDots();
 
     $('.my-card').click(function() {
       const $slide = $(this).outerWidth();
@@ -52,16 +64,19 @@ export default {
       $(this).addClass('active');
       $(this).prev().addClass('prev');
       $(this).next().addClass('next');
+
+      updateDots();
     });
 
-    // Keyboard navigation
     $('body').keydown(function(e) {
-      if (e.keyCode == 37) { 
+      if (e.keyCode === 37) { 
         $('.active').prev().trigger('click');
-      } else if (e.keyCode == 39) { 
+      } else if (e.keyCode === 39) { 
         $('.active').next().trigger('click');
       }
     });
+
+    updateDots();
   }
 }
 </script>
@@ -142,4 +157,25 @@ export default {
   font-weight: 300;
   color: #fff;
 }
+
+.pagination-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pagination-dots .dot {
+  height: 12px;
+  width: 12px;
+  margin: 0 5px;
+  background-color: #ddd;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.pagination-dots .dot.active {
+  background-color: #333;
+}
+
 </style>

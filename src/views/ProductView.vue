@@ -40,14 +40,12 @@ const products = useProductStore();
     <section id="product-list" class="my-8 py-8 xl:mx-40 md:mx-20">
       <div id="product-container" class="main-container">
         <template v-for="(item, i) in products.list" :key="i">
-          <router-link :to="{ name: 'productDetail', params: { id: item.id } }">
             <article class="product-item">
               <div class="product-image" :style="{ backgroundImage: `url(${item.img})` }">
               </div>
               <div class="product-title text-black font-bold text-xl mt-2 ml-4">{{ item.name }}</div>
               <div class="product-sub text-black text-md mt-2 ml-4">{{ item.sub }}</div>
             </article>
-          </router-link>
         </template>
       </div>
     </section>
@@ -59,14 +57,12 @@ const products = useProductStore();
     <section id="product-list" class="my-8 py-8 xl:mx-40 md:mx-20 ">
       <div id="product-container" class="main-container">
         <template v-for="(item, i) in products.list" :key="i">
-          <router-link :to="{ name: 'productDetail', params: { id: item.id } }">
             <article class="product-item">
               <div class="product-image" :style="{ backgroundImage: `url(${item.img})` }">
               </div>
               <div class="product-title text-black font-bold text-xl mt-2 ml-4">{{ item.name }}</div>
               <div class="product-sub text-black text-md mt-2 ml-4">{{ item.sub }}</div>
             </article>
-          </router-link>
         </template>
       </div>
     </section>

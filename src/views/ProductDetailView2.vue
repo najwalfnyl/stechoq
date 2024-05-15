@@ -60,6 +60,24 @@ useHead({
     </div> 
   </article>
     </article>
+
+    <article class="main-container font-poppins max-w  py-8 grid md:grid-cols-2 md:gap-4">
+    <div class="xl:mx-10 sm:mx-6 px-10 pb-4 pt-6 flex items-center">
+        <img src="src/assets/img/product/dm-home.png" alt="Product Image">
+    </div>  
+    <div class="w-3/4 md:w-auto"> 
+        <div class="flex flex-row items-center gap-8">
+          <h1 class="text-6xl text-navy-prim font-poppins font-bold"> Digital Control System</h1>
+        </div>
+        <ul class=" font-poppins list-disc text-justify text-base text-navy-prim font-normal my-0 pt-6 pb-5">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
+            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in 
+            voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat 
+            non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </ul>
+      </div>
+    </article>
 </template>
 
 <style scoped>

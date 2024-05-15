@@ -18,13 +18,6 @@ const routes = [
     path: '/products',
     name: 'products',
     component: () => import('@/views/ProductView.vue'),
-    children: [
-      {
-        path: '/products/:id',
-        name: 'productDetail',
-        component: () => import('@/views/ProductDetailView.vue'),
-      },
-    ],
   },
   {
     path: '/e-learning',
@@ -50,6 +43,16 @@ const routes = [
     path: '/carousel',
     name: 'carousel',
     component: () => import('@/views/Carousel.vue'),
+  },
+  {
+    path: '/product-detail',
+    name: 'product detail',
+    component: () => import('@/views/ProductDetailView.vue'),
+  },
+  {
+    path: '/product-detail2',
+    name: 'product detail2',
+    component: () => import('@/views/ProductDetailView2.vue'),
   },
 ];
 
