@@ -1,9 +1,9 @@
 <template>
-  <div class="main-container card-carousel my-6 flex flex-col justify-center items-center" ref="carousel">
-    <div class="carousel-container flex justify-center items-center">
+  <div class="main-container card-carousel my-6 flex flex-col justify-center items-center">
+    <div class="carousel-container flex justify-center items-center" ref="carousel">
       <div class="my-card" v-for="(card, index) in cards" :key="index"
-        :style="{ backgroundImage: `url(${url + card})` }" @click="() => handleCardClick(index)"
-        :class="getClass(index)"></div>
+        :style="{ backgroundImage: `url(${url + card})` }" :class="getClass(index)" @click="handleCardClick(index)">
+      </div>
     </div>
     <div class="pagination flex justify-center mt-4">
       <span v-for="(card, index) in cards" :key="'pagination-' + index" class="pagination-dot"
@@ -18,6 +18,7 @@ import axios from 'axios';
 
 const about = ref([]);
 const url = 'http://127.0.0.1:8000/storage/';
+const activeIndex = ref(0);
 
 const fetchAboutUs = async () => {
   try {
@@ -30,7 +31,6 @@ const fetchAboutUs = async () => {
 
 const cards = ref([]);
 const carousel = ref(null);
-const activeIndex = ref(0);
 
 const getClass = (index) => {
   if (index === activeIndex.value) return 'active';
