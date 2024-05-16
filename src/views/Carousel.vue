@@ -105,7 +105,7 @@ export default {
   opacity: 0;
   cursor: pointer;
   pointer-events: none;
-  background: black;
+  background: rgb(15, 15, 15);
   background-size: contain; 
   background-repeat: no-repeat; 
   background-position: center; 
